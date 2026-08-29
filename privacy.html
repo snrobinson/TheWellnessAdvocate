@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy & Disclosures | The Wellness Advocate</title>
+  <meta name="description" content="Website privacy policy, HIPAA Notice of Privacy Practices, and medical disclaimer for The Wellness Advocate.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <!-- One Google Fonts family (Fraunces, headings only) loaded with font-display: swap.
+       Body text uses the system font stack — see css/styles.css. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ======================================================================
+     SITE HEADER — this block is IDENTICAL on every page.
+     To change the nav, edit it here on one page, then copy the whole
+     block (or find-and-replace) across all eight HTML files.
+     ====================================================================== -->
+<header class="site-header">
+  <div class="container header-inner">
+    <!-- EDIT: replace with logo image when the final logo is ready.
+         Swap the text below for: <img src="assets/logo.svg" alt="The Wellness Advocate"> -->
+    <a class="wordmark" href="index.html">The&nbsp;Wellness&nbsp;Advocate</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+      Menu
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- Patient portal link — real URL is set once in js/main.js (PORTAL_URL). -->
+        <li><a href="contact.html#book" class="js-portal-link nav-portal">Patient Portal</a></li>
+        <!-- Booking link — real URL is set once in js/main.js (BOOKING_URL). -->
+        <li><a href="contact.html#book" class="js-booking-link button button-primary nav-cta">Book a visit</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- ===== END SITE HEADER ===== -->
+
+<main id="main">
+
+  <!-- ===== EDIT: privacy hero ===== -->
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Privacy &amp; Disclosures</p>
+      <h1>Privacy, notices &amp; disclaimers</h1>
+      <p class="hero-lede">This page holds the practice&rsquo;s website privacy policy, HIPAA
+        notice, and medical disclaimer. Structure is in place &mdash; final language is pending
+        review.</p>
+      <!-- COMPLIANCE: every section on this page is placeholder structure only.
+           All final language must be reviewed by the practice's attorney and
+           malpractice carrier before launch. Do not publish without that review. -->
+    </div>
+  </section>
+
+  <!-- ===== EDIT: website privacy policy ===== -->
+  <section class="service-section" id="privacy-policy" aria-labelledby="privacy-heading">
+    <div class="container">
+      <h2 id="privacy-heading">Website privacy policy</h2>
+      <p><em>Effective date: [TBD-CLIENT: privacy policy effective date]</em></p>
+      <p>This website does not use analytics, advertising trackers, third-party scripts,
+        or cookies. The only information the practice receives through this site is what
+        you choose to send through the contact form.</p>
+      <p>[TBD-CLIENT: full privacy policy language &mdash; attorney review. Should cover: what
+        the contact form collects and how it is used, how long messages are retained, who
+        has access, hosting provider disclosure (AWS Amplify), and how visitors can
+        request deletion of submitted information.]</p>
+    </div>
+  </section>
+
+  <!-- ===== EDIT: HIPAA notice of privacy practices ===== -->
+  <section class="service-section" id="hipaa" aria-labelledby="hipaa-heading">
+    <div class="container">
+      <h2 id="hipaa-heading">Notice of Privacy Practices (HIPAA)</h2>
+      <p>The practice&rsquo;s Notice of Privacy Practices describes how medical information
+        about you may be used and disclosed, and how you can get access to that
+        information.</p>
+      <p>[TBD-CLIENT: full HIPAA Notice of Privacy Practices &mdash; attorney/compliance
+        review. Consider linking a downloadable PDF of the signed notice here, and note
+        where patients receive and acknowledge it during enrollment.]</p>
+    </div>
+  </section>
+
+  <!-- ===== EDIT: medical disclaimer ===== -->
+  <section class="service-section" id="disclaimer" aria-labelledby="disclaimer-heading">
+    <div class="container">
+      <h2 id="disclaimer-heading">Medical disclaimer</h2>
+      <p>Content on this website is provided for general information only and is not
+        medical advice, diagnosis, or treatment. Reading this website, sending a message
+        through the contact form, or booking an appointment does not create a
+        provider&ndash;patient relationship. Never disregard professional medical advice or
+        delay seeking it because of something you read on this site.</p>
+      <p><strong>If you are experiencing a mental health emergency, call or text
+        <a href="tel:988">988</a> or go to your nearest emergency room.</strong> For any
+        other medical emergency, call 911.</p>
+      <p>[TBD-CLIENT: final disclaimer language &mdash; attorney/malpractice carrier review,
+        including any Florida-specific nurse practitioner practice disclosures and DPC
+        agreement disclosures required by state law.]</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================================================================
+     SITE FOOTER — this block is IDENTICAL on every page.
+     To change it, edit it here on one page, then copy the whole block
+     (or find-and-replace) across all eight HTML files.
+     ====================================================================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-name">The Wellness Advocate</p>
+        <p>Direct Primary Care &middot; Hormone Health &middot; Psychiatry</p>
+        <p>Jacksonville, Florida</p>
+        <!-- EDIT: practice phone and email -->
+        <p>Phone: [TBD-CLIENT: practice phone number]</p>
+        <p>Email: [TBD-CLIENT: practice email address]</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy &amp; Disclosures</a></li>
+          <li><a href="contact.html#book" class="js-portal-link">Patient Portal</a></li>
+          <li><a href="contact.html#book" class="js-booking-link">Book a visit</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-crisis">
+      <p><strong>If you are experiencing a mental health emergency, call or text <a href="tel:988">988</a> or go to your nearest emergency room.</strong></p>
+      <p>Services are available to patients located in [TBD-CLIENT: licensed states].</p>
+    </div>
+    <p class="footer-fine">
+      &copy; <span class="js-year">2026</span> The Wellness Advocate. All rights reserved.
+      This website is for general information only and is not medical advice &mdash; see
+      <a href="privacy.html">Privacy &amp; Disclosures</a>.
+      <span class="footer-credit">Website by Robinson Consulting Group</span>
+    </p>
+  </div>
+</footer>
+<!-- ===== END SITE FOOTER ===== -->
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

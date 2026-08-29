@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Membership & Pricing | The Wellness Advocate</title>
+  <meta name="description" content="How Direct Primary Care membership works at The Wellness Advocate: flat monthly pricing, no insurance billing, more time with your provider.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <!-- One Google Fonts family (Fraunces, headings only) loaded with font-display: swap.
+       Body text uses the system font stack — see css/styles.css. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ======================================================================
+     SITE HEADER — this block is IDENTICAL on every page.
+     To change the nav, edit it here on one page, then copy the whole
+     block (or find-and-replace) across all eight HTML files.
+     ====================================================================== -->
+<header class="site-header">
+  <div class="container header-inner">
+    <!-- EDIT: replace with logo image when the final logo is ready.
+         Swap the text below for: <img src="assets/logo.svg" alt="The Wellness Advocate"> -->
+    <a class="wordmark" href="index.html">The&nbsp;Wellness&nbsp;Advocate</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+      Menu
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- Patient portal link — real URL is set once in js/main.js (PORTAL_URL). -->
+        <li><a href="contact.html#book" class="js-portal-link nav-portal">Patient Portal</a></li>
+        <!-- Booking link — real URL is set once in js/main.js (BOOKING_URL). -->
+        <li><a href="contact.html#book" class="js-booking-link button button-primary nav-cta">Book a visit</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- ===== END SITE HEADER ===== -->
+
+<main id="main">
+
+  <!-- ===== EDIT: membership hero ===== -->
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Membership</p>
+      <h1>Simple monthly pricing. No insurance middleman.</h1>
+      <p class="hero-lede">One flat membership fee covers your ongoing care &mdash; so decisions
+        get made between you and your provider, not by a claims department.</p>
+      <div class="cta-row">
+        <a href="contact.html#book" class="button button-primary js-booking-link">Book a visit</a>
+        <a href="faq.html" class="button button-secondary">Read the FAQ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDIT: how membership works ===== -->
+  <section class="section" aria-labelledby="how-membership-heading">
+    <div class="container">
+      <h2 id="how-membership-heading">How membership works</h2>
+      <p class="section-lede">Membership is a direct agreement between you and the practice:
+        a monthly fee, clearly listed services, and no per-visit insurance billing.</p>
+      <ol class="steps">
+        <li>
+          <h3>Enroll</h3>
+          <p>Pick a plan and sign up online. Membership is month-to-month.
+            [TBD-CLIENT: confirm enrollment fee and cancellation terms]</p>
+        </li>
+        <li>
+          <h3>Pay one flat fee</h3>
+          <p>Your monthly fee covers the care listed in your plan &mdash; visits, portal
+            messaging, and care coordination.</p>
+        </li>
+        <li>
+          <h3>Use your care</h3>
+          <p>Book visits when you need them, message between visits, and never wonder what
+            an appointment will cost.</p>
+        </li>
+        <li>
+          <h3>Adjust anytime</h3>
+          <p>Life changes &mdash; your plan can too. [TBD-CLIENT: confirm plan-change and
+            pause policies]</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== EDIT: why cash-pay ===== -->
+  <section class="section section-tint" aria-labelledby="why-heading">
+    <div class="container">
+      <h2 id="why-heading">Why cash-pay?</h2>
+      <p class="section-lede">Removing insurance from everyday primary care changes what a
+        visit can be.</p>
+      <div class="card-grid">
+        <div class="card">
+          <h3>More time with your provider</h3>
+          <p>Without insurance quotas, visits are scheduled for the time your questions
+            actually need.</p>
+        </div>
+        <div class="card">
+          <h3>No billing surprises</h3>
+          <p>You know the price before you walk in. No claims, no codes, no statements
+            months later.</p>
+        </div>
+        <div class="card">
+          <h3>Care decisions stay yours</h3>
+          <p>Plans are built around what you and your provider decide together &mdash; not what
+            a payer will reimburse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDIT: pricing table (all tiers are placeholders) ===== -->
+  <section class="section" aria-labelledby="pricing-heading">
+    <div class="container">
+      <h2 id="pricing-heading">Membership plans</h2>
+      <p class="section-lede">[TBD-CLIENT: confirm number of tiers, names, prices, and
+        included services &mdash; the three cards below are placeholders]</p>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>[TBD-CLIENT: tier 1 name]</h3>
+          <p class="price">[TBD-CLIENT: tier 1 monthly price]</p>
+          <ul>
+            <li>[TBD-CLIENT: tier 1 included service]</li>
+            <li>[TBD-CLIENT: tier 1 included service]</li>
+            <li>[TBD-CLIENT: tier 1 included service]</li>
+          </ul>
+          <a href="contact.html#book" class="button button-primary js-booking-link">Get started</a>
+        </div>
+        <div class="price-card">
+          <h3>[TBD-CLIENT: tier 2 name]</h3>
+          <p class="price">[TBD-CLIENT: tier 2 monthly price]</p>
+          <ul>
+            <li>[TBD-CLIENT: tier 2 included service]</li>
+            <li>[TBD-CLIENT: tier 2 included service]</li>
+            <li>[TBD-CLIENT: tier 2 included service]</li>
+          </ul>
+          <a href="contact.html#book" class="button button-primary js-booking-link">Get started</a>
+        </div>
+        <div class="price-card">
+          <h3>[TBD-CLIENT: tier 3 name]</h3>
+          <p class="price">[TBD-CLIENT: tier 3 monthly price]</p>
+          <ul>
+            <li>[TBD-CLIENT: tier 3 included service]</li>
+            <li>[TBD-CLIENT: tier 3 included service]</li>
+            <li>[TBD-CLIENT: tier 3 included service]</li>
+          </ul>
+          <a href="contact.html#book" class="button button-primary js-booking-link">Get started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDIT: what membership does / does not include ===== -->
+  <section class="section" aria-labelledby="includes-heading">
+    <div class="container">
+      <h2 id="includes-heading">What membership does &mdash; and doesn&rsquo;t &mdash; include</h2>
+      <div class="compare-cols">
+        <div class="card">
+          <h3>Membership generally includes</h3>
+          <p>[TBD-CLIENT: confirm this list against the final membership agreement]</p>
+          <ul>
+            <li>Primary care visits with your provider</li>
+            <li>Same-day / next-day scheduling when available</li>
+            <li>Patient portal messaging between visits</li>
+            <li>Chronic condition management and annual wellness care</li>
+            <li>Care coordination and referrals when you need a specialist</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Membership is not insurance</h3>
+          <ul>
+            <li>Membership does not cover hospital care, emergency care, specialists,
+              imaging centers, or prescriptions filled at a pharmacy.</li>
+            <li>Most members pair membership with a high-deductible or catastrophic
+              insurance plan for those situations &mdash; talk to a licensed insurance agent
+              about what fits your circumstances.</li>
+            <li>Labs, certain procedures, BHRT, and psychiatry services may be billed
+              separately. [TBD-CLIENT: confirm what is in vs. out of membership]</li>
+            <li>[TBD-CLIENT: any state-required DPC agreement disclosures &mdash; attorney
+              review]</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a href="contact.html#book" class="button button-primary js-booking-link">Book a visit</a>
+        <a href="contact.html" class="button button-secondary">Ask a question first</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================================================================
+     SITE FOOTER — this block is IDENTICAL on every page.
+     To change it, edit it here on one page, then copy the whole block
+     (or find-and-replace) across all eight HTML files.
+     ====================================================================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <p class="footer-name">The Wellness Advocate</p>
+        <p>Direct Primary Care &middot; Hormone Health &middot; Psychiatry</p>
+        <p>Jacksonville, Florida</p>
+        <!-- EDIT: practice phone and email -->
+        <p>Phone: [TBD-CLIENT: practice phone number]</p>
+        <p>Email: [TBD-CLIENT: practice email address]</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy &amp; Disclosures</a></li>
+          <li><a href="contact.html#book" class="js-portal-link">Patient Portal</a></li>
+          <li><a href="contact.html#book" class="js-booking-link">Book a visit</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-crisis">
+      <p><strong>If you are experiencing a mental health emergency, call or text <a href="tel:988">988</a> or go to your nearest emergency room.</strong></p>
+      <p>Services are available to patients located in [TBD-CLIENT: licensed states].</p>
+    </div>
+    <p class="footer-fine">
+      &copy; <span class="js-year">2026</span> The Wellness Advocate. All rights reserved.
+      This website is for general information only and is not medical advice &mdash; see
+      <a href="privacy.html">Privacy &amp; Disclosures</a>.
+      <span class="footer-credit">Website by Robinson Consulting Group</span>
+    </p>
+  </div>
+</footer>
+<!-- ===== END SITE FOOTER ===== -->
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
