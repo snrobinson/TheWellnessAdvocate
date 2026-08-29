@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" role="img" aria-label="Placeholder for provider headshot">
+  <!-- EDIT: this file is a placeholder. Replace by saving the real headshot as
+       assets/headshot.jpg and updating the <img> src on index.html and about.html -->
+  <rect width="400" height="480" fill="#f5e9dc"/>
+  <circle cx="200" cy="180" r="70" fill="#d9c6ad"/>
+  <path d="M80 480c0-80 54-130 120-130s120 50 120 130z" fill="#d9c6ad"/>
+  <text x="200" y="452" font-family="Arial, sans-serif" font-size="20" fill="#96551f" text-anchor="middle">Headshot coming soon</text>
+</svg>

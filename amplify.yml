@@ -1,0 +1,14 @@
+# AWS Amplify build spec — static site, NO build step.
+# Amplify serves the repo root directly; nothing is compiled or installed.
+version: 1
+frontend:
+  phases:
+    build:
+      commands: []
+  artifacts:
+    # Serve the repository root as-is
+    baseDirectory: /
+    files:
+      - '**/*'
+  cache:
+    paths: []
