@@ -6,11 +6,11 @@
   <title>Frequently Asked Questions | The Wellness Advocate</title>
   <meta name="description" content="Answers to common questions about Direct Primary Care, cash-pay membership, BHRT, and psychiatry at The Wellness Advocate in Jacksonville, FL.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <!-- One Google Fonts family (Fraunces, headings only) loaded with font-display: swap.
-       Body text uses the system font stack — see css/styles.css. -->
+  <!-- One Google Fonts family pair (Fraunces for headings, Outfit for body),
+       loaded with font-display: swap. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -52,18 +52,21 @@
 
   <!-- ===== EDIT: FAQ hero ===== -->
   <section class="hero">
+    <span class="orb orb-green" style="top:5rem; right:-3rem;" aria-hidden="true"></span>
     <div class="container">
-      <p class="eyebrow">FAQ</p>
-      <h1>Questions, answered plainly</h1>
-      <p class="hero-lede">The questions prospective patients ask most about Direct Primary
-        Care, hormone health, and psychiatry at The Wellness Advocate.</p>
+      <div class="reveal">
+        <p class="eyebrow">FAQ</p>
+        <h1>Questions, answered <em class="accent">plainly</em></h1>
+        <p class="hero-lede">The questions prospective patients ask most about Direct Primary
+          Care, hormone health, and psychiatry at The Wellness Advocate.</p>
+      </div>
     </div>
   </section>
 
   <!-- ===== EDIT: FAQ list — add/remove <details> blocks as needed ===== -->
   <section class="section" aria-label="Frequently asked questions">
     <div class="container">
-      <div class="faq-list">
+      <div class="faq-list" data-stagger>
 
         <details>
           <summary>What is Direct Primary Care, and how is it different from a regular doctor&rsquo;s office?</summary>
@@ -172,7 +175,7 @@
 
       </div>
 
-      <div class="notice">
+      <div class="notice reveal">
         <p>Have a question that isn&rsquo;t answered here?
           <a href="contact.html">Send it through the contact page</a> &mdash; we&rsquo;re happy to
           help you figure out whether the practice is a good fit.</p>
@@ -183,10 +186,21 @@
 </main>
 
 <!-- ======================================================================
-     SITE FOOTER — this block is IDENTICAL on every page.
-     To change it, edit it here on one page, then copy the whole block
-     (or find-and-replace) across all eight HTML files.
+     PRE-FOOTER CTA BAND + SITE FOOTER — this block is IDENTICAL on every
+     page. To change it, edit it here on one page, then copy the whole
+     block (or find-and-replace) across all eight HTML files.
      ====================================================================== -->
+<section class="cta-band on-dark" aria-labelledby="cta-band-heading">
+  <div class="container">
+    <p class="eyebrow" style="justify-content:center;">Ready when you are</p>
+    <h2 id="cta-band-heading">Care that finally <em class="accent">knows you</em></h2>
+    <p>Become a member, or start with a single conversation — no insurance card required.</p>
+    <div class="cta-row">
+      <a href="contact.html#book" class="button button-primary js-booking-link">Book a visit</a>
+      <a href="membership.html" class="button button-secondary">Explore membership</a>
+    </div>
+  </div>
+</section>
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -222,7 +236,7 @@
     </p>
   </div>
 </footer>
-<!-- ===== END SITE FOOTER ===== -->
+<!-- ===== END PRE-FOOTER + SITE FOOTER ===== -->
 
 <script src="js/main.js" defer></script>
 </body>

@@ -6,11 +6,11 @@
   <title>Membership & Pricing | The Wellness Advocate</title>
   <meta name="description" content="How Direct Primary Care membership works at The Wellness Advocate: flat monthly pricing, no insurance billing, more time with your provider.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <!-- One Google Fonts family (Fraunces, headings only) loaded with font-display: swap.
-       Body text uses the system font stack — see css/styles.css. -->
+  <!-- One Google Fonts family pair (Fraunces for headings, Outfit for body),
+       loaded with font-display: swap. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -52,14 +52,17 @@
 
   <!-- ===== EDIT: membership hero ===== -->
   <section class="hero">
+    <span class="orb orb-clay" style="top:6rem; right:-2rem;" aria-hidden="true"></span>
     <div class="container">
-      <p class="eyebrow">Membership</p>
-      <h1>Simple monthly pricing. No insurance middleman.</h1>
-      <p class="hero-lede">One flat membership fee covers your ongoing care &mdash; so decisions
-        get made between you and your provider, not by a claims department.</p>
-      <div class="cta-row">
-        <a href="contact.html#book" class="button button-primary js-booking-link">Book a visit</a>
-        <a href="faq.html" class="button button-secondary">Read the FAQ</a>
+      <div class="reveal">
+        <p class="eyebrow">Membership</p>
+        <h1>Simple monthly pricing. <em class="accent">No insurance middleman.</em></h1>
+        <p class="hero-lede">One flat membership fee covers your ongoing care &mdash; so decisions
+          get made between you and your provider, not by a claims department.</p>
+        <div class="cta-row">
+          <a href="contact.html#book" class="button button-primary js-booking-link">Book a visit</a>
+          <a href="faq.html" class="button button-secondary">Read the FAQ</a>
+        </div>
       </div>
     </div>
   </section>
@@ -67,10 +70,13 @@
   <!-- ===== EDIT: how membership works ===== -->
   <section class="section" aria-labelledby="how-membership-heading">
     <div class="container">
-      <h2 id="how-membership-heading">How membership works</h2>
-      <p class="section-lede">Membership is a direct agreement between you and the practice:
-        a monthly fee, clearly listed services, and no per-visit insurance billing.</p>
-      <ol class="steps">
+      <div class="reveal">
+        <p class="eyebrow">01 &mdash; The model</p>
+        <h2 id="how-membership-heading">How membership <em class="accent">works</em></h2>
+        <p class="section-lede">Membership is a direct agreement between you and the practice:
+          a monthly fee, clearly listed services, and no per-visit insurance billing.</p>
+      </div>
+      <ol class="steps" data-stagger>
         <li>
           <h3>Enroll</h3>
           <p>Pick a plan and sign up online. Membership is month-to-month.
@@ -96,38 +102,44 @@
   </section>
 
   <!-- ===== EDIT: why cash-pay ===== -->
-  <section class="section section-tint" aria-labelledby="why-heading">
+  <section class="section section-dark on-dark" aria-labelledby="why-heading">
     <div class="container">
-      <h2 id="why-heading">Why cash-pay?</h2>
-      <p class="section-lede">Removing insurance from everyday primary care changes what a
-        visit can be.</p>
-      <div class="card-grid">
-        <div class="card">
+      <div class="reveal">
+        <p class="eyebrow">02 &mdash; The why</p>
+        <h2 id="why-heading">Why <em class="accent">cash-pay?</em></h2>
+        <p class="section-lede">Removing insurance from everyday primary care changes what a
+          visit can be.</p>
+      </div>
+      <ol class="steps" data-stagger style="grid-template-columns:1fr;">
+        <li>
           <h3>More time with your provider</h3>
           <p>Without insurance quotas, visits are scheduled for the time your questions
             actually need.</p>
-        </div>
-        <div class="card">
+        </li>
+        <li>
           <h3>No billing surprises</h3>
           <p>You know the price before you walk in. No claims, no codes, no statements
             months later.</p>
-        </div>
-        <div class="card">
+        </li>
+        <li>
           <h3>Care decisions stay yours</h3>
           <p>Plans are built around what you and your provider decide together &mdash; not what
             a payer will reimburse.</p>
-        </div>
-      </div>
+        </li>
+      </ol>
     </div>
   </section>
 
   <!-- ===== EDIT: pricing table (all tiers are placeholders) ===== -->
   <section class="section" aria-labelledby="pricing-heading">
     <div class="container">
-      <h2 id="pricing-heading">Membership plans</h2>
-      <p class="section-lede">[TBD-CLIENT: confirm number of tiers, names, prices, and
-        included services &mdash; the three cards below are placeholders]</p>
-      <div class="pricing-grid">
+      <div class="reveal">
+        <p class="eyebrow">03 &mdash; Plans</p>
+        <h2 id="pricing-heading">Membership <em class="accent">plans</em></h2>
+        <p class="section-lede">[TBD-CLIENT: confirm number of tiers, names, prices, and
+          included services &mdash; the three cards below are placeholders]</p>
+      </div>
+      <div class="pricing-grid" data-stagger>
         <div class="price-card">
           <h3>[TBD-CLIENT: tier 1 name]</h3>
           <p class="price">[TBD-CLIENT: tier 1 monthly price]</p>
@@ -138,7 +150,7 @@
           </ul>
           <a href="contact.html#book" class="button button-primary js-booking-link">Get started</a>
         </div>
-        <div class="price-card">
+        <div class="price-card featured">
           <h3>[TBD-CLIENT: tier 2 name]</h3>
           <p class="price">[TBD-CLIENT: tier 2 monthly price]</p>
           <ul>
@@ -163,10 +175,13 @@
   </section>
 
   <!-- ===== EDIT: what membership does / does not include ===== -->
-  <section class="section" aria-labelledby="includes-heading">
+  <section class="section section-cream" aria-labelledby="includes-heading">
     <div class="container">
-      <h2 id="includes-heading">What membership does &mdash; and doesn&rsquo;t &mdash; include</h2>
-      <div class="compare-cols">
+      <div class="reveal">
+        <p class="eyebrow">04 &mdash; The fine print, plainly</p>
+        <h2 id="includes-heading">What membership does &mdash; and <em class="accent">doesn&rsquo;t</em> &mdash; include</h2>
+      </div>
+      <div class="compare-cols" data-stagger>
         <div class="card">
           <h3>Membership generally includes</h3>
           <p>[TBD-CLIENT: confirm this list against the final membership agreement]</p>
@@ -193,20 +208,27 @@
           </ul>
         </div>
       </div>
-      <div class="cta-row">
-        <a href="contact.html#book" class="button button-primary js-booking-link">Book a visit</a>
-        <a href="contact.html" class="button button-secondary">Ask a question first</a>
-      </div>
     </div>
   </section>
 
 </main>
 
 <!-- ======================================================================
-     SITE FOOTER — this block is IDENTICAL on every page.
-     To change it, edit it here on one page, then copy the whole block
-     (or find-and-replace) across all eight HTML files.
+     PRE-FOOTER CTA BAND + SITE FOOTER — this block is IDENTICAL on every
+     page. To change it, edit it here on one page, then copy the whole
+     block (or find-and-replace) across all eight HTML files.
      ====================================================================== -->
+<section class="cta-band on-dark" aria-labelledby="cta-band-heading">
+  <div class="container">
+    <p class="eyebrow" style="justify-content:center;">Ready when you are</p>
+    <h2 id="cta-band-heading">Care that finally <em class="accent">knows you</em></h2>
+    <p>Become a member, or start with a single conversation — no insurance card required.</p>
+    <div class="cta-row">
+      <a href="contact.html#book" class="button button-primary js-booking-link">Book a visit</a>
+      <a href="membership.html" class="button button-secondary">Explore membership</a>
+    </div>
+  </div>
+</section>
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -242,7 +264,7 @@
     </p>
   </div>
 </footer>
-<!-- ===== END SITE FOOTER ===== -->
+<!-- ===== END PRE-FOOTER + SITE FOOTER ===== -->
 
 <script src="js/main.js" defer></script>
 </body>

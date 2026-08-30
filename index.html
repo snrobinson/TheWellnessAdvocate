@@ -6,11 +6,11 @@
   <title>The Wellness Advocate | Direct Primary Care in Jacksonville, FL</title>
   <meta name="description" content="Membership-based Direct Primary Care, BHRT, and psychiatry in Jacksonville, FL. Direct, personal care without insurance in the middle, led by Aimee Roberts-Serrato, PMHNP-BC, FNP-C.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <!-- One Google Fonts family (Fraunces, headings only) loaded with font-display: swap.
-       Body text uses the system font stack — see css/styles.css. -->
+  <!-- One Google Fonts family pair (Fraunces for headings, Outfit for body),
+       loaded with font-display: swap. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -52,16 +52,54 @@
 
   <!-- ===== EDIT: home hero ===== -->
   <section class="hero">
+    <span class="orb orb-green" style="top:6rem; left:-4rem;" aria-hidden="true"></span>
     <div class="container">
-      <p class="eyebrow">Direct Primary Care &middot; Jacksonville, FL</p>
-      <h1>Direct, personal care &mdash; without insurance in the middle.</h1>
-      <p class="hero-lede">The Wellness Advocate is a membership-based primary care, hormone
-        health, and psychiatry practice led by Aimee Roberts-Serrato, PMHNP-BC, FNP-C.
-        One provider who knows your story, appointments that never feel rushed, and
-        simple monthly pricing.</p>
-      <div class="cta-row">
-        <a href="contact.html#book" class="button button-primary js-booking-link">Book a visit</a>
-        <a href="membership.html" class="button button-secondary">Learn about membership</a>
+      <div class="hero-grid">
+        <div class="reveal">
+          <p class="eyebrow">Direct Primary Care &middot; Jacksonville, FL</p>
+          <h1>Direct, <em class="accent">personal</em> care &mdash; without insurance in the middle.</h1>
+          <p class="hero-lede">The Wellness Advocate is a membership-based primary care, hormone
+            health, and psychiatry practice led by Aimee Roberts-Serrato, PMHNP-BC, FNP-C.
+            One provider who knows your story, appointments that never feel rushed, and
+            simple monthly pricing.</p>
+          <div class="cta-row">
+            <a href="contact.html#book" class="button button-primary js-booking-link">Book a visit</a>
+            <a href="membership.html" class="button button-secondary">Learn about membership</a>
+          </div>
+        </div>
+        <div class="reveal arch-wrap" style="--reveal-delay:150ms;">
+          <!-- EDIT: art-directed placeholder — to use a real photo, add
+               <img src="assets/hero.jpg" alt="..."> as the first child of the
+               figure below and delete the inline <svg>. -->
+          <figure class="arch-frame" role="img"
+            aria-label="Decorative botanical illustration — practice photo coming soon">
+            <svg viewBox="0 0 400 500" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+              <g fill="none" stroke="#1e4d42" stroke-width="2" stroke-linecap="round" opacity="0.5">
+                <path d="M200 470 C 196 360 204 250 198 140"/>
+                <path d="M198 400 C 160 380 130 340 128 300"/>
+                <path d="M198 400 C 160 380 130 340 128 300 C 170 310 196 350 198 400" opacity="0.35"/>
+                <path d="M199 330 C 240 312 268 274 270 235"/>
+                <path d="M199 330 C 240 312 268 274 270 235 C 228 244 202 284 199 330" opacity="0.35"/>
+                <path d="M198 255 C 162 240 138 208 136 172"/>
+                <path d="M198 255 C 162 240 138 208 136 172 C 174 180 196 214 198 255" opacity="0.35"/>
+                <path d="M198 185 C 232 168 254 136 256 104"/>
+                <path d="M198 185 C 232 168 254 136 256 104 C 220 112 200 146 198 185" opacity="0.35"/>
+                <circle cx="198" cy="128" r="5" fill="#c07a4a" stroke="none" opacity="0.8"/>
+              </g>
+            </svg>
+            <figcaption>Photo slot &mdash; coming soon</figcaption>
+          </figure>
+          <span class="seal" aria-hidden="true">
+            <svg viewBox="0 0 100 100">
+              <defs><path id="seal-circle" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"/></defs>
+              <circle cx="50" cy="50" r="49" fill="#f7f2e9" stroke="#e3d7c2"/>
+              <text font-size="9.5" letter-spacing="2.5" fill="#8f5222" font-family="Outfit, sans-serif">
+                <textPath href="#seal-circle">WHOLE-PERSON CARE &#183; JACKSONVILLE &#183;</textPath>
+              </text>
+              <circle cx="50" cy="50" r="4" fill="#1e4d42"/>
+            </svg>
+          </span>
+        </div>
       </div>
     </div>
   </section>
@@ -69,23 +107,45 @@
   <!-- ===== EDIT: three service cards ===== -->
   <section class="section" aria-labelledby="services-heading">
     <div class="container">
-      <h2 id="services-heading">Care built around you</h2>
-      <p class="section-lede">Three services, one provider, one relationship &mdash; so your
-        primary care, hormone health, and mental health care actually talk to each other.</p>
-      <div class="card-grid">
+      <div class="reveal">
+        <p class="eyebrow">01 &mdash; What we do</p>
+        <h2 id="services-heading">Care built <em class="accent">around you</em></h2>
+        <p class="section-lede">Three services, one provider, one relationship &mdash; so your
+          primary care, hormone health, and mental health care actually talk to each other.</p>
+      </div>
+      <div class="card-grid" data-stagger>
         <div class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M24 42 C 14 34 6 27 6 18 a 9 9 0 0 1 18 -3 a 9 9 0 0 1 18 3 c 0 9 -8 16 -18 24 z"/>
+              <path d="M13 24 h7 l3 -6 4 10 3 -4 h5"/>
+            </svg>
+          </span>
           <h3>Direct Primary Care</h3>
           <p>A flat monthly membership covers your primary care &mdash; same-day and next-day
             access, longer visits, and a provider who answers when you reach out.</p>
           <a class="card-link" href="services.html#dpc">Learn about Direct Primary Care</a>
         </div>
         <div class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M24 6 C 30 16 36 22 36 30 a 12 12 0 0 1 -24 0 c 0 -8 6 -14 12 -24 z"/>
+              <path d="M19 30 a 5 5 0 0 0 5 5"/>
+            </svg>
+          </span>
           <h3>Hormone Health (BHRT)</h3>
           <p>Bioidentical hormone replacement therapy consultations for symptoms of hormonal
             change, guided by lab work and an individualized plan.</p>
           <a class="card-link" href="services.html#bhrt">Learn about BHRT</a>
         </div>
         <div class="card">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M24 34 c -5 3 -12 2 -15 -2 c 4 -1 6 -3 7 -6 c -4 -8 0 -18 8 -20 c 8 2 12 12 8 20 c 1 3 3 5 7 6 c -3 4 -10 5 -15 2 z"/>
+              <path d="M24 34 v8"/>
+              <path d="M19 15 c 1 3 3 5 5 5 c 2 0 4 -2 5 -5"/>
+            </svg>
+          </span>
           <h3>Psychiatry</h3>
           <p>Psychiatric evaluation and medication management from a dual-certified nurse
             practitioner who can see the whole picture, not just one prescription.</p>
@@ -96,10 +156,13 @@
   </section>
 
   <!-- ===== EDIT: how DPC works strip ===== -->
-  <section class="section section-tint" aria-labelledby="how-heading">
+  <section class="section section-dark on-dark" aria-labelledby="how-heading">
     <div class="container">
-      <h2 id="how-heading">How Direct Primary Care works</h2>
-      <ol class="steps">
+      <div class="reveal">
+        <p class="eyebrow">02 &mdash; The model</p>
+        <h2 id="how-heading">How Direct Primary Care <em class="accent">works</em></h2>
+      </div>
+      <ol class="steps" data-stagger>
         <li>
           <h3>Join as a member</h3>
           <p>Choose a membership plan and enroll online. No insurance billing, no surprise
@@ -120,7 +183,7 @@
             come up.</p>
         </li>
       </ol>
-      <p class="section-header-cta"><a class="button button-secondary" href="membership.html">See membership details</a></p>
+      <p class="section-header-cta reveal"><a class="button button-secondary" href="membership.html">See membership details</a></p>
     </div>
   </section>
 
@@ -128,14 +191,22 @@
   <section class="section" aria-labelledby="provider-heading">
     <div class="container">
       <div class="provider-grid">
-        <figure class="headshot">
-          <!-- EDIT: replace placeholder with real headshot (assets/headshot.jpg) -->
-          <img src="assets/headshot-placeholder.svg" width="400" height="480"
-            alt="Aimee Roberts-Serrato, PMHNP-BC, FNP-C — headshot coming soon">
-        </figure>
-        <div>
-          <p class="eyebrow">Your provider</p>
-          <h2 id="provider-heading">Meet Aimee Roberts-Serrato, PMHNP-BC, FNP-C</h2>
+        <div class="reveal arch-wrap" style="margin-inline:0;">
+          <!-- EDIT: replace placeholder with real headshot — add
+               <img src="assets/headshot.jpg" alt="Aimee Roberts-Serrato, PMHNP-BC, FNP-C">
+               as the first child of the figure and delete the inline <svg>. -->
+          <figure class="arch-frame" role="img"
+            aria-label="Aimee Roberts-Serrato, PMHNP-BC, FNP-C — headshot coming soon">
+            <svg viewBox="0 0 400 500" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
+              <circle cx="200" cy="205" r="72" fill="#d9c6ad"/>
+              <path d="M75 500 c0 -85 56 -138 125 -138 s125 53 125 138 z" fill="#d9c6ad"/>
+            </svg>
+            <figcaption>Headshot &mdash; coming soon</figcaption>
+          </figure>
+        </div>
+        <div class="reveal" style="--reveal-delay:120ms;">
+          <p class="eyebrow">03 &mdash; Your provider</p>
+          <h2 id="provider-heading">Meet Aimee Roberts-Serrato, <em class="accent">PMHNP-BC, FNP-C</em></h2>
           <p>Aimee is a dual board-certified nurse practitioner in family practice and
             psychiatric&ndash;mental health, with six years in practice. She built The Wellness
             Advocate around a simple idea: you get better care when your provider has the
@@ -150,10 +221,21 @@
 </main>
 
 <!-- ======================================================================
-     SITE FOOTER — this block is IDENTICAL on every page.
-     To change it, edit it here on one page, then copy the whole block
-     (or find-and-replace) across all eight HTML files.
+     PRE-FOOTER CTA BAND + SITE FOOTER — this block is IDENTICAL on every
+     page. To change it, edit it here on one page, then copy the whole
+     block (or find-and-replace) across all eight HTML files.
      ====================================================================== -->
+<section class="cta-band on-dark" aria-labelledby="cta-band-heading">
+  <div class="container">
+    <p class="eyebrow" style="justify-content:center;">Ready when you are</p>
+    <h2 id="cta-band-heading">Care that finally <em class="accent">knows you</em></h2>
+    <p>Become a member, or start with a single conversation — no insurance card required.</p>
+    <div class="cta-row">
+      <a href="contact.html#book" class="button button-primary js-booking-link">Book a visit</a>
+      <a href="membership.html" class="button button-secondary">Explore membership</a>
+    </div>
+  </div>
+</section>
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -189,7 +271,7 @@
     </p>
   </div>
 </footer>
-<!-- ===== END SITE FOOTER ===== -->
+<!-- ===== END PRE-FOOTER + SITE FOOTER ===== -->
 
 <script src="js/main.js" defer></script>
 </body>
