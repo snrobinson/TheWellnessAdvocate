@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Jost:wght@300;400;500&display=swap">
+  <style>
+    body { margin:0; background:#0F312A; color:#F0EBDE;
+      font-family:"Jost", "Helvetica Neue", Arial, sans-serif; font-weight:300; }
+    a { color:#DCB07C; } a:hover { color:#F0EBDE; }
+    .g { display:grid; grid-template-columns:repeat(12, minmax(0,1fr)); gap:0 24px; }
+    .lbl { font-size:10px; letter-spacing:0.3em; text-transform:uppercase; font-weight:400; color:#DCB07C; }
+    .bod { font-family:"Bodoni Moda", "Didot", Georgia, serif; font-weight:400; }
+  </style>
+</helmet>
+
+<!-- hero: deep flood, arch used architecturally as a cut in the layout -->
+<div style="padding: 0 76px 96px; position:relative; overflow:hidden;">
+  <div style="display:flex; justify-content:space-between; align-items:baseline;
+      padding:32px 0 20px; border-bottom:1px solid #23473E;">
+    <span class="bod" style="font-size:20px; letter-spacing:0.02em;">The Wellness Advocate</span>
+    <span class="lbl">Jacksonville &middot; Est. 2026</span>
+  </div>
+
+  <div class="g" style="margin-top:88px; align-items:end;">
+    <div style="grid-column:1 / span 7;">
+      <p class="lbl" style="margin:0 0 30px;">Direct Primary Care &middot; Hormone Health &middot; Psychiatry</p>
+      <h1 class="bod" style="margin:0; font-size:96px; line-height:0.92; letter-spacing:-0.02em;
+          font-weight:400; text-wrap:pretty;">
+        Care worth<br><em style="font-weight:400;">the wait</em><br>you no longer<br>have to do.
+      </h1>
+    </div>
+    <!-- the arch is a structural cut, not a photo frame -->
+    <div style="grid-column:9 / span 4;">
+      <div style="height:430px; border-radius:220px 220px 4px 4px; border:1px solid #DCB07C;
+          display:flex; align-items:flex-end; justify-content:center; padding-bottom:30px;">
+        <span class="lbl" style="color:#7E9A8C;">[Photograph]</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="g" style="margin-top:56px;">
+    <p style="grid-column:1 / span 5; margin:0; font-size:17px; line-height:1.8; color:#B4C3B8;">
+      A membership practice where one dual board-certified provider looks after your
+      primary care, your hormones and your mental health &mdash; on your schedule, at a
+      price you know in advance.
+    </p>
+    <div style="grid-column:7 / span 5; display:flex; gap:20px; align-items:center;">
+      <a href="#" style="background:#DCB07C; color:#0F312A; text-decoration:none; font-size:11px;
+          letter-spacing:0.2em; text-transform:uppercase; padding:17px 34px;">Book a visit</a>
+      <a href="#" style="color:#F0EBDE; text-decoration:none; font-size:11px; letter-spacing:0.2em;
+          text-transform:uppercase; border-bottom:1px solid #DCB07C; padding-bottom:4px;">Membership</a>
+    </div>
+  </div>
+</div>
+
+<!-- light band, dramatic contrast flip -->
+<div style="background:#F0EBDE; color:#0F312A; padding:82px 76px;">
+  <div class="g">
+    <h2 class="bod" style="grid-column:1 / span 6; margin:0; font-size:52px; line-height:1.05;
+        font-weight:400;">Three disciplines,<br><em>one relationship.</em></h2>
+    <div style="grid-column:8 / span 5;">
+      <div style="border-top:1px solid #0F312A; padding:22px 0;">
+        <h3 class="bod" style="margin:0; font-size:23px; font-weight:500;">Direct Primary Care</h3>
+        <p style="margin:7px 0 0; font-size:14px; line-height:1.7; color:#41564C;">
+          Flat monthly membership. Same-day access, unhurried visits.</p>
+      </div>
+      <div style="border-top:1px solid #C8C0AC; padding:22px 0;">
+        <h3 class="bod" style="margin:0; font-size:23px; font-weight:500;">Hormone Health</h3>
+        <p style="margin:7px 0 0; font-size:14px; line-height:1.7; color:#41564C;">
+          Lab-guided bioidentical hormone therapy, monitored over time.</p>
+      </div>
+      <div style="border-top:1px solid #C8C0AC; padding:22px 0 0;">
+        <h3 class="bod" style="margin:0; font-size:23px; font-weight:500;">Psychiatry</h3>
+        <p style="margin:7px 0 0; font-size:14px; line-height:1.7; color:#41564C;">
+          Evaluation and medication management for adults.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="padding:86px 76px;">
+  <div class="g">
+    <p class="bod" style="grid-column:2 / span 9; margin:0; font-size:40px; line-height:1.28;
+        font-weight:400; font-style:italic;">
+      Medication is one tool. Food, sleep and movement are the other three.
+    </p>
+    <p class="lbl" style="grid-column:2 / span 5; margin:28px 0 0; color:#7E9A8C;">
+      Aimee Roberts-Serrato, MSN, APRN, PMHNP-BC, FNP-C
+    </p>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

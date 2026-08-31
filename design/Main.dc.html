@@ -1,0 +1,185 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Karla:wght@300;400;500&display=swap">
+  <style>
+    body { margin: 0; background: #F6F1E7; color: #1A1917;
+      font-family: "Karla", "Helvetica Neue", Arial, sans-serif; font-weight: 300; }
+    a { color: #9C4A21; } a:hover { color: #6E3316; }
+    .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 0 24px; }
+    .lbl { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
+      font-weight: 500; color: #9C4A21; }
+    .rule { height: 1px; background: #D9CFBC; }
+    .ser { font-family: "Newsreader", Georgia, serif; font-weight: 300; }
+  </style>
+</helmet>
+
+<div style="padding: 0 72px 88px;">
+
+  <!-- masthead -->
+  <div style="display:flex; justify-content:space-between; align-items:baseline; padding: 26px 0 14px;">
+    <span class="lbl" style="color:#1A1917;">The Wellness Advocate</span>
+    <span class="lbl" style="color:#8A8175;">Jacksonville, Florida</span>
+  </div>
+  <div class="rule" style="background:#1A1917;"></div>
+
+  <!-- hero: 7/5 asymmetric, plate hangs above the headline baseline -->
+  <div class="grid" style="margin-top: 54px;">
+    <div style="grid-column: 1 / span 7;">
+      <div style="display:flex; gap:18px; align-items:baseline; margin-bottom:26px;">
+        <span class="lbl">01</span>
+        <span class="lbl" style="color:#8A8175;">Direct Primary Care &middot; Hormone Health &middot; Psychiatry</span>
+      </div>
+      <h1 class="ser" style="margin:0; font-size: 92px; line-height: 0.94; letter-spacing:-0.025em; text-wrap: pretty;">
+        Your doctor<br>
+        has time<br>
+        <em style="font-weight:300;">for you again.</em>
+      </h1>
+    </div>
+    <div style="grid-column: 9 / span 4; margin-top: -34px;">
+      <div style="aspect-ratio: 3 / 4; background:
+          linear-gradient(168deg, #E4D6C0 0%, #CFC1A8 52%, #A9AE99 100%);"></div>
+      <p class="lbl" style="color:#8A8175; margin: 12px 0 0;">[Photograph &mdash; Aimee at work]</p>
+    </div>
+  </div>
+
+  <!-- lede sits under the headline at a narrow measure, gutter note to its right -->
+  <div class="grid" style="margin-top: 44px;">
+    <div style="grid-column: 1 / span 5;">
+      <p style="margin:0; font-size: 18px; line-height: 1.65; color:#3D3A34;">
+        A membership practice in Jacksonville where one provider handles your primary
+        care, your hormones, and your mental health &mdash; without an insurance company
+        deciding how long the visit lasts.
+      </p>
+      <div style="display:flex; gap: 28px; align-items:center; margin-top: 34px;">
+        <a href="#" style="background:#1A1917; color:#F6F1E7; text-decoration:none;
+            font-size:11px; letter-spacing:0.18em; text-transform:uppercase;
+            padding: 16px 30px;">Book a visit</a>
+        <a href="#" style="color:#1A1917; font-size:11px; letter-spacing:0.18em;
+            text-transform:uppercase; text-decoration:none; border-bottom:1px solid #9C4A21;
+            padding-bottom:3px;">What membership covers</a>
+      </div>
+    </div>
+    <div style="grid-column: 7 / span 2; border-left:1px solid #D9CFBC; padding-left:16px;">
+      <p style="margin:0; font-size:12px; line-height:1.55; color:#8A8175; font-style:italic;">
+        Direct primary care: you pay the practice a flat monthly fee. No claims,
+        no copays, no billing codes.
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- services as an editorial list, NOT three equal cards -->
+<div style="background:#EFE7D8; padding: 76px 72px 84px;">
+  <div class="grid">
+    <span class="lbl" style="grid-column: 1 / span 2;">02 &mdash; Practice</span>
+    <h2 class="ser" style="grid-column: 3 / span 7; margin:0; font-size:40px; line-height:1.08;
+        letter-spacing:-0.02em; font-weight:300;">
+      Three kinds of care that finally talk to each other.
+    </h2>
+  </div>
+
+  <div style="margin-top: 52px;">
+    <div class="rule"></div>
+    <div class="grid" style="padding: 30px 0;">
+      <span class="lbl" style="grid-column:1 / span 1; color:#B9AF9C;">i</span>
+      <h3 class="ser" style="grid-column: 2 / span 3; margin:0; font-size:27px; font-weight:400;
+          line-height:1.15;">Direct Primary Care</h3>
+      <p style="grid-column: 6 / span 5; margin:0; font-size:15px; line-height:1.7; color:#3D3A34;">
+        Same-day and next-day visits, long enough to get through your whole list.
+        Message your provider between appointments.
+      </p>
+      <a href="#" style="grid-column: 12 / span 1; font-size:11px; letter-spacing:0.14em;
+          text-transform:uppercase; text-decoration:none; align-self:center; text-align:right;">Read&nbsp;&rarr;</a>
+    </div>
+    <div class="rule"></div>
+    <div class="grid" style="padding: 30px 0;">
+      <span class="lbl" style="grid-column:1 / span 1; color:#B9AF9C;">ii</span>
+      <h3 class="ser" style="grid-column: 2 / span 3; margin:0; font-size:27px; font-weight:400;
+          line-height:1.15;">Hormone Health</h3>
+      <p style="grid-column: 6 / span 5; margin:0; font-size:15px; line-height:1.7; color:#3D3A34;">
+        Bioidentical hormone therapy for the symptoms of perimenopause, menopause and
+        low testosterone &mdash; evaluated with labs, reviewed with you, monitored over time.
+      </p>
+      <a href="#" style="grid-column: 12 / span 1; font-size:11px; letter-spacing:0.14em;
+          text-transform:uppercase; text-decoration:none; align-self:center; text-align:right;">Read&nbsp;&rarr;</a>
+    </div>
+    <div class="rule"></div>
+    <div class="grid" style="padding: 30px 0;">
+      <span class="lbl" style="grid-column:1 / span 1; color:#B9AF9C;">iii</span>
+      <h3 class="ser" style="grid-column: 2 / span 3; margin:0; font-size:27px; font-weight:400;
+          line-height:1.15;">Psychiatry</h3>
+      <p style="grid-column: 6 / span 5; margin:0; font-size:15px; line-height:1.7; color:#3D3A34;">
+        Evaluation and medication management for adults &mdash; with nutrition, sleep and
+        physical health treated as part of the plan, not a separate appointment.
+      </p>
+      <a href="#" style="grid-column: 12 / span 1; font-size:11px; letter-spacing:0.14em;
+          text-transform:uppercase; text-decoration:none; align-self:center; text-align:right;">Read&nbsp;&rarr;</a>
+    </div>
+    <div class="rule"></div>
+  </div>
+</div>
+
+<!-- statement: left-aligned, hanging quote, not centered -->
+<div style="padding: 84px 72px;">
+  <div class="grid">
+    <span class="ser" style="grid-column: 1 / span 1; font-size:86px; line-height:0.7;
+        color:#C6B9A2;">&ldquo;</span>
+    <p class="ser" style="grid-column: 2 / span 8; margin:0; font-size:38px; line-height:1.28;
+        letter-spacing:-0.015em; font-weight:300;">
+      Medication is one tool. What you eat, how you sleep and how you move are the
+      <em>other three</em> &mdash; and they belong in the same conversation.
+    </p>
+    <p class="lbl" style="grid-column: 2 / span 4; color:#8A8175; margin: 26px 0 0;">
+      Aimee Roberts-Serrato &middot; on nutritional psychiatry
+    </p>
+  </div>
+</div>
+
+<!-- provider: small plate left, weight on the right -->
+<div style="background:#1E2B24; color:#EDE7DA; padding: 76px 72px 84px;">
+  <div class="grid">
+    <div style="grid-column: 1 / span 3;">
+      <div style="aspect-ratio: 4/5; background:
+        linear-gradient(160deg, #4C5A46 0%, #6E7358 60%, #97907A 100%);"></div>
+      <p class="lbl" style="color:#8E9585; margin:12px 0 0;">[Headshot]</p>
+    </div>
+    <div style="grid-column: 5 / span 7;">
+      <span class="lbl" style="color:#C68A5E;">03 &mdash; Your provider</span>
+      <h2 class="ser" style="margin: 22px 0 0; font-size:46px; line-height:1.06;
+          letter-spacing:-0.02em; font-weight:300; color:#F3EEE2;">
+        Aimee Roberts-Serrato,<br><em style="font-weight:300;">MSN, APRN, PMHNP-BC, FNP-C</em>
+      </h2>
+      <p style="margin: 26px 0 0; font-size:16px; line-height:1.75; color:#BEC5B6; max-width: 46ch;">
+        Dual board-certified in family practice and psychiatric&ndash;mental health, and a
+        nurse practitioner since 2016. She opened The Wellness Advocate so that one
+        clinician could follow the whole person instead of half of them.
+      </p>
+      <div style="display:flex; gap:44px; margin-top: 40px; padding-top: 24px;
+          border-top:1px solid #3A473C;">
+        <div>
+          <p class="ser" style="margin:0; font-size:30px; color:#F3EEE2;">2&times;</p>
+          <p class="lbl" style="color:#8E9585; margin:6px 0 0;">Board-certified</p>
+        </div>
+        <div>
+          <p class="ser" style="margin:0; font-size:30px; color:#F3EEE2;">2016</p>
+          <p class="lbl" style="color:#8E9585; margin:6px 0 0;">Practicing since</p>
+        </div>
+        <div>
+          <p class="ser" style="margin:0; font-size:30px; color:#F3EEE2;">[FEE]</p>
+          <p class="lbl" style="color:#8E9585; margin:6px 0 0;">Per month</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</x-dc>
+</body>
+</html>
