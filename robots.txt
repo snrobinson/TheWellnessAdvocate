@@ -1,0 +1,6 @@
+# The Wellness Advocate
+# The sitemap address uses BASE_URL; change it at launch (README).
+User-agent: *
+Disallow: /partials/
+
+Sitemap: https://main.d1bs05hyunugqi.amplifyapp.com/sitemap.xml
