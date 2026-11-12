@@ -36,6 +36,7 @@ css/styles.css        The one stylesheet; colors, fonts and spacing live in :roo
 js/main.js            OptiMantra link addresses, menus, current-page marker, scroll reveals
 assets/brand/         Logo files and the social-sharing image (see below)
 assets/favicon-32.png, assets/apple-touch-icon.png   Browser and home-screen icons
+assets/textures/      grain.svg and grain-light.svg, the faint paper grain (see below)
 amplify.yml           Amplify build spec (no-build static deploy)
 customHttp.yml        Amplify security headers (HSTS, CSP, etc.)
 ```
@@ -66,6 +67,14 @@ customHttp.yml        Amplify security headers (HSTS, CSP, etc.)
   labels are at least 0.76rem and weight 600. See the `LEGIBILITY` comment in
   `css/styles.css` before making type lighter or smaller.
 - **The open rose-gold ring** around portraits echoes the ring in the logo.
+- **Texture and depth ("paper, foil and ink").** Light backgrounds carry a
+  faint warm paper grain (`assets/textures/grain.svg`, a tiny tiled image).
+  Navy bands get soft tonal light, a fine light grain and, on larger screens,
+  a faint double rose-gold ring in the upper corner. Cards, buttons and
+  floating elements use a three-step shadow scale (`--shadow-1` to
+  `--shadow-3` in `:root`). All of it lives in the "Surfaces and depth"
+  section of `css/styles.css`; keep it subtle, as the grain should be felt
+  rather than seen.
 
 When a new logo file arrives, re-cut these files from it (same names and
 sizes) and the whole site updates. A simplified small mark for the favicon is
