@@ -34,22 +34,139 @@
        JavaScript-enabled before the first paint, so the mobile menu never
        flashes open and shifts the page. It waits for the page itself. -->
   <script src="js/main.js"></script>
+  <!-- SEARCH + AI: structured data that search engines and AI assistants read to understand
+       the practice, Aimee and this page. Keep it true to the visible page. -->
+  <!-- EDIT: the FAQ below is repeated here for search engines and AI assistants.
+       When you change a question or answer on the page, change it here the same way. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
+    "@graph": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://main.d1bs05hyunugqi.amplifyapp.com/"
+        "@type": "WebPage",
+        "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/how-dpc-works.html#webpage",
+        "url": "https://main.d1bs05hyunugqi.amplifyapp.com/how-dpc-works.html",
+        "name": "How Direct Primary Care Works | The Wellness Advocate",
+        "description": "How direct primary care membership works at The Wellness Advocate: a flat monthly fee, no insurance billing, what membership covers and doesn't, and answers to common questions.",
+        "inLanguage": "en-US",
+        "isPartOf": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#website"
+        },
+        "publisher": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#clinic"
+        },
+        "dateModified": "2026-11-12",
+        "about": {
+          "@type": "Thing",
+          "name": "Direct primary care"
+        },
+        "breadcrumb": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/how-dpc-works.html#breadcrumb"
+        }
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "How Direct Primary Care Works",
-        "item": "https://main.d1bs05hyunugqi.amplifyapp.com/how-dpc-works.html"
+        "@type": "FAQPage",
+        "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/how-dpc-works.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Direct Primary Care, and how is it different from a regular doctor’s office?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Direct Primary Care (DPC) replaces per-visit insurance billing with a flat monthly membership paid directly to the practice. Because the practice doesn’t bill insurance for your primary care, visits can be longer, easier to schedule, and focused entirely on you. You always know the cost up front."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you accept insurance?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No — The Wellness Advocate is a cash-pay practice and does not bill insurance for its services. That is a deliberate choice: it keeps pricing transparent and keeps care decisions between you and your provider. You may still use your insurance for prescriptions, labs, imaging, specialists, and hospital care outside the practice. [TBD-CLIENT: confirm policy on providing superbills/receipts for out-of-network reimbursement]"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I still need health insurance if I become a member?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Membership is not insurance and doesn’t replace it. Most members keep at least a high-deductible or catastrophic plan for hospitalizations, emergencies, and specialist care. A licensed insurance agent can help you decide what coverage makes sense alongside membership."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does membership cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "[TBD-CLIENT: membership tier names and monthly prices]. Current plans and what each includes are listed on the membership page."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I pay with an HSA or FSA?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "[TBD-CLIENT: HSA/FSA policy — rules for using HSA funds for DPC memberships have specific requirements; confirm with the practice’s accountant before publishing an answer]"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I book a visit, and do you offer telehealth?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Visits are booked online through the practice’s scheduling system — use any “Book a visit” button on this site. [TBD-CLIENT: confirm telehealth availability, visit types, and typical scheduling windows]"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is BHRT, and how do I know if it’s right for me?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Bioidentical hormone replacement therapy (BHRT) uses hormones structurally identical to those your body produces to address symptoms associated with hormonal change, such as those related to perimenopause, menopause, or low testosterone. Whether it’s appropriate for you depends on your symptoms, labs, history, and preferences — that’s what the consult process is for. It starts with lab work and an in-depth review, and therapy is only started if you and your provider decide together that it makes sense. Read more about the BHRT consult process."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What psychiatric services do you offer? Do you prescribe medication?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Aimee is a board-certified psychiatric–mental health nurse practitioner (PMHNP-BC) and provides psychiatric evaluations and ongoing medication management for adults, integrated with attention to sleep, nutrition, and overall health. [TBD-CLIENT: confirm conditions treated and any medications or conditions outside the practice’s scope, e.g. controlled-substance policies]"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can the same provider handle my primary care and my mental health care?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — that’s one of the main reasons this practice exists. Aimee is dual board-certified in family practice and psychiatric–mental health, so your physical and mental health care can live in one relationship, with one provider who sees the whole picture."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I have to live in Jacksonville to be a patient?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The practice is based in Jacksonville, Florida. Services are available to patients located in [TBD-CLIENT: licensed states]. [TBD-CLIENT: confirm telehealth rules for patients outside the Jacksonville area but within licensed states]"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/how-dpc-works.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://main.d1bs05hyunugqi.amplifyapp.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "How Direct Primary Care Works",
+            "item": "https://main.d1bs05hyunugqi.amplifyapp.com/how-dpc-works.html"
+          }
+        ]
       }
     ]
   }

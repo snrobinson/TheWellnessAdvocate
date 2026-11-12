@@ -158,6 +158,134 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  /* ----- Section navigator -----
+     On pages with three or more sections, a small index follows the reader:
+     desktop gets a slim rail on the right edge (one tick per section; the
+     current one grows in rose gold and its name slides out briefly; hover or
+     keyboard focus shows every name). Phones get a slim bar at the top that
+     names the current section and opens the full list on tap.
+     Labels come from each section's small eyebrow line; a section can set its
+     own short label with data-nav-label="...". */
+  var mainEl = document.getElementById("main");
+  var sections = mainEl ? Array.prototype.filter.call(mainEl.children, function (el) {
+    return el.tagName === "SECTION";
+  }) : [];
+  if (sections.length >= 3) {
+    var labelFor = function (sec, i) {
+      if (sec.dataset.navLabel) return sec.dataset.navLabel;
+      if (i === 0 && (sec.classList.contains("hero") || sec.classList.contains("page-hero"))) return "Overview";
+      var eyebrow = sec.querySelector(".eyebrow");
+      var heading = sec.querySelector("h1, h2");
+      return ((eyebrow || heading).textContent || "").trim();
+    };
+    var slug = function (text) { return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); };
+    var entries = sections.map(function (sec, i) {
+      var label = labelFor(sec, i);
+      if (!sec.id) sec.id = i === 0 ? "overview" : slug(label);
+      return { sec: sec, label: label };
+    });
+
+    var makeList = function (className, itemHtml) {
+      var list = document.createElement("ol");
+      list.className = className;
+      entries.forEach(function (entry) {
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.href = "#" + entry.sec.id;
+        a.innerHTML = itemHtml;
+        a.querySelector("[data-label]").textContent = entry.label;
+        li.appendChild(a);
+        list.appendChild(li);
+        entry[className] = a;
+      });
+      return list;
+    };
+
+    /* desktop rail */
+    var rail = document.createElement("nav");
+    rail.className = "section-rail";
+    rail.setAttribute("aria-label", "Sections on this page");
+    rail.appendChild(makeList("rail-list", '<span class="rail-label" data-label></span><span class="rail-tick" aria-hidden="true"></span>'));
+
+    /* phone bar */
+    var bar = document.createElement("nav");
+    bar.className = "section-bar";
+    bar.setAttribute("aria-label", "Sections on this page");
+    bar.innerHTML = '<button class="section-bar-toggle" type="button" aria-expanded="false" aria-controls="section-bar-list">' +
+      '<span class="section-bar-count" aria-hidden="true"></span><span class="section-bar-current"></span>' +
+      '<span class="section-bar-chevron" aria-hidden="true"></span></button>' +
+      '<span class="section-bar-progress" aria-hidden="true"></span>';
+    var barList = makeList("bar-list", '<span data-label></span>');
+    barList.id = "section-bar-list";
+    bar.appendChild(barList);
+
+    mainEl.appendChild(rail);
+    mainEl.appendChild(bar);
+
+    var barToggle = bar.querySelector(".section-bar-toggle");
+    var barCurrent = bar.querySelector(".section-bar-current");
+    var barCount = bar.querySelector(".section-bar-count");
+    var barProgress = bar.querySelector(".section-bar-progress");
+    var setBarOpen = function (open) {
+      bar.classList.toggle("is-open", open);
+      barToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+    barToggle.addEventListener("click", function () { setBarOpen(!bar.classList.contains("is-open")); });
+    barList.addEventListener("click", function (event) { if (event.target.closest("a")) setBarOpen(false); });
+    document.addEventListener("click", function (event) { if (!bar.contains(event.target)) setBarOpen(false); });
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && bar.classList.contains("is-open")) { setBarOpen(false); barToggle.focus(); }
+    });
+
+    var footerEl = document.querySelector(".closing") || document.querySelector(".site-footer");
+    var current = -1;
+    var flashTimer = null;
+    var navTick = false;
+    var updateSections = function () {
+      navTick = false;
+      var probe = window.innerHeight * 0.35;
+      var index = 0;
+      entries.forEach(function (entry, i) {
+        if (entry.sec.getBoundingClientRect().top <= probe) index = i;
+      });
+      var heroBottom = entries[0].sec.getBoundingClientRect().bottom;
+      var footerTop = footerEl ? footerEl.getBoundingClientRect().top : Infinity;
+      var show = heroBottom < window.innerHeight * 0.4 && footerTop > window.innerHeight * 0.55;
+      rail.classList.toggle("is-visible", show);
+      bar.classList.toggle("is-visible", show);
+      if (!show) setBarOpen(false);
+      /* the phone bar sits under the header while the header is showing */
+      bar.classList.toggle("is-under-header", !!header && !header.classList.contains("is-hidden"));
+
+      var room = document.documentElement.scrollHeight - window.innerHeight;
+      barProgress.style.setProperty("--read", room > 0 ? Math.min(1, window.scrollY / room).toFixed(3) : "0");
+
+      if (index !== current) {
+        entries.forEach(function (entry, i) {
+          [entry["rail-list"], entry["bar-list"]].forEach(function (a) {
+            if (i === index) a.setAttribute("aria-current", "location");
+            else a.removeAttribute("aria-current");
+          });
+        });
+        barCurrent.textContent = entries[index].label;
+        barCount.textContent = (index + 1) + " / " + entries.length;
+        if (current !== -1 && show) {
+          /* slide the new section's name out for a moment */
+          rail.classList.add("is-announcing");
+          clearTimeout(flashTimer);
+          flashTimer = setTimeout(function () { rail.classList.remove("is-announcing"); }, 1800);
+        }
+        current = index;
+      }
+    };
+    var onSectionScroll = function () {
+      if (!navTick) { navTick = true; window.requestAnimationFrame(updateSections); }
+    };
+    window.addEventListener("scroll", onSectionScroll, { passive: true });
+    window.addEventListener("resize", onSectionScroll);
+    updateSections();
+  }
+
   /* ----- Mark the current page in the menu -----
      Done here so the header markup can stay identical on every page. */
   var here = window.location.pathname.split("/").pop() || "index.html";

@@ -34,57 +34,147 @@
        JavaScript-enabled before the first paint, so the mobile menu never
        flashes open and shifts the page. It waits for the page itself. -->
   <script src="js/main.js"></script>
-  <!-- SEARCH: structured data for search engines. Address, phone and hours are left out
-       until known. When confirmed, add streetAddress and postalCode to "address"
+  <!-- SEARCH + AI: structured data that search engines and AI assistants read to understand
+       the practice, Aimee and this page. Address, phone and hours are left out until known.
+       When confirmed, add streetAddress and postalCode to "address"
        [TBD-CLIENT: practice address, or note if telehealth-only], a "telephone" value
-       [TBD-CLIENT: practice phone number], and "openingHoursSpecification"
-       [TBD-CLIENT: practice hours]. -->
+       [TBD-CLIENT: practice phone number], "openingHoursSpecification"
+       [TBD-CLIENT: practice hours], and a "sameAs" list of the practice's and Aimee's
+       official profiles (Google Business Profile, NPI registry, LinkedIn)
+       [TBD-CLIENT: official profile links]. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalClinic",
-    "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#clinic",
-    "name": "The Wellness Advocate",
-    "description": "A membership-based direct primary care practice in Jacksonville, Florida, offering primary care, hormone therapy, and psychiatry & mental health care.",
-    "url": "https://main.d1bs05hyunugqi.amplifyapp.com/",
-    "logo": "https://main.d1bs05hyunugqi.amplifyapp.com/assets/brand/logo-original.png",
-    "image": "https://main.d1bs05hyunugqi.amplifyapp.com/assets/brand/og-image.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Jacksonville",
-      "addressRegion": "FL",
-      "addressCountry": "US"
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Jacksonville, Florida"
-    },
-    "medicalSpecialty": [
-      "PrimaryCare",
-      "Psychiatric"
-    ],
-    "employee": {
-      "@type": "Person",
-      "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/about.html#aimee",
-      "name": "Aimee Roberts-Serrato",
-      "honorificSuffix": "APRN",
-      "jobTitle": "Advanced Practice Registered Nurse",
-      "url": "https://main.d1bs05hyunugqi.amplifyapp.com/about.html",
-      "hasCredential": [
-        {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "certification",
-          "name": "PMHNP-BC",
-          "description": "Board-certified Psychiatric-Mental Health Nurse Practitioner"
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#webpage",
+        "url": "https://main.d1bs05hyunugqi.amplifyapp.com/",
+        "name": "The Wellness Advocate | Direct Primary Care in Jacksonville, FL",
+        "description": "A membership practice in Jacksonville, FL for direct primary care, bioidentical hormone therapy and psychiatry & mental health — direct, personal care without insurance in the middle.",
+        "inLanguage": "en-US",
+        "isPartOf": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#website"
         },
-        {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "certification",
-          "name": "FNP-C",
-          "description": "Board-certified Family Nurse Practitioner"
+        "publisher": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#clinic"
+        },
+        "dateModified": "2026-11-12",
+        "about": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#clinic"
         }
-      ]
-    }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#website",
+        "name": "The Wellness Advocate",
+        "url": "https://main.d1bs05hyunugqi.amplifyapp.com/",
+        "inLanguage": "en-US",
+        "publisher": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#clinic"
+        }
+      },
+      {
+        "@type": "MedicalClinic",
+        "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#clinic",
+        "name": "The Wellness Advocate",
+        "description": "A membership-based direct primary care practice in Jacksonville, Florida, offering primary care, bioidentical hormone therapy, and psychiatry & mental health care from one dual board-certified nurse practitioner.",
+        "url": "https://main.d1bs05hyunugqi.amplifyapp.com/",
+        "logo": "https://main.d1bs05hyunugqi.amplifyapp.com/assets/brand/logo-original.png",
+        "image": "https://main.d1bs05hyunugqi.amplifyapp.com/assets/brand/og-image.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Jacksonville",
+          "addressRegion": "FL",
+          "addressCountry": "US"
+        },
+        "areaServed": {
+          "@type": "City",
+          "name": "Jacksonville, Florida"
+        },
+        "medicalSpecialty": [
+          "PrimaryCare",
+          "Psychiatric"
+        ],
+        "knowsAbout": [
+          "Direct primary care",
+          "Bioidentical hormone replacement therapy",
+          "Psychiatric evaluation",
+          "Psychiatric medication management"
+        ],
+        "founder": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/about.html#aimee"
+        },
+        "employee": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/about.html#aimee"
+        }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/about.html#aimee",
+        "name": "Aimee Roberts-Serrato",
+        "givenName": "Aimee",
+        "familyName": "Roberts-Serrato",
+        "honorificSuffix": "MSN, APRN, PMHNP-BC, FNP-C",
+        "jobTitle": "Dual board-certified nurse practitioner (family and psychiatric-mental health)",
+        "url": "https://main.d1bs05hyunugqi.amplifyapp.com/about.html",
+        "worksFor": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#clinic"
+        },
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Cincinnati"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Florida State University"
+          }
+        ],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "degree",
+            "name": "Master of Science in Nursing",
+            "recognizedBy": {
+              "@type": "CollegeOrUniversity",
+              "name": "University of Cincinnati"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certificate",
+            "name": "Post-master's certificate",
+            "recognizedBy": {
+              "@type": "CollegeOrUniversity",
+              "name": "Florida State University"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "license",
+            "name": "Advanced Practice Registered Nurse (APRN)"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certification",
+            "name": "FNP-C",
+            "description": "Board-certified Family Nurse Practitioner"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certification",
+            "name": "PMHNP-BC",
+            "description": "Board-certified Psychiatric-Mental Health Nurse Practitioner"
+          }
+        ],
+        "knowsAbout": [
+          "Primary care",
+          "Psychiatric-mental health",
+          "Bioidentical hormone replacement therapy"
+        ]
+      }
+    ]
   }
   </script>
   <!-- ANALYTICS — currently OFF. [TBD-RCG: analytics provider and token]
@@ -176,7 +266,7 @@
   </section>
 
   <!-- ===== EDIT: what is direct primary care? ===== -->
-  <section class="section section-porcelain" aria-labelledby="dpc-term">
+  <section class="section section-porcelain" id="what-is-dpc" aria-labelledby="dpc-term" data-nav-label="What is DPC">
     <div class="wrap definition">
       <p class="eyebrow definition-term" id="dpc-term">What is direct primary care?</p>
       <div class="reveal">

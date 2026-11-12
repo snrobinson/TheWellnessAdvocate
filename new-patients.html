@@ -34,22 +34,47 @@
        JavaScript-enabled before the first paint, so the mobile menu never
        flashes open and shifts the page. It waits for the page itself. -->
   <script src="js/main.js"></script>
+  <!-- SEARCH + AI: structured data that search engines and AI assistants read to understand
+       the practice, Aimee and this page. Keep it true to the visible page. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
+    "@graph": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://main.d1bs05hyunugqi.amplifyapp.com/"
+        "@type": "WebPage",
+        "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/new-patients.html#webpage",
+        "url": "https://main.d1bs05hyunugqi.amplifyapp.com/new-patients.html",
+        "name": "New Patients | The Wellness Advocate",
+        "description": "How to become a patient of The Wellness Advocate: choose a plan, enroll, complete intake forms, book a first visit, and reach the practice between visits.",
+        "inLanguage": "en-US",
+        "isPartOf": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#website"
+        },
+        "publisher": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#clinic"
+        },
+        "dateModified": "2026-11-12",
+        "breadcrumb": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/new-patients.html#breadcrumb"
+        }
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "New Patients",
-        "item": "https://main.d1bs05hyunugqi.amplifyapp.com/new-patients.html"
+        "@type": "BreadcrumbList",
+        "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/new-patients.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://main.d1bs05hyunugqi.amplifyapp.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "New Patients",
+            "item": "https://main.d1bs05hyunugqi.amplifyapp.com/new-patients.html"
+          }
+        ]
       }
     ]
   }
@@ -180,7 +205,7 @@
   </section>
 
   <!-- ===== EDIT: what to bring ===== -->
-  <section class="section section-porcelain" id="what-to-bring" aria-labelledby="bring-heading">
+  <section class="section section-porcelain" id="what-to-bring" aria-labelledby="bring-heading" data-nav-label="What to bring">
     <div class="wrap split">
       <div class="reveal">
         <p class="eyebrow">Your first visit</p>

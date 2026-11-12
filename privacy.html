@@ -34,22 +34,47 @@
        JavaScript-enabled before the first paint, so the mobile menu never
        flashes open and shifts the page. It waits for the page itself. -->
   <script src="js/main.js"></script>
+  <!-- SEARCH + AI: structured data that search engines and AI assistants read to understand
+       the practice, Aimee and this page. Keep it true to the visible page. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
+    "@graph": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://main.d1bs05hyunugqi.amplifyapp.com/"
+        "@type": "WebPage",
+        "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/privacy.html#webpage",
+        "url": "https://main.d1bs05hyunugqi.amplifyapp.com/privacy.html",
+        "name": "Privacy & Disclosures | The Wellness Advocate",
+        "description": "Website privacy policy, HIPAA Notice of Privacy Practices and medical disclaimer for The Wellness Advocate.",
+        "inLanguage": "en-US",
+        "isPartOf": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#website"
+        },
+        "publisher": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#clinic"
+        },
+        "dateModified": "2026-11-12",
+        "breadcrumb": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/privacy.html#breadcrumb"
+        }
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Privacy & Disclosures",
-        "item": "https://main.d1bs05hyunugqi.amplifyapp.com/privacy.html"
+        "@type": "BreadcrumbList",
+        "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/privacy.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://main.d1bs05hyunugqi.amplifyapp.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Privacy & Disclosures",
+            "item": "https://main.d1bs05hyunugqi.amplifyapp.com/privacy.html"
+          }
+        ]
       }
     ]
   }

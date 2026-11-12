@@ -30,7 +30,8 @@ privacy.html          Privacy policy / HIPAA notice / medical disclaimer — pla
 404.html              Not-found page
 faq.html              Redirect only: sends visitors to how-dpc-works.html#faq
 sitemap.xml           Every public page, for search engines
-robots.txt            Points search engines at the sitemap
+robots.txt            Points search engines at the sitemap; welcomes AI assistants by name
+llms.txt              Plain-language guide to the practice for AI assistants (see below)
 partials/             Reusable snippets that are NOT shown on any page (see below)
 css/styles.css        The one stylesheet; colors, fonts and spacing live in :root at the top
 js/main.js            OptiMantra link addresses, menus, current-page marker, scroll reveals
@@ -144,6 +145,11 @@ nothing. Submit the new `sitemap.xml` address in Google Search Console.
   scroll up. The longest pages (`how-dpc-works`, `membership`, `new-patients`)
   have an "On this page" row of links under the heading; if a section is added
   or renamed there, update that row and the section's `id` to match.
+- **Section navigator.** On pages with three or more sections, `js/main.js`
+  adds a small index that follows the reader: a slim rail on the right edge on
+  desktop, a slim bar at the top on phones. Its labels come from each section's
+  small eyebrow line; to give a section a shorter label, add
+  `data-nav-label="..."` to its `<section>` tag. Nothing to maintain otherwise.
 - **No inline styles.** The live site's security policy (`customHttp.yml`)
   blocks `style="…"` attributes and `<style>` tags. Put all styling in
   `css/styles.css`.
@@ -166,6 +172,28 @@ discounted-fee or reduced-fee service, examination or treatment (a free
 consultation, a discounted first visit, a promotional membership price). The
 comment in that file explains placement; confirm with counsel before any
 promotion goes live.
+
+## Search engines and AI assistants (SEO and GEO)
+
+The site is set up to be found and quoted accurately by search engines and by
+AI assistants (ChatGPT, Claude, Perplexity, Google's AI answers), which is
+sometimes called GEO, generative engine optimization.
+
+- **Structured data.** Every page's `<head>` has a `<script type="application/ld+json">`
+  block describing the page, the practice (`MedicalClinic`) and Aimee (`Person`,
+  with her degrees and board certifications), all linked together. The
+  How DPC Works page also lists the FAQ (`FAQPage`). **If you change an FAQ
+  question or answer on that page, change the copy in its structured data the
+  same way** (an `EDIT` comment marks it). The home page's block has a note on
+  adding the address, phone, hours and official profile links once confirmed.
+- **`llms.txt`** is a short Markdown summary of the practice and its pages,
+  written for AI assistants. Keep its facts in step with the site, and add
+  pricing or the address there once they are final.
+- **`robots.txt`** allows every crawler and names the AI ones explicitly. To keep
+  the site out of AI *training* while staying visible in AI *answers*, follow
+  the comment in that file.
+- **`sitemap.xml`** carries a `lastmod` date; update it when pages change.
+- All of these use BASE_URL, so the launch command above updates them too.
 
 ## Analytics
 

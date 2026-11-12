@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Every public page. Addresses use BASE_URL; change it at launch (README). -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/</loc></url>
-  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/how-dpc-works.html</loc></url>
-  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/membership.html</loc></url>
-  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/services.html</loc></url>
-  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/primary-care.html</loc></url>
-  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/hormone-therapy.html</loc></url>
-  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/psychiatry.html</loc></url>
-  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/about.html</loc></url>
-  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/new-patients.html</loc></url>
-  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/contact.html</loc></url>
-  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/privacy.html</loc></url>
+  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/how-dpc-works.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/membership.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/services.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/primary-care.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/hormone-therapy.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/psychiatry.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/about.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/new-patients.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/contact.html</loc><lastmod>2026-11-12</lastmod></url>
+  <url><loc>https://main.d1bs05hyunugqi.amplifyapp.com/privacy.html</loc><lastmod>2026-11-12</lastmod></url>
 </urlset>

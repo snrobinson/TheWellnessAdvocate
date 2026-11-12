@@ -34,28 +34,61 @@
        JavaScript-enabled before the first paint, so the mobile menu never
        flashes open and shifts the page. It waits for the page itself. -->
   <script src="js/main.js"></script>
+  <!-- SEARCH + AI: structured data that search engines and AI assistants read to understand
+       the practice, Aimee and this page. Keep it true to the visible page. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
+    "@graph": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://main.d1bs05hyunugqi.amplifyapp.com/"
+        "@type": "MedicalWebPage",
+        "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/psychiatry.html#webpage",
+        "url": "https://main.d1bs05hyunugqi.amplifyapp.com/psychiatry.html",
+        "name": "Psychiatry & Mental Health | The Wellness Advocate",
+        "description": "Psychiatric evaluation and medication management for adults in Jacksonville, FL, with sleep, nutrition and physical health part of the plan.",
+        "inLanguage": "en-US",
+        "isPartOf": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#website"
+        },
+        "publisher": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#clinic"
+        },
+        "dateModified": "2026-11-12",
+        "about": {
+          "@type": "MedicalSpecialty",
+          "name": "Psychiatry and mental health"
+        },
+        "audience": {
+          "@type": "MedicalAudience",
+          "audienceType": "Patient"
+        },
+        "breadcrumb": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/psychiatry.html#breadcrumb"
+        }
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Services",
-        "item": "https://main.d1bs05hyunugqi.amplifyapp.com/services.html"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Psychiatry & Mental Health",
-        "item": "https://main.d1bs05hyunugqi.amplifyapp.com/psychiatry.html"
+        "@type": "BreadcrumbList",
+        "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/psychiatry.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://main.d1bs05hyunugqi.amplifyapp.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://main.d1bs05hyunugqi.amplifyapp.com/services.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Psychiatry & Mental Health",
+            "item": "https://main.d1bs05hyunugqi.amplifyapp.com/psychiatry.html"
+          }
+        ]
       }
     ]
   }

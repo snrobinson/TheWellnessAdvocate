@@ -34,22 +34,115 @@
        JavaScript-enabled before the first paint, so the mobile menu never
        flashes open and shifts the page. It waits for the page itself. -->
   <script src="js/main.js"></script>
+  <!-- SEARCH + AI: structured data that search engines and AI assistants read to understand
+       the practice, Aimee and this page. Keep it true to the visible page. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
+    "@graph": [
       {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://main.d1bs05hyunugqi.amplifyapp.com/"
+        "@type": "ProfilePage",
+        "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/about.html#webpage",
+        "url": "https://main.d1bs05hyunugqi.amplifyapp.com/about.html",
+        "name": "About Aimee Roberts-Serrato, APRN, PMHNP-BC, FNP-C | The Wellness Advocate",
+        "description": "Meet Aimee Roberts-Serrato, APRN, the dual board-certified nurse practitioner behind The Wellness Advocate in Jacksonville, FL.",
+        "inLanguage": "en-US",
+        "isPartOf": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#website"
+        },
+        "publisher": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#clinic"
+        },
+        "dateModified": "2026-11-12",
+        "mainEntity": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/about.html#aimee"
+        },
+        "breadcrumb": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/about.html#breadcrumb"
+        }
       },
       {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "About",
-        "item": "https://main.d1bs05hyunugqi.amplifyapp.com/about.html"
+        "@type": "Person",
+        "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/about.html#aimee",
+        "name": "Aimee Roberts-Serrato",
+        "givenName": "Aimee",
+        "familyName": "Roberts-Serrato",
+        "honorificSuffix": "MSN, APRN, PMHNP-BC, FNP-C",
+        "jobTitle": "Dual board-certified nurse practitioner (family and psychiatric-mental health)",
+        "url": "https://main.d1bs05hyunugqi.amplifyapp.com/about.html",
+        "worksFor": {
+          "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#clinic"
+        },
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Cincinnati"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Florida State University"
+          }
+        ],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "degree",
+            "name": "Master of Science in Nursing",
+            "recognizedBy": {
+              "@type": "CollegeOrUniversity",
+              "name": "University of Cincinnati"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certificate",
+            "name": "Post-master's certificate",
+            "recognizedBy": {
+              "@type": "CollegeOrUniversity",
+              "name": "Florida State University"
+            }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "license",
+            "name": "Advanced Practice Registered Nurse (APRN)"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certification",
+            "name": "FNP-C",
+            "description": "Board-certified Family Nurse Practitioner"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certification",
+            "name": "PMHNP-BC",
+            "description": "Board-certified Psychiatric-Mental Health Nurse Practitioner"
+          }
+        ],
+        "knowsAbout": [
+          "Primary care",
+          "Psychiatric-mental health",
+          "Bioidentical hormone replacement therapy"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/about.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://main.d1bs05hyunugqi.amplifyapp.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://main.d1bs05hyunugqi.amplifyapp.com/about.html"
+          }
+        ]
       }
     ]
   }

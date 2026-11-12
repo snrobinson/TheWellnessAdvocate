@@ -1302,6 +1302,170 @@ body { background: var(--ivory) url("../assets/textures/grain.svg"); }
   .float-book { display: none; }
 }
 
+/* Section navigator (built by main.js on pages with three or more sections).
+   Desktop: a slim frosted rail on the right edge, one tick per section.
+   Phones: a slim bar at the top naming the current section. */
+.section-rail, .section-bar { display: none; }
+
+@media (min-width: 64em) {
+  .section-rail {
+    display: block;
+    position: fixed;
+    top: 50%;
+    right: 0.75rem;
+    z-index: 80;
+    transform: translate(0.75rem, -50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s var(--ease), transform 0.5s var(--ease), visibility 0s linear 0.5s;
+  }
+  .section-rail.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, -50%);
+    transition: opacity 0.5s var(--ease), transform 0.5s var(--ease), visibility 0s;
+  }
+  .rail-list {
+    list-style: none;
+    margin: 0;
+    padding: 0.55rem 0.45rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.1rem;
+    background: rgba(251, 249, 246, 0.86);
+    -webkit-backdrop-filter: saturate(1.3) blur(14px);
+            backdrop-filter: saturate(1.3) blur(14px);
+    border: 1px solid rgba(214, 196, 183, 0.7);
+    border-radius: 1.25rem;
+    box-shadow: var(--shadow-1);
+  }
+  .rail-list a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.7rem;
+    min-height: 1.85rem;
+    padding: 0 0.3rem 0 0.5rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+  .rail-tick {
+    display: block;
+    width: 0.75rem;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--line-strong);
+    transition: width 0.45s var(--ease), background-color 0.45s var(--ease);
+  }
+  .rail-list a:hover .rail-tick { width: 1.1rem; background-color: var(--slate); }
+  .rail-list a[aria-current] .rail-tick { width: 1.6rem; background: var(--foil); }
+  .rail-label {
+    display: block;
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    white-space: nowrap;
+    font-family: var(--font-caps);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transition: max-width 0.55s var(--ease), opacity 0.35s var(--ease);
+  }
+  .rail-list a:hover, .rail-list a:focus-visible { color: var(--navy); }
+  .rail-list a[aria-current] .rail-label { color: var(--rose-deep); }
+  /* hover or keyboard focus shows every name; a new section briefly shows its own */
+  .section-rail:hover .rail-label,
+  .section-rail:focus-within .rail-label,
+  .section-rail.is-announcing a[aria-current] .rail-label { max-width: 16rem; opacity: 1; }
+}
+@media (min-width: 90em) {
+  .section-rail { right: 1.5rem; }
+}
+
+@media (max-width: 63.99em) {
+  .js .section-bar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 95;
+    background: rgba(251, 249, 246, 0.95);
+    -webkit-backdrop-filter: saturate(1.3) blur(14px);
+            backdrop-filter: saturate(1.3) blur(14px);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 12px 26px -24px rgba(10, 30, 60, 0.45);
+    transform: translateY(-110%);
+    visibility: hidden;
+    transition: transform 0.35s var(--ease), visibility 0s linear 0.35s;
+  }
+  .js .section-bar.is-visible {
+    transform: translateY(0);
+    visibility: visible;
+    transition: transform 0.35s var(--ease), visibility 0s;
+  }
+  /* sits just under the header whenever the header is showing */
+  .js .section-bar.is-visible.is-under-header { transform: translateY(calc(4.75rem + 1px)); }
+}
+.section-bar-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: 100%;
+  min-height: 2.9rem;
+  padding: 0 var(--gutter);
+  background: none;
+  border: 0;
+  color: var(--navy);
+  font-family: var(--font-caps);
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-align: left;
+  cursor: pointer;
+}
+.section-bar-count { color: var(--rose-deep); letter-spacing: 0.08em; font-variant-numeric: tabular-nums; }
+.section-bar-current { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.section-bar-chevron {
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-top: -0.25rem;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 0.35s var(--ease), margin 0.35s var(--ease);
+}
+.section-bar.is-open .section-bar-chevron { transform: rotate(-135deg); margin-top: 0.25rem; }
+.section-bar-progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background: var(--foil);
+  transform-origin: left center;
+  transform: scaleX(var(--read, 0));
+}
+.bar-list { display: none; list-style: none; margin: 0; padding: 0 var(--gutter) 0.6rem; border-top: 1px solid var(--line); }
+.section-bar.is-open .bar-list { display: block; }
+.bar-list a {
+  display: flex;
+  align-items: center;
+  min-height: 2.9rem;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  font-variation-settings: "opsz" 11;
+  color: var(--navy);
+  text-decoration: none;
+}
+.bar-list li:last-child a { border-bottom: 0; }
+.bar-list a[aria-current] { color: var(--rose-deep); font-style: italic; }
+
 /* The header slides away while reading down and returns on the way up
    (phones and tablets; the class is set by main.js). */
 @media (max-width: 79.99em) {

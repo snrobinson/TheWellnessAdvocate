@@ -1,6 +1,68 @@
 # The Wellness Advocate
 # The sitemap address uses BASE_URL; change it at launch (README).
+
+# Every search engine and AI assistant is welcome to read the public pages.
 User-agent: *
+Disallow: /partials/
+
+# AI assistants and AI search, listed by name so the welcome is explicit.
+# To keep the site out of AI model TRAINING while staying visible in AI answers,
+# change "Allow: /" to "Disallow: /" for GPTBot, ClaudeBot, Google-Extended and
+# Applebot-Extended only. Leave the search and user bots allowed.
+
+# ChatGPT search
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /partials/
+
+# ChatGPT, when a person asks it to read a page
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /partials/
+
+# OpenAI model training
+User-agent: GPTBot
+Allow: /
+Disallow: /partials/
+
+# Claude search
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /partials/
+
+# Claude, when a person asks it to read a page
+User-agent: Claude-User
+Allow: /
+Disallow: /partials/
+
+# Anthropic model training
+User-agent: ClaudeBot
+Allow: /
+Disallow: /partials/
+
+# Perplexity search
+User-agent: PerplexityBot
+Allow: /
+Disallow: /partials/
+
+# Perplexity, when a person asks it to read a page
+User-agent: Perplexity-User
+Allow: /
+Disallow: /partials/
+
+# Gemini and Google AI training
+User-agent: Google-Extended
+Allow: /
+Disallow: /partials/
+
+# Apple Intelligence training
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /partials/
+
+# Bing and Microsoft Copilot
+User-agent: Bingbot
+Allow: /
 Disallow: /partials/
 
 Sitemap: https://main.d1bs05hyunugqi.amplifyapp.com/sitemap.xml
