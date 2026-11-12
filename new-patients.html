@@ -65,7 +65,7 @@
        <script defer src="ANALYTICS_SCRIPT_URL" data-token="ANALYTICS_TOKEN"></script>
   -->
 </head>
-<body>
+<body id="top">
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <!-- ======================================================================
@@ -120,14 +120,21 @@
       <p class="hero-lede rise rise-3">Joining the practice takes a few steps. Here is what to expect, from choosing a plan to your first visit and staying in touch afterward.</p>
       <div class="actions rise rise-4">
         <a class="button" href="membership.html#plans">Choose a plan</a>
-        <a class="link-arrow" href="#between-visits">Reaching the practice</a>
       </div>
+      <nav class="jump rise rise-5" aria-label="On this page">
+        <p class="jump-label">On this page</p>
+        <ul>
+          <li><a href="#getting-started">Getting started</a></li>
+          <li><a href="#what-to-bring">What to bring</a></li>
+          <li><a href="#between-visits">Between visits</a></li>
+        </ul>
+      </nav>
     </div>
     <img class="page-hero-leaves" src="assets/brand/leaves.webp" width="285" height="498" alt="" decoding="async">
   </section>
 
   <!-- ===== EDIT: getting started, step by step ===== -->
-  <section class="section" aria-labelledby="start-heading">
+  <section class="section" id="getting-started" aria-labelledby="start-heading">
     <div class="wrap split">
       <div class="reveal">
         <p class="eyebrow">Getting started</p>
@@ -173,7 +180,7 @@
   </section>
 
   <!-- ===== EDIT: what to bring ===== -->
-  <section class="section section-porcelain" aria-labelledby="bring-heading">
+  <section class="section section-porcelain" id="what-to-bring" aria-labelledby="bring-heading">
     <div class="wrap split">
       <div class="reveal">
         <p class="eyebrow">Your first visit</p>
@@ -289,7 +296,21 @@
       <p class="footer-credit">Website by Robinson Consulting Group</p>
     </div>
   </div>
+
+  <!-- Floating buttons: "Back to top" on every screen and "Book a visit" on phones.
+       Shown by js/main.js after the first screen of scrolling. -->
+  <div class="float-actions">
+    <a class="button float-book js-booking-link" href="contact.html#book">Book a visit</a>
+    <a class="to-top" href="#top" aria-label="Back to top">
+      <svg viewBox="0 0 52 52" aria-hidden="true" focusable="false">
+        <circle class="to-top-track" cx="26" cy="26" r="24"></circle>
+        <circle class="to-top-progress" cx="26" cy="26" r="24" pathLength="100"></circle>
+        <path class="to-top-arrow" d="M26 34V18M19.5 24.5L26 18l6.5 6.5"></path>
+      </svg>
+    </a>
+  </div>
 </footer>
+
 <!-- ===== END CLOSING + SITE FOOTER ===== -->
 
 </body>

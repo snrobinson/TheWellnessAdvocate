@@ -65,7 +65,7 @@
        <script defer src="ANALYTICS_SCRIPT_URL" data-token="ANALYTICS_TOKEN"></script>
   -->
 </head>
-<body>
+<body id="top">
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <!-- ======================================================================
@@ -120,8 +120,15 @@
       <p class="hero-lede rise rise-3">One flat membership fee covers your ongoing care, so decisions are made between you and your provider &mdash; not by a claims department.</p>
       <div class="actions rise rise-4">
         <a class="button js-booking-link" href="contact.html#book">Book a visit</a>
-        <a class="link-arrow" href="#plans">See the plans</a>
       </div>
+      <nav class="jump rise rise-5" aria-label="On this page">
+        <p class="jump-label">On this page</p>
+        <ul>
+          <li><a href="#plans">Plans</a></li>
+          <li><a href="#enrollment">How enrollment works</a></li>
+          <li><a href="#insurance">Membership and insurance</a></li>
+        </ul>
+      </nav>
     </div>
     <img class="page-hero-leaves" src="assets/brand/leaves.webp" width="285" height="498" alt="" decoding="async">
   </section>
@@ -170,7 +177,7 @@
   </section>
 
   <!-- ===== EDIT: how membership works ===== -->
-  <section class="section" aria-labelledby="how-heading">
+  <section class="section" id="enrollment" aria-labelledby="how-heading">
     <div class="wrap">
       <div class="section-head reveal">
         <p class="eyebrow">Enrollment</p>
@@ -203,7 +210,7 @@
   </section>
 
   <!-- ===== EDIT: coverage reminder (details live on how-dpc-works.html#coverage) ===== -->
-  <section class="section section-ruled" aria-labelledby="coverage-heading">
+  <section class="section section-ruled" id="insurance" aria-labelledby="coverage-heading">
     <div class="wrap split">
       <div class="reveal">
         <p class="eyebrow">Before you choose</p>
@@ -299,7 +306,21 @@
       <p class="footer-credit">Website by Robinson Consulting Group</p>
     </div>
   </div>
+
+  <!-- Floating buttons: "Back to top" on every screen and "Book a visit" on phones.
+       Shown by js/main.js after the first screen of scrolling. -->
+  <div class="float-actions">
+    <a class="button float-book js-booking-link" href="contact.html#book">Book a visit</a>
+    <a class="to-top" href="#top" aria-label="Back to top">
+      <svg viewBox="0 0 52 52" aria-hidden="true" focusable="false">
+        <circle class="to-top-track" cx="26" cy="26" r="24"></circle>
+        <circle class="to-top-progress" cx="26" cy="26" r="24" pathLength="100"></circle>
+        <path class="to-top-arrow" d="M26 34V18M19.5 24.5L26 18l6.5 6.5"></path>
+      </svg>
+    </a>
+  </div>
 </footer>
+
 <!-- ===== END CLOSING + SITE FOOTER ===== -->
 
 </body>

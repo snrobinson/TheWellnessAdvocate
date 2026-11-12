@@ -127,6 +127,14 @@ nothing. Submit the new `sitemap.xml` address in Google Search Console.
   ever changes, change every copy the same way.
 - **Photos** — each portrait slot has an `EDIT` comment showing the one `<img>`
   line to add. Square photos work best (they are cropped to a circle).
+- **Getting around long pages.** The footer block ends with two floating
+  buttons that `js/main.js` shows after the first screen of scrolling: "Back
+  to top" (its rose-gold ring fills as the page is read) and, on phones only,
+  "Book a visit" (hidden while another booking button is on screen). On phones
+  and tablets the header slides away while reading down and returns on any
+  scroll up. The longest pages (`how-dpc-works`, `membership`, `new-patients`)
+  have an "On this page" row of links under the heading; if a section is added
+  or renamed there, update that row and the section's `id` to match.
 - **No inline styles.** The live site's security policy (`customHttp.yml`)
   blocks `style="…"` attributes and `<style>` tags. Put all styling in
   `css/styles.css`.

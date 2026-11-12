@@ -57,7 +57,7 @@
 
   /* Space */
   --gutter:   clamp(1.25rem, 5vw, 3rem);
-  --section:  clamp(4.5rem, 11vw, 8.5rem);
+  --section:  clamp(3.5rem, 11vw, 8.5rem);
   --measure:  36rem;
   --wrap:     78rem;
   --ease:     cubic-bezier(0.22, 1, 0.36, 1);
@@ -545,7 +545,7 @@ a:hover { color: var(--rose-deep); }
 .section-navy p { color: var(--on-navy-soft); }
 .section-navy a { color: var(--on-navy); }
 
-.section-head { max-width: 46rem; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+.section-head { max-width: 46rem; margin-bottom: clamp(2rem, 5vw, 4rem); }
 .section-lede { max-width: var(--measure); font-size: 1.1rem; color: var(--ink-soft); }
 .section-navy .section-lede { color: var(--on-navy-soft); }
 
@@ -571,13 +571,13 @@ a:hover { color: var(--rose-deep); }
 .svc {
   position: relative;
   display: grid;
-  grid-template-columns: 2.25rem minmax(0, 1fr);
-  gap: 0.35rem 1rem;
-  padding: 2rem 0;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.35rem 0.85rem;
+  padding: 1.6rem 0;
   border-top: 1px solid var(--line);
 }
 .svc-num {
-  grid-row: 1 / span 2;
   font-family: var(--font-display);
   font-style: italic;
   font-size: 1.25rem;
@@ -588,10 +588,10 @@ a:hover { color: var(--rose-deep); }
 .svc h3 a { color: var(--navy); text-decoration: none; }
 /* the whole row is clickable through the title link */
 .svc h3 a::after { content: ""; position: absolute; inset: 0; }
-.svc p { margin: 0.6rem 0 0; color: var(--ink-soft); max-width: 34rem; }
+.svc p { grid-column: 1 / -1; margin: 0.5rem 0 0; color: var(--ink-soft); max-width: 34rem; }
 .svc-go {
-  grid-column: 2;
-  margin-top: 1.1rem;
+  grid-column: 1 / -1;
+  margin-top: 0.75rem;
   font-size: 0.82rem;
   font-weight: 500;
   letter-spacing: 0.14em;
@@ -1124,6 +1124,138 @@ main > .service:first-child { border-top: 0; padding-top: clamp(3rem, 8vw, 6.5re
 /* ============================================================================
    Larger screens
    ========================================================================== */
+/* ============================================================================
+   Getting around long pages
+   ========================================================================== */
+/* "On this page" links under a page heading */
+.jump { margin-top: 2rem; max-width: 40rem; }
+.jump-label {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-caps);
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.jump ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.jump a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.75rem;
+  padding: 0.45rem 1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--navy);
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: border-color 0.3s var(--ease), background-color 0.3s var(--ease);
+}
+.jump a::after { content: "\2193"; color: var(--rose-deep); font-size: 0.9em; }
+.jump a:hover { border-color: var(--navy); background: var(--white); color: var(--navy); }
+
+/* Floating buttons: back to top (all screens) and Book a visit (phones).
+   They exist only when JavaScript runs; main.js shows them after a screen of scrolling. */
+.float-actions { display: none; }
+.js .float-actions {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  pointer-events: none;
+}
+.float-actions > a {
+  pointer-events: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.75rem);
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease), visibility 0s linear 0.35s;
+}
+.float-actions > a.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease), visibility 0s;
+}
+.float-book {
+  min-height: 3rem;
+  padding: 0.7rem 1.35rem;
+  border-color: rgba(244, 239, 233, 0.35);
+  box-shadow: 0 10px 28px rgba(10, 30, 60, 0.22);
+}
+.to-top {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  background: rgba(251, 249, 246, 0.96);
+  color: var(--navy);
+  box-shadow: 0 8px 24px rgba(10, 30, 60, 0.16);
+}
+.to-top:hover { color: var(--rose-deep); background: var(--white); }
+.to-top svg { width: 100%; height: 100%; overflow: visible; }
+.to-top circle { fill: none; stroke-width: 1.5; }
+.to-top-track { stroke: var(--line-strong); }
+/* the rose-gold ring fills as the page is read, like the ring in the logo */
+.to-top-progress {
+  stroke: var(--rose);
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transform-box: fill-box;
+}
+.to-top-arrow { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+@media (min-width: 48em) {
+  .float-book { display: none; }
+}
+
+/* The header slides away while reading down and returns on the way up
+   (phones and tablets; the class is set by main.js). */
+@media (max-width: 79.99em) {
+  .site-header { transition: border-color 0.4s var(--ease), transform 0.35s var(--ease); }
+  .site-header.is-hidden { transform: translateY(-100%); }
+}
+
+/* ============================================================================
+   Phones (under 48em): spend the screen on content, not on air.
+   ========================================================================== */
+@media (max-width: 47.99em) {
+  .hero-grid { gap: 2.25rem; }
+  .hero-sign { margin-top: 2rem; }
+  /* portraits shrink so they no longer take a whole screen each */
+  .portrait-set { width: min(72%, 16rem); }
+  .portrait-set-sm { width: min(64%, 14rem); }
+  .portrait figcaption { padding-inline: 12%; line-height: 1.6; letter-spacing: 0.16em; text-wrap: balance; }
+
+  /* lists of reasons and inclusions: same content, less air */
+  .trio-item { padding: 1.5rem 0; }
+  .trio-num { margin-bottom: 0.35rem; }
+  .ledger li { padding: 0.7rem 0; }
+  .ledger h3 { margin-bottom: 0.9rem; }
+  .faq summary { padding-block: 1.2rem; }
+
+  /* footer: logo beside its line, link groups in two columns */
+  .site-footer { padding-top: 2.75rem; }
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 1.25rem; }
+  .footer-brand { grid-column: 1 / -1; display: flex; align-items: center; gap: 1.25rem; }
+  .footer-logo { width: 6.5rem; flex: none; }
+  .footer-place { margin: 0; font-size: 0.93rem; }
+  .footer-head { margin-bottom: 0.7rem; }
+  .footer-contact { overflow-wrap: anywhere; }
+  .site-footer .crisis { margin-top: 2.25rem; }
+  .crisis { padding: 1.1rem 1.1rem; gap: 0.75rem; }
+  .footer-fine { margin-top: 1.5rem; }
+  /* room for the floating buttons so they never sit on the last line */
+  .js .site-footer { padding-bottom: 5.5rem; }
+}
+
 @media (min-width: 30em) {
   .nav-toggle-label { position: static; width: auto; height: auto; overflow: visible; clip: auto; }
   .brand-mark { height: 3rem; }
@@ -1140,7 +1272,7 @@ main > .service:first-child { border-top: 0; padding-top: clamp(3rem, 8vw, 6.5re
     padding: 2.4rem 0;
   }
   .svc-num { grid-row: auto; }
-  .svc p { margin: 0; }
+  .svc p { grid-column: auto; margin: 0; }
   .svc-go { grid-column: auto; margin: 0; }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 3rem; }
   .steps::before { display: none; }

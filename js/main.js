@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function setMenu(open) {
     nav.classList.toggle("is-open", open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    onScroll(); /* hide the floating buttons while the menu is open */
   }
   if (toggle && nav) {
     toggle.addEventListener("click", function () {
@@ -83,14 +84,78 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  /* ----- Header hairline once the page scrolls ----- */
+  /* ----- Scrolling: header hairline, header that steps aside, floating buttons -----
+     The header slides away while reading down and returns on any scroll up
+     (the CSS limits this to phones and tablets). After one screen of scrolling,
+     a "Back to top" button appears, its ring filling as the page is read; on
+     phones a "Book a visit" button joins it unless a booking button is already
+     on screen. */
   var header = document.querySelector(".site-header");
+  var toTop = document.querySelector(".to-top");
+  var floatBook = document.querySelector(".float-book");
+  var ring = document.querySelector(".to-top-progress");
+  var calmMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var lastY = window.scrollY;
+  var bookingInView = 0;
+  var ticking = false;
+
+  function update() {
+    ticking = false;
+    var y = window.scrollY;
+    var screen = window.innerHeight;
+    var menuOpen = !!(nav && nav.classList.contains("is-open"));
+    if (header) {
+      header.classList.toggle("is-scrolled", y > 4);
+      var dy = y - lastY;
+      if (Math.abs(dy) > 8) {
+        var busy = !!header.querySelector(":focus-visible"); /* a keyboard user is in the header */
+        header.classList.toggle("is-hidden", dy > 0 && y > header.offsetHeight * 2 && !menuOpen && !busy);
+        lastY = y;
+      }
+      if (y <= 0) header.classList.remove("is-hidden");
+    }
+    var past = y > screen * 0.9 && !menuOpen;
+    if (toTop) toTop.classList.toggle("is-visible", past);
+    if (floatBook) floatBook.classList.toggle("is-visible", past && bookingInView === 0);
+    if (ring) {
+      var room = document.documentElement.scrollHeight - screen;
+      var read = room > 0 ? Math.min(1, Math.max(0, y / room)) : 0;
+      ring.setAttribute("stroke-dashoffset", (100 - read * 100).toFixed(1));
+    }
+  }
+  function onScroll() {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
   if (header) {
-    var onScroll = function () {
-      header.classList.toggle("is-scrolled", window.scrollY > 4);
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+    /* keyboard users tabbing back into the header always see it */
+    header.addEventListener("focusin", function () { header.classList.remove("is-hidden"); });
+  }
+  update();
+
+  /* hide the floating "Book a visit" while another booking button or the footer is visible */
+  if (floatBook && "IntersectionObserver" in window) {
+    var bookingSpots = document.querySelectorAll("main .button.js-booking-link, .closing, .site-footer");
+    var watch = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var was = entry.target.dataset.inView === "1";
+        if (entry.isIntersecting && !was) { bookingInView++; entry.target.dataset.inView = "1"; }
+        if (!entry.isIntersecting && was) { bookingInView--; entry.target.dataset.inView = "0"; }
+      });
+      update();
+    });
+    bookingSpots.forEach(function (el) { watch.observe(el); });
+  }
+
+  /* back to top: scroll up, then put keyboard focus at the start of the page */
+  if (toTop) {
+    toTop.addEventListener("click", function (event) {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: calmMotion.matches ? "auto" : "smooth" });
+      var start = document.querySelector(".brand");
+      if (start && event.detail === 0) start.focus({ preventScroll: true }); /* keyboard only */
+    });
   }
 
   /* ----- Mark the current page in the menu -----
