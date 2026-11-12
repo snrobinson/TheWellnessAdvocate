@@ -4,7 +4,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Wellness Advocate | Direct Primary Care in Jacksonville, FL</title>
-  <meta name="description" content="A membership practice in Jacksonville, FL for direct primary care, bioidentical hormone therapy and psychiatry — direct, personal care without insurance in the middle.">
+  <meta name="description" content="A membership practice in Jacksonville, FL for direct primary care, bioidentical hormone therapy and psychiatry &amp; mental health — direct, personal care without insurance in the middle.">
+  <link rel="canonical" href="https://main.d1bs05hyunugqi.amplifyapp.com/">
+  <!-- Social sharing previews. Absolute addresses use BASE_URL (see README). -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Wellness Advocate">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="The Wellness Advocate | Direct Primary Care in Jacksonville, FL">
+  <meta property="og:description" content="A membership practice in Jacksonville, FL for direct primary care, bioidentical hormone therapy and psychiatry &amp; mental health — direct, personal care without insurance in the middle.">
+  <meta property="og:url" content="https://main.d1bs05hyunugqi.amplifyapp.com/">
+  <meta property="og:image" content="https://main.d1bs05hyunugqi.amplifyapp.com/assets/brand/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Wellness Advocate logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Wellness Advocate | Direct Primary Care in Jacksonville, FL">
+  <meta name="twitter:description" content="A membership practice in Jacksonville, FL for direct primary care, bioidentical hormone therapy and psychiatry &amp; mental health — direct, personal care without insurance in the middle.">
+  <meta name="twitter:image" content="https://main.d1bs05hyunugqi.amplifyapp.com/assets/brand/og-image.jpg">
   <meta name="theme-color" content="#FBF9F6">
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -18,13 +34,76 @@
        JavaScript-enabled before the first paint, so the mobile menu never
        flashes open and shifts the page. It waits for the page itself. -->
   <script src="js/main.js"></script>
+  <!-- SEARCH: structured data for search engines. Address, phone and hours are left out
+       until known. When confirmed, add streetAddress and postalCode to "address"
+       [TBD-CLIENT: practice address, or note if telehealth-only], a "telephone" value
+       [TBD-CLIENT: practice phone number], and "openingHoursSpecification"
+       [TBD-CLIENT: practice hours]. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/#clinic",
+    "name": "The Wellness Advocate",
+    "description": "A membership-based direct primary care practice in Jacksonville, Florida, offering primary care, hormone therapy, and psychiatry & mental health care.",
+    "url": "https://main.d1bs05hyunugqi.amplifyapp.com/",
+    "logo": "https://main.d1bs05hyunugqi.amplifyapp.com/assets/brand/logo-original.png",
+    "image": "https://main.d1bs05hyunugqi.amplifyapp.com/assets/brand/og-image.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jacksonville",
+      "addressRegion": "FL",
+      "addressCountry": "US"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Jacksonville, Florida"
+    },
+    "medicalSpecialty": [
+      "PrimaryCare",
+      "Psychiatric"
+    ],
+    "employee": {
+      "@type": "Person",
+      "@id": "https://main.d1bs05hyunugqi.amplifyapp.com/about.html#aimee",
+      "name": "Aimee Roberts-Serrato",
+      "honorificSuffix": "APRN",
+      "jobTitle": "Advanced Practice Registered Nurse",
+      "url": "https://main.d1bs05hyunugqi.amplifyapp.com/about.html",
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "certification",
+          "name": "PMHNP-BC",
+          "description": "Board-certified Psychiatric-Mental Health Nurse Practitioner"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "certification",
+          "name": "FNP-C",
+          "description": "Board-certified Family Nurse Practitioner"
+        }
+      ]
+    }
+  }
+  </script>
+  <!-- ANALYTICS — currently OFF. [TBD-RCG: analytics provider and token]
+       Plan: cookieless, aggregate visit counts only. No cookies, and no personal
+       or health information. To switch it on:
+         1. Move the script line below out of this comment, and replace
+            ANALYTICS_SCRIPT_URL and ANALYTICS_TOKEN with the provider's values.
+         2. Add the provider's domain to script-src and connect-src in
+            customHttp.yml, or the browser will block the script.
+         3. Replace the [TBD-RCG] analytics paragraph on privacy.html.
+       <script defer src="ANALYTICS_SCRIPT_URL" data-token="ANALYTICS_TOKEN"></script>
+  -->
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <!-- ======================================================================
      SITE HEADER — identical on every page. Edit it on one page, then copy
-     the whole block (or find-and-replace) across all eight HTML files.
+     the whole block (or find-and-replace) across all the HTML pages.
      ====================================================================== -->
 <header class="site-header">
   <div class="wrap header-bar">
@@ -40,10 +119,19 @@
     <nav id="site-nav" class="site-nav" aria-label="Main">
       <ul>
         <li class="nav-home"><a href="index.html">Home</a></li>
+        <li><a href="how-dpc-works.html">How DPC Works</a></li>
+        <li><a href="membership.html">Membership &amp; Pricing</a></li>
+        <li class="has-sub">
+          <a href="services.html">Services</a>
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-services"><span class="visually-hidden">Show the three services</span></button>
+          <ul class="sub-nav" id="sub-services">
+            <li><a href="primary-care.html">Primary Care</a></li>
+            <li><a href="hormone-therapy.html">Hormone Therapy</a></li>
+            <li><a href="psychiatry.html">Psychiatry &amp; Mental Health</a></li>
+          </ul>
+        </li>
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="membership.html">Membership</a></li>
-        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="new-patients.html">New Patients</a></li>
         <li><a href="contact.html">Contact</a></li>
         <!-- Patient portal — the real address is set once in js/main.js (PORTAL_URL) -->
         <li><a class="nav-portal js-portal-link" href="contact.html#book">Patient Portal</a></li>
@@ -93,7 +181,7 @@
       <p class="eyebrow definition-term" id="dpc-term">What is direct primary care?</p>
       <div class="reveal">
         <p class="definition-text">You pay the practice a flat monthly fee instead of billing insurance for every visit. No claims and no billing codes. In return, a provider with the time to <em class="accent">actually know you.</em></p>
-        <a class="link-arrow" href="membership.html">How membership works</a>
+        <a class="link-arrow" href="how-dpc-works.html">How direct primary care works</a>
       </div>
     </div>
   </section>
@@ -109,19 +197,19 @@
       <ol class="svc-list" data-stagger>
         <li class="svc">
           <span class="svc-num" aria-hidden="true">i.</span>
-          <h3><a href="services.html#dpc">Direct Primary Care</a></h3>
+          <h3><a href="primary-care.html">Primary Care</a></h3>
           <p>Visits that are often available the same or next day, long enough to cover your whole list, with a way to reach your provider in between.</p>
           <span class="svc-go" aria-hidden="true">Explore</span>
         </li>
         <li class="svc">
           <span class="svc-num" aria-hidden="true">ii.</span>
-          <h3><a href="services.html#bhrt">Hormone Health</a></h3>
+          <h3><a href="hormone-therapy.html">Hormone Therapy</a></h3>
           <p>Bioidentical hormone replacement therapy consultations for symptoms of hormonal change, guided by lab work and an individual plan.</p>
           <span class="svc-go" aria-hidden="true">Explore</span>
         </li>
         <li class="svc">
           <span class="svc-num" aria-hidden="true">iii.</span>
-          <h3><a href="services.html#psychiatry">Psychiatry</a></h3>
+          <h3><a href="psychiatry.html">Psychiatry &amp; Mental Health</a></h3>
           <p>Psychiatric evaluation and medication management for adults, with sleep, nutrition and physical health treated as part of the plan.</p>
           <span class="svc-go" aria-hidden="true">Explore</span>
         </li>
@@ -159,7 +247,7 @@
         </li>
       </ol>
       <div class="actions reveal">
-        <a class="link-arrow" href="membership.html">See membership details</a>
+        <a class="link-arrow" href="how-dpc-works.html">See how it works</a>
       </div>
     </div>
   </section>
@@ -195,7 +283,7 @@
 
 <!-- ======================================================================
      CLOSING CALL TO ACTION + SITE FOOTER — identical on every page.
-     Edit on one page, then copy the whole block across all eight HTML files.
+     Edit on one page, then copy the whole block across all the HTML pages.
      ====================================================================== -->
 <section class="closing" aria-labelledby="closing-heading">
   <div class="wrap closing-grid">
@@ -217,18 +305,26 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
-      <div>
+      <div class="footer-brand">
         <!-- EDIT: footer logo -->
         <img class="footer-logo" src="assets/brand/logo.webp" width="420" height="391" alt="The Wellness Advocate" loading="lazy" decoding="async">
-        <p class="footer-place">Direct primary care, hormone health and psychiatry<br>Jacksonville, Florida</p>
+        <p class="footer-place">Direct primary care, hormone therapy, and psychiatry &amp; mental health<br>Jacksonville, Florida</p>
       </div>
       <nav aria-label="Practice">
         <p class="footer-head">Practice</p>
         <ul class="footer-links">
+          <li><a href="how-dpc-works.html">How DPC Works</a></li>
+          <li><a href="membership.html">Membership &amp; Pricing</a></li>
           <li><a href="about.html">About Aimee</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="membership.html">Membership</a></li>
-          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="new-patients.html">New Patients</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services">
+        <p class="footer-head">Services</p>
+        <ul class="footer-links">
+          <li><a href="primary-care.html">Primary Care</a></li>
+          <li><a href="hormone-therapy.html">Hormone Therapy</a></li>
+          <li><a href="psychiatry.html">Psychiatry &amp; Mental Health</a></li>
         </ul>
       </nav>
       <nav aria-label="Patients">
@@ -248,14 +344,15 @@
       </div>
     </div>
 
-    <!-- EDIT: crisis line and service area -->
-    <div class="crisis">
+    <div class="crisis" role="note" aria-label="Crisis and emergency information">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5.2 3.5h3.1l1.6 4-2 1.3a11 11 0 0 0 5.3 5.3l1.3-2 4 1.6v3.1a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 3.2 5.7a2 2 0 0 1 2-2.2z"/></svg>
       <div>
-        <p><strong>If you are experiencing a mental health emergency, call or text <a href="tel:988">988</a> or go to your nearest emergency room.</strong></p>
-        <p>Services are available to patients located in [TBD-CLIENT: licensed states].</p>
+        <p><strong>If you are experiencing a mental health crisis, call or text <a href="tel:988">988</a> to reach the 988 Suicide &amp; Crisis Lifeline.</strong></p>
+        <p>For an emergency, call <a href="tel:911">911</a> or go to your nearest emergency room. This website and its contact form are not monitored for urgent messages.</p>
       </div>
     </div>
+    <!-- EDIT: service area -->
+    <p class="footer-area">Services are available to patients located in [TBD-CLIENT: licensed states].</p>
 
     <div class="footer-fine">
       <p>&copy; <span class="js-year">2026</span> The Wellness Advocate, Jacksonville, Florida. This website is general information, not medical advice &mdash; see <a href="privacy.html">Privacy &amp; Disclosures</a>.</p>

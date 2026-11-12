@@ -3,8 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Aimee Roberts-Serrato, PMHNP-BC, FNP-C | The Wellness Advocate</title>
-  <meta name="description" content="Meet Aimee Roberts-Serrato, the dual board-certified nurse practitioner behind The Wellness Advocate in Jacksonville, FL.">
+  <title>About Aimee Roberts-Serrato, APRN, PMHNP-BC, FNP-C | The Wellness Advocate</title>
+  <meta name="description" content="Meet Aimee Roberts-Serrato, APRN, the dual board-certified nurse practitioner behind The Wellness Advocate in Jacksonville, FL.">
+  <link rel="canonical" href="https://main.d1bs05hyunugqi.amplifyapp.com/about.html">
+  <!-- Social sharing previews. Absolute addresses use BASE_URL (see README). -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Wellness Advocate">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="About Aimee Roberts-Serrato, APRN, PMHNP-BC, FNP-C | The Wellness Advocate">
+  <meta property="og:description" content="Meet Aimee Roberts-Serrato, APRN, the dual board-certified nurse practitioner behind The Wellness Advocate in Jacksonville, FL.">
+  <meta property="og:url" content="https://main.d1bs05hyunugqi.amplifyapp.com/about.html">
+  <meta property="og:image" content="https://main.d1bs05hyunugqi.amplifyapp.com/assets/brand/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Wellness Advocate logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Aimee Roberts-Serrato, APRN, PMHNP-BC, FNP-C | The Wellness Advocate">
+  <meta name="twitter:description" content="Meet Aimee Roberts-Serrato, APRN, the dual board-certified nurse practitioner behind The Wellness Advocate in Jacksonville, FL.">
+  <meta name="twitter:image" content="https://main.d1bs05hyunugqi.amplifyapp.com/assets/brand/og-image.jpg">
   <meta name="theme-color" content="#FBF9F6">
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -18,13 +34,43 @@
        JavaScript-enabled before the first paint, so the mobile menu never
        flashes open and shifts the page. It waits for the page itself. -->
   <script src="js/main.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://main.d1bs05hyunugqi.amplifyapp.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://main.d1bs05hyunugqi.amplifyapp.com/about.html"
+      }
+    ]
+  }
+  </script>
+  <!-- ANALYTICS — currently OFF. [TBD-RCG: analytics provider and token]
+       Plan: cookieless, aggregate visit counts only. No cookies, and no personal
+       or health information. To switch it on:
+         1. Move the script line below out of this comment, and replace
+            ANALYTICS_SCRIPT_URL and ANALYTICS_TOKEN with the provider's values.
+         2. Add the provider's domain to script-src and connect-src in
+            customHttp.yml, or the browser will block the script.
+         3. Replace the [TBD-RCG] analytics paragraph on privacy.html.
+       <script defer src="ANALYTICS_SCRIPT_URL" data-token="ANALYTICS_TOKEN"></script>
+  -->
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <!-- ======================================================================
      SITE HEADER — identical on every page. Edit it on one page, then copy
-     the whole block (or find-and-replace) across all eight HTML files.
+     the whole block (or find-and-replace) across all the HTML pages.
      ====================================================================== -->
 <header class="site-header">
   <div class="wrap header-bar">
@@ -40,10 +86,19 @@
     <nav id="site-nav" class="site-nav" aria-label="Main">
       <ul>
         <li class="nav-home"><a href="index.html">Home</a></li>
+        <li><a href="how-dpc-works.html">How DPC Works</a></li>
+        <li><a href="membership.html">Membership &amp; Pricing</a></li>
+        <li class="has-sub">
+          <a href="services.html">Services</a>
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-services"><span class="visually-hidden">Show the three services</span></button>
+          <ul class="sub-nav" id="sub-services">
+            <li><a href="primary-care.html">Primary Care</a></li>
+            <li><a href="hormone-therapy.html">Hormone Therapy</a></li>
+            <li><a href="psychiatry.html">Psychiatry &amp; Mental Health</a></li>
+          </ul>
+        </li>
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="membership.html">Membership</a></li>
-        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="new-patients.html">New Patients</a></li>
         <li><a href="contact.html">Contact</a></li>
         <!-- Patient portal — the real address is set once in js/main.js (PORTAL_URL) -->
         <li><a class="nav-portal js-portal-link" href="contact.html#book">Patient Portal</a></li>
@@ -82,7 +137,7 @@
         <p class="eyebrow">Your provider</p>
         <h2 id="bio-heading">Aimee Roberts-Serrato</h2>
         <p class="creds">MSN &middot; APRN &middot; PMHNP-BC &middot; FNP-C</p>
-        <p>Aimee is a dual board-certified nurse practitioner &mdash; certified in both family practice (FNP-C) and psychiatric&ndash;mental health (PMHNP-BC). That combination is uncommon, and it is the heart of this practice: your primary care and your mental health care can live in one relationship, instead of being split across offices that never compare notes.</p>
+        <p>Aimee Roberts-Serrato, APRN, is a dual board-certified nurse practitioner &mdash; certified in both family practice (FNP-C) and psychiatric&ndash;mental health (PMHNP-BC). That combination is uncommon, and it is the heart of this practice: your primary care and your mental health care can live in one relationship, instead of being split across offices that never compare notes.</p>
         <p>[TBD-CLIENT: two or three sentences in Aimee&rsquo;s own words &mdash; why she started the practice and what Jacksonville means to her]</p>
       </div>
     </div>
@@ -98,6 +153,7 @@
       <ul class="fact-list reveal">
         <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6.5"/></svg><span>Master of Science in Nursing, University of Cincinnati (2016)</span></li>
         <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6.5"/></svg><span>Post-master&rsquo;s certificate, Florida State University (2022)</span></li>
+        <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6.5"/></svg><span>Advanced Practice Registered Nurse (APRN)</span></li>
         <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6.5"/></svg><span>Board-certified Family Nurse Practitioner (FNP-C)</span></li>
         <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6.5"/></svg><span>Board-certified Psychiatric&ndash;Mental Health Nurse Practitioner (PMHNP-BC)</span></li>
         <!-- VERIFY: the original brief said "six years in practice"; the Florida license
@@ -143,7 +199,7 @@
 
 <!-- ======================================================================
      CLOSING CALL TO ACTION + SITE FOOTER — identical on every page.
-     Edit on one page, then copy the whole block across all eight HTML files.
+     Edit on one page, then copy the whole block across all the HTML pages.
      ====================================================================== -->
 <section class="closing" aria-labelledby="closing-heading">
   <div class="wrap closing-grid">
@@ -165,18 +221,26 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
-      <div>
+      <div class="footer-brand">
         <!-- EDIT: footer logo -->
         <img class="footer-logo" src="assets/brand/logo.webp" width="420" height="391" alt="The Wellness Advocate" loading="lazy" decoding="async">
-        <p class="footer-place">Direct primary care, hormone health and psychiatry<br>Jacksonville, Florida</p>
+        <p class="footer-place">Direct primary care, hormone therapy, and psychiatry &amp; mental health<br>Jacksonville, Florida</p>
       </div>
       <nav aria-label="Practice">
         <p class="footer-head">Practice</p>
         <ul class="footer-links">
+          <li><a href="how-dpc-works.html">How DPC Works</a></li>
+          <li><a href="membership.html">Membership &amp; Pricing</a></li>
           <li><a href="about.html">About Aimee</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="membership.html">Membership</a></li>
-          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="new-patients.html">New Patients</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services">
+        <p class="footer-head">Services</p>
+        <ul class="footer-links">
+          <li><a href="primary-care.html">Primary Care</a></li>
+          <li><a href="hormone-therapy.html">Hormone Therapy</a></li>
+          <li><a href="psychiatry.html">Psychiatry &amp; Mental Health</a></li>
         </ul>
       </nav>
       <nav aria-label="Patients">
@@ -196,14 +260,15 @@
       </div>
     </div>
 
-    <!-- EDIT: crisis line and service area -->
-    <div class="crisis">
+    <div class="crisis" role="note" aria-label="Crisis and emergency information">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5.2 3.5h3.1l1.6 4-2 1.3a11 11 0 0 0 5.3 5.3l1.3-2 4 1.6v3.1a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 3.2 5.7a2 2 0 0 1 2-2.2z"/></svg>
       <div>
-        <p><strong>If you are experiencing a mental health emergency, call or text <a href="tel:988">988</a> or go to your nearest emergency room.</strong></p>
-        <p>Services are available to patients located in [TBD-CLIENT: licensed states].</p>
+        <p><strong>If you are experiencing a mental health crisis, call or text <a href="tel:988">988</a> to reach the 988 Suicide &amp; Crisis Lifeline.</strong></p>
+        <p>For an emergency, call <a href="tel:911">911</a> or go to your nearest emergency room. This website and its contact form are not monitored for urgent messages.</p>
       </div>
     </div>
+    <!-- EDIT: service area -->
+    <p class="footer-area">Services are available to patients located in [TBD-CLIENT: licensed states].</p>
 
     <div class="footer-fine">
       <p>&copy; <span class="js-year">2026</span> The Wellness Advocate, Jacksonville, Florida. This website is general information, not medical advice &mdash; see <a href="privacy.html">Privacy &amp; Disclosures</a>.</p>

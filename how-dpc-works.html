@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How Direct Primary Care Works | The Wellness Advocate</title>
+  <meta name="description" content="How direct primary care membership works at The Wellness Advocate: a flat monthly fee, no insurance billing, what membership covers and doesn't, and answers to common questions.">
+  <link rel="canonical" href="https://main.d1bs05hyunugqi.amplifyapp.com/how-dpc-works.html">
+  <!-- Social sharing previews. Absolute addresses use BASE_URL (see README). -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Wellness Advocate">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="How Direct Primary Care Works | The Wellness Advocate">
+  <meta property="og:description" content="How direct primary care membership works at The Wellness Advocate: a flat monthly fee, no insurance billing, what membership covers and doesn't, and answers to common questions.">
+  <meta property="og:url" content="https://main.d1bs05hyunugqi.amplifyapp.com/how-dpc-works.html">
+  <meta property="og:image" content="https://main.d1bs05hyunugqi.amplifyapp.com/assets/brand/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Wellness Advocate logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How Direct Primary Care Works | The Wellness Advocate">
+  <meta name="twitter:description" content="How direct primary care membership works at The Wellness Advocate: a flat monthly fee, no insurance billing, what membership covers and doesn't, and answers to common questions.">
+  <meta name="twitter:image" content="https://main.d1bs05hyunugqi.amplifyapp.com/assets/brand/og-image.jpg">
+  <meta name="theme-color" content="#FBF9F6">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <!-- Fonts (Google Fonts, display=swap): Bodoni Moda for headings, Cinzel for
+       small capitals, Jost for body text — chosen to match the practice logo. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&amp;family=Cinzel:wght@400..600&amp;family=Jost:wght@300..500&amp;display=swap">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Loaded in the head on purpose (not deferred): it marks the page as
+       JavaScript-enabled before the first paint, so the mobile menu never
+       flashes open and shifts the page. It waits for the page itself. -->
+  <script src="js/main.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://main.d1bs05hyunugqi.amplifyapp.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "How Direct Primary Care Works",
+        "item": "https://main.d1bs05hyunugqi.amplifyapp.com/how-dpc-works.html"
+      }
+    ]
+  }
+  </script>
+  <!-- ANALYTICS — currently OFF. [TBD-RCG: analytics provider and token]
+       Plan: cookieless, aggregate visit counts only. No cookies, and no personal
+       or health information. To switch it on:
+         1. Move the script line below out of this comment, and replace
+            ANALYTICS_SCRIPT_URL and ANALYTICS_TOKEN with the provider's values.
+         2. Add the provider's domain to script-src and connect-src in
+            customHttp.yml, or the browser will block the script.
+         3. Replace the [TBD-RCG] analytics paragraph on privacy.html.
+       <script defer src="ANALYTICS_SCRIPT_URL" data-token="ANALYTICS_TOKEN"></script>
+  -->
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ======================================================================
+     SITE HEADER — identical on every page. Edit it on one page, then copy
+     the whole block (or find-and-replace) across all the HTML pages.
+     ====================================================================== -->
+<header class="site-header">
+  <div class="wrap header-bar">
+    <!-- EDIT: logo lockup (both images are cut from the practice logo) -->
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/brand/mark.webp" width="225" height="176" alt="">
+      <img class="brand-word" src="assets/brand/wordmark.webp" width="640" height="104" alt="The Wellness Advocate — home">
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+      <span class="nav-toggle-label">Menu</span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li class="nav-home"><a href="index.html">Home</a></li>
+        <li><a href="how-dpc-works.html">How DPC Works</a></li>
+        <li><a href="membership.html">Membership &amp; Pricing</a></li>
+        <li class="has-sub">
+          <a href="services.html">Services</a>
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-services"><span class="visually-hidden">Show the three services</span></button>
+          <ul class="sub-nav" id="sub-services">
+            <li><a href="primary-care.html">Primary Care</a></li>
+            <li><a href="hormone-therapy.html">Hormone Therapy</a></li>
+            <li><a href="psychiatry.html">Psychiatry &amp; Mental Health</a></li>
+          </ul>
+        </li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="new-patients.html">New Patients</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- Patient portal — the real address is set once in js/main.js (PORTAL_URL) -->
+        <li><a class="nav-portal js-portal-link" href="contact.html#book">Patient Portal</a></li>
+        <!-- Booking — the real address is set once in js/main.js (BOOKING_URL) -->
+        <li class="nav-cta-item"><a class="button nav-cta js-booking-link" href="contact.html#book">Book a visit</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- ===== END SITE HEADER ===== -->
+
+<main id="main">
+
+  <!-- ===== EDIT: How Direct Primary Care Works — page heading ===== -->
+  <section class="page-hero" aria-labelledby="page-heading">
+    <div class="wrap">
+      <p class="eyebrow rise rise-1">How it works</p>
+      <h1 id="page-heading" class="rise rise-2">How direct primary care <em class="accent">works.</em></h1>
+      <p class="hero-lede rise rise-3">You pay the practice a flat monthly fee instead of billing insurance for every visit. No claims and no billing codes. In return, a provider with the time to actually know you.</p>
+      <div class="actions rise rise-4">
+        <a class="button" href="membership.html#plans">See membership plans</a>
+        <a class="link-arrow" href="#faq">Read the FAQ</a>
+      </div>
+    </div>
+    <img class="page-hero-leaves" src="assets/brand/leaves.webp" width="285" height="498" alt="" decoding="async">
+  </section>
+
+  <!-- ===== EDIT: the model, step by step ===== -->
+  <section class="section" aria-labelledby="model-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">The model</p>
+        <h2 id="model-heading">Membership medicine, <em class="accent">in four steps.</em></h2>
+        <p class="section-lede">A flat monthly fee paid directly to the practice, with no insurance billing in between.</p>
+      </div>
+      <ol class="steps" data-stagger>
+        <li class="step">
+          <span class="step-num">01</span>
+          <h3>Join</h3>
+          <p>Choose a membership and enroll online. There is no insurance paperwork to file.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">02</span>
+          <h3>Book directly</h3>
+          <p>Schedule with your provider online &mdash; often the same or the next day.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">03</span>
+          <h3>Take your time</h3>
+          <p>Visits are built around your questions, not a billing code. Bring the whole list.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">04</span>
+          <h3>Stay in touch</h3>
+          <p>Message your provider between visits through the patient portal.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== EDIT: why cash-pay ===== -->
+  <section class="section section-navy on-navy" aria-labelledby="why-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Why cash-pay</p>
+        <h2 id="why-heading">Take insurance out of everyday care, and <em class="accent">the visit changes.</em></h2>
+      </div>
+      <div class="trio" data-stagger>
+        <div class="trio-item">
+          <span class="trio-num" aria-hidden="true">i.</span>
+          <h3>More time with your provider</h3>
+          <p>Without insurance quotas, visits are scheduled for the time your questions actually need.</p>
+        </div>
+        <div class="trio-item">
+          <span class="trio-num" aria-hidden="true">ii.</span>
+          <h3>No billing surprises</h3>
+          <p>You know the price before you arrive. No claims, no codes, no statements months later.</p>
+        </div>
+        <div class="trio-item">
+          <span class="trio-num" aria-hidden="true">iii.</span>
+          <h3>Decisions stay yours</h3>
+          <p>Plans are built around what you and your provider decide together, not what a payer will reimburse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDIT: what membership covers and does not cover ===== -->
+  <section class="section section-porcelain" id="coverage" aria-labelledby="includes-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">What it covers</p>
+        <h2 id="includes-heading">Membership is <em class="accent">not insurance.</em></h2>
+        <p class="section-lede">Membership covers your everyday care with the practice. It does not replace insurance for hospital care, emergencies, specialists or prescriptions.</p>
+      </div>
+      <div class="ledger">
+        <div class="reveal">
+          <h3>Membership generally includes</h3>
+          <ul>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10.5l4 4 8-9"/></svg><span>Primary care visits with your provider</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10.5l4 4 8-9"/></svg><span>Same-day or next-day scheduling when available</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10.5l4 4 8-9"/></svg><span>Patient portal messaging between visits</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10.5l4 4 8-9"/></svg><span>Chronic condition management and annual wellness care</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10.5l4 4 8-9"/></svg><span>Care coordination and referrals when you need a specialist</span></li>
+          </ul>
+          <p class="ledger-note">[TBD-CLIENT: confirm this list against the final membership agreement]</p>
+        </div>
+        <div class="reveal">
+          <h3>What membership does not cover</h3>
+          <ul>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 10h10"/></svg><span>It does not cover hospital care, emergency care, specialists, imaging centers or prescriptions filled at a pharmacy.</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 10h10"/></svg><span>Most members pair membership with a high-deductible or catastrophic insurance plan &mdash; a licensed insurance agent can advise on what fits.</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 10h10"/></svg><span>Labs, certain procedures, BHRT and psychiatry services may be billed separately. [TBD-CLIENT: confirm what is in and out of membership]</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 10h10"/></svg><span>[TBD-CLIENT: any state-required DPC agreement disclosures &mdash; attorney review]</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDIT: frequently asked questions (moved here from faq.html) ===== -->
+  <section class="section" id="faq" aria-labelledby="faq-heading">
+    <div class="wrap faq-layout">
+      <div class="faq-aside reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2 id="faq-heading">Questions, answered <em class="accent">plainly.</em></h2>
+        <p>Still wondering about something? Ask before you decide &mdash; we are happy to help you work out whether the practice is a good fit.</p>
+        <a class="link-arrow" href="contact.html">Ask a question</a>
+      </div>
+      <!-- ===== EDIT: questions — add or remove whole <details> blocks ===== -->
+      <div class="faq reveal">
+        <details>
+          <summary>What is Direct Primary Care, and how is it different from a regular doctor&rsquo;s office?</summary>
+          <div class="faq-answer">
+            <p>Direct Primary Care (DPC) replaces per-visit insurance billing with a flat
+            monthly membership paid directly to the practice. Because the practice
+            doesn&rsquo;t bill insurance for your primary care, visits can be longer, easier
+            to schedule, and focused entirely on you. You always know the cost up front.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Do you accept insurance?</summary>
+          <div class="faq-answer">
+            <p>No &mdash; The Wellness Advocate is a cash-pay practice and does not bill
+            insurance for its services. That is a deliberate choice: it keeps pricing
+            transparent and keeps care decisions between you and your provider. You may
+            still use your insurance for prescriptions, labs, imaging, specialists, and
+            hospital care outside the practice. [TBD-CLIENT: confirm policy on providing
+            superbills/receipts for out-of-network reimbursement]</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Do I still need health insurance if I become a member?</summary>
+          <div class="faq-answer">
+            <p>Membership is not insurance and doesn&rsquo;t replace it. Most members keep at
+            least a high-deductible or catastrophic plan for hospitalizations,
+            emergencies, and specialist care. A licensed insurance agent can help you
+            decide what coverage makes sense alongside membership.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How much does membership cost?</summary>
+          <div class="faq-answer">
+            <p>[TBD-CLIENT: membership tier names and monthly prices]. Current plans and
+            what each includes are listed on the
+            <a href="membership.html">membership page</a>.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can I pay with an HSA or FSA?</summary>
+          <div class="faq-answer">
+            <p>[TBD-CLIENT: HSA/FSA policy &mdash; rules for using HSA funds for DPC
+            memberships have specific requirements; confirm with the practice&rsquo;s
+            accountant before publishing an answer]</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>How do I book a visit, and do you offer telehealth?</summary>
+          <div class="faq-answer">
+            <p>Visits are booked online through the practice&rsquo;s scheduling system &mdash; use
+            any &ldquo;Book a visit&rdquo; button on this site. [TBD-CLIENT: confirm telehealth
+            availability, visit types, and typical scheduling windows]</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What is BHRT, and how do I know if it&rsquo;s right for me?</summary>
+          <div class="faq-answer">
+            <p>Bioidentical hormone replacement therapy (BHRT) uses hormones structurally
+            identical to those your body produces to address symptoms associated with
+            hormonal change, such as those related to perimenopause, menopause, or low
+            testosterone. Whether it&rsquo;s appropriate for you depends on your symptoms,
+            labs, history, and preferences &mdash; that&rsquo;s what the consult process is for.
+            It starts with lab work and an in-depth review, and therapy is only started
+            if you and your provider decide together that it makes sense.
+            <a href="hormone-therapy.html">Read more about the BHRT consult process</a>.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>What psychiatric services do you offer? Do you prescribe medication?</summary>
+          <div class="faq-answer">
+            <p>Aimee is a board-certified psychiatric&ndash;mental health nurse practitioner
+            (PMHNP-BC) and provides psychiatric evaluations and ongoing medication
+            management for adults, integrated with attention to sleep, nutrition, and
+            overall health. [TBD-CLIENT: confirm conditions treated and any medications
+            or conditions outside the practice&rsquo;s scope, e.g. controlled-substance
+            policies]</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Can the same provider handle my primary care and my mental health care?</summary>
+          <div class="faq-answer">
+            <p>Yes &mdash; that&rsquo;s one of the main reasons this practice exists. Aimee is dual
+            board-certified in family practice and psychiatric&ndash;mental health, so your
+            physical and mental health care can live in one relationship, with one
+            provider who sees the whole picture.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Do I have to live in Jacksonville to be a patient?</summary>
+          <div class="faq-answer">
+            <p>The practice is based in Jacksonville, Florida. Services are available to
+            patients located in [TBD-CLIENT: licensed states].
+            [TBD-CLIENT: confirm telehealth rules for patients outside the Jacksonville
+            area but within licensed states]</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ======================================================================
+     CLOSING CALL TO ACTION + SITE FOOTER — identical on every page.
+     Edit on one page, then copy the whole block across all the HTML pages.
+     ====================================================================== -->
+<section class="closing" aria-labelledby="closing-heading">
+  <div class="wrap closing-grid">
+    <div class="reveal">
+      <p class="eyebrow">Ready when you are</p>
+      <h2 id="closing-heading">Care that finally has <em class="accent">time for you.</em></h2>
+    </div>
+    <div class="reveal">
+      <p>Book a first visit, or ask a question before you decide. No insurance card required.</p>
+      <div class="actions">
+        <a class="button js-booking-link" href="contact.html#book">Book a visit</a>
+        <a class="link-arrow" href="contact.html">Ask a question</a>
+      </div>
+    </div>
+  </div>
+  <img class="closing-leaves" src="assets/brand/leaves.webp" width="285" height="498" alt="" loading="lazy" decoding="async">
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <!-- EDIT: footer logo -->
+        <img class="footer-logo" src="assets/brand/logo.webp" width="420" height="391" alt="The Wellness Advocate" loading="lazy" decoding="async">
+        <p class="footer-place">Direct primary care, hormone therapy, and psychiatry &amp; mental health<br>Jacksonville, Florida</p>
+      </div>
+      <nav aria-label="Practice">
+        <p class="footer-head">Practice</p>
+        <ul class="footer-links">
+          <li><a href="how-dpc-works.html">How DPC Works</a></li>
+          <li><a href="membership.html">Membership &amp; Pricing</a></li>
+          <li><a href="about.html">About Aimee</a></li>
+          <li><a href="new-patients.html">New Patients</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services">
+        <p class="footer-head">Services</p>
+        <ul class="footer-links">
+          <li><a href="primary-care.html">Primary Care</a></li>
+          <li><a href="hormone-therapy.html">Hormone Therapy</a></li>
+          <li><a href="psychiatry.html">Psychiatry &amp; Mental Health</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Patients">
+        <p class="footer-head">Patients</p>
+        <ul class="footer-links">
+          <li><a class="js-booking-link" href="contact.html#book">Book a visit</a></li>
+          <li><a class="js-portal-link" href="contact.html#book">Patient Portal</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy &amp; Disclosures</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <p class="footer-head">Reach the practice</p>
+        <!-- EDIT: practice phone and email -->
+        <p>[TBD-CLIENT: practice phone number]</p>
+        <p>[TBD-CLIENT: practice email address]</p>
+      </div>
+    </div>
+
+    <div class="crisis" role="note" aria-label="Crisis and emergency information">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5.2 3.5h3.1l1.6 4-2 1.3a11 11 0 0 0 5.3 5.3l1.3-2 4 1.6v3.1a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 3.2 5.7a2 2 0 0 1 2-2.2z"/></svg>
+      <div>
+        <p><strong>If you are experiencing a mental health crisis, call or text <a href="tel:988">988</a> to reach the 988 Suicide &amp; Crisis Lifeline.</strong></p>
+        <p>For an emergency, call <a href="tel:911">911</a> or go to your nearest emergency room. This website and its contact form are not monitored for urgent messages.</p>
+      </div>
+    </div>
+    <!-- EDIT: service area -->
+    <p class="footer-area">Services are available to patients located in [TBD-CLIENT: licensed states].</p>
+
+    <div class="footer-fine">
+      <p>&copy; <span class="js-year">2026</span> The Wellness Advocate, Jacksonville, Florida. This website is general information, not medical advice &mdash; see <a href="privacy.html">Privacy &amp; Disclosures</a>.</p>
+      <p class="footer-credit">Website by Robinson Consulting Group</p>
+    </div>
+  </div>
+</footer>
+<!-- ===== END CLOSING + SITE FOOTER ===== -->
+
+</body>
+</html>

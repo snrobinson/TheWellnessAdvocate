@@ -3,8 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Membership & Pricing | The Wellness Advocate</title>
-  <meta name="description" content="How direct primary care membership works at The Wellness Advocate: one flat monthly fee, no insurance billing, more time with your provider.">
+  <title>Membership &amp; Pricing | The Wellness Advocate</title>
+  <meta name="description" content="Membership plans and pricing at The Wellness Advocate in Jacksonville, FL, and how enrollment works.">
+  <link rel="canonical" href="https://main.d1bs05hyunugqi.amplifyapp.com/membership.html">
+  <!-- Social sharing previews. Absolute addresses use BASE_URL (see README). -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Wellness Advocate">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Membership &amp; Pricing | The Wellness Advocate">
+  <meta property="og:description" content="Membership plans and pricing at The Wellness Advocate in Jacksonville, FL, and how enrollment works.">
+  <meta property="og:url" content="https://main.d1bs05hyunugqi.amplifyapp.com/membership.html">
+  <meta property="og:image" content="https://main.d1bs05hyunugqi.amplifyapp.com/assets/brand/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Wellness Advocate logo">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Membership &amp; Pricing | The Wellness Advocate">
+  <meta name="twitter:description" content="Membership plans and pricing at The Wellness Advocate in Jacksonville, FL, and how enrollment works.">
+  <meta name="twitter:image" content="https://main.d1bs05hyunugqi.amplifyapp.com/assets/brand/og-image.jpg">
   <meta name="theme-color" content="#FBF9F6">
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
@@ -18,13 +34,43 @@
        JavaScript-enabled before the first paint, so the mobile menu never
        flashes open and shifts the page. It waits for the page itself. -->
   <script src="js/main.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://main.d1bs05hyunugqi.amplifyapp.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Membership & Pricing",
+        "item": "https://main.d1bs05hyunugqi.amplifyapp.com/membership.html"
+      }
+    ]
+  }
+  </script>
+  <!-- ANALYTICS — currently OFF. [TBD-RCG: analytics provider and token]
+       Plan: cookieless, aggregate visit counts only. No cookies, and no personal
+       or health information. To switch it on:
+         1. Move the script line below out of this comment, and replace
+            ANALYTICS_SCRIPT_URL and ANALYTICS_TOKEN with the provider's values.
+         2. Add the provider's domain to script-src and connect-src in
+            customHttp.yml, or the browser will block the script.
+         3. Replace the [TBD-RCG] analytics paragraph on privacy.html.
+       <script defer src="ANALYTICS_SCRIPT_URL" data-token="ANALYTICS_TOKEN"></script>
+  -->
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <!-- ======================================================================
      SITE HEADER — identical on every page. Edit it on one page, then copy
-     the whole block (or find-and-replace) across all eight HTML files.
+     the whole block (or find-and-replace) across all the HTML pages.
      ====================================================================== -->
 <header class="site-header">
   <div class="wrap header-bar">
@@ -40,10 +86,19 @@
     <nav id="site-nav" class="site-nav" aria-label="Main">
       <ul>
         <li class="nav-home"><a href="index.html">Home</a></li>
+        <li><a href="how-dpc-works.html">How DPC Works</a></li>
+        <li><a href="membership.html">Membership &amp; Pricing</a></li>
+        <li class="has-sub">
+          <a href="services.html">Services</a>
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-controls="sub-services"><span class="visually-hidden">Show the three services</span></button>
+          <ul class="sub-nav" id="sub-services">
+            <li><a href="primary-care.html">Primary Care</a></li>
+            <li><a href="hormone-therapy.html">Hormone Therapy</a></li>
+            <li><a href="psychiatry.html">Psychiatry &amp; Mental Health</a></li>
+          </ul>
+        </li>
         <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="membership.html">Membership</a></li>
-        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="new-patients.html">New Patients</a></li>
         <li><a href="contact.html">Contact</a></li>
         <!-- Patient portal — the real address is set once in js/main.js (PORTAL_URL) -->
         <li><a class="nav-portal js-portal-link" href="contact.html#book">Patient Portal</a></li>
@@ -69,66 +124,6 @@
       </div>
     </div>
     <img class="page-hero-leaves" src="assets/brand/leaves.webp" width="285" height="498" alt="" decoding="async">
-  </section>
-
-  <!-- ===== EDIT: how membership works ===== -->
-  <section class="section" aria-labelledby="how-heading">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">The model</p>
-        <h2 id="how-heading">How membership <em class="accent">works.</em></h2>
-        <p class="section-lede">A direct agreement between you and the practice: a monthly fee, clearly listed services, and no per-visit insurance billing.</p>
-      </div>
-      <ol class="steps" data-stagger>
-        <li class="step">
-          <span class="step-num">01</span>
-          <h3>Enroll</h3>
-          <p>Pick a plan and sign up online. [TBD-CLIENT: confirm enrollment fee and cancellation terms]</p>
-        </li>
-        <li class="step">
-          <span class="step-num">02</span>
-          <h3>One flat fee</h3>
-          <p>Your monthly fee covers the care listed in your plan &mdash; visits, portal messaging and care coordination.</p>
-        </li>
-        <li class="step">
-          <span class="step-num">03</span>
-          <h3>Use your care</h3>
-          <p>Book visits when you need them and message between visits, without wondering what an appointment will cost.</p>
-        </li>
-        <li class="step">
-          <span class="step-num">04</span>
-          <h3>Adjust as life changes</h3>
-          <p>[TBD-CLIENT: confirm plan-change and pause policies]</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- ===== EDIT: why cash-pay ===== -->
-  <section class="section section-navy on-navy" aria-labelledby="why-heading">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Why cash-pay</p>
-        <h2 id="why-heading">Take insurance out of everyday care, and <em class="accent">the visit changes.</em></h2>
-      </div>
-      <div class="trio" data-stagger>
-        <div class="trio-item">
-          <span class="trio-num" aria-hidden="true">i.</span>
-          <h3>More time with your provider</h3>
-          <p>Without insurance quotas, visits are scheduled for the time your questions actually need.</p>
-        </div>
-        <div class="trio-item">
-          <span class="trio-num" aria-hidden="true">ii.</span>
-          <h3>No billing surprises</h3>
-          <p>You know the price before you arrive. No claims, no codes, no statements months later.</p>
-        </div>
-        <div class="trio-item">
-          <span class="trio-num" aria-hidden="true">iii.</span>
-          <h3>Decisions stay yours</h3>
-          <p>Plans are built around what you and your provider decide together, not what a payer will reimburse.</p>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- ===== EDIT: membership plans (all three tiers are placeholders) ===== -->
@@ -174,33 +169,51 @@
     </div>
   </section>
 
-  <!-- ===== EDIT: what membership does and does not include ===== -->
-  <section class="section section-porcelain" aria-labelledby="includes-heading">
+  <!-- ===== EDIT: how membership works ===== -->
+  <section class="section" aria-labelledby="how-heading">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">The fine print, plainly</p>
-        <h2 id="includes-heading">What membership does, and <em class="accent">doesn&rsquo;t</em>, include.</h2>
+        <p class="eyebrow">Enrollment</p>
+        <h2 id="how-heading">How enrollment <em class="accent">works.</em></h2>
+        <p class="section-lede">A direct agreement between you and the practice: a monthly fee, clearly listed services, and no per-visit insurance billing.</p>
       </div>
-      <div class="ledger">
-        <div class="reveal">
-          <h3>Membership generally includes</h3>
-          <ul>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10.5l4 4 8-9"/></svg><span>Primary care visits with your provider</span></li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10.5l4 4 8-9"/></svg><span>Same-day or next-day scheduling when available</span></li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10.5l4 4 8-9"/></svg><span>Patient portal messaging between visits</span></li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10.5l4 4 8-9"/></svg><span>Chronic condition management and annual wellness care</span></li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10.5l4 4 8-9"/></svg><span>Care coordination and referrals when you need a specialist</span></li>
-          </ul>
-          <p class="ledger-note">[TBD-CLIENT: confirm this list against the final membership agreement]</p>
-        </div>
-        <div class="reveal">
-          <h3>Membership is not insurance</h3>
-          <ul>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 10h10"/></svg><span>It does not cover hospital care, emergency care, specialists, imaging centers or prescriptions filled at a pharmacy.</span></li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 10h10"/></svg><span>Most members pair membership with a high-deductible or catastrophic insurance plan &mdash; a licensed insurance agent can advise on what fits.</span></li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 10h10"/></svg><span>Labs, certain procedures, BHRT and psychiatry services may be billed separately. [TBD-CLIENT: confirm what is in and out of membership]</span></li>
-            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 10h10"/></svg><span>[TBD-CLIENT: any state-required DPC agreement disclosures &mdash; attorney review]</span></li>
-          </ul>
+      <ol class="steps" data-stagger>
+        <li class="step">
+          <span class="step-num">01</span>
+          <h3>Enroll</h3>
+          <p>Pick a plan and sign up online. [TBD-CLIENT: confirm enrollment fee and cancellation terms]</p>
+        </li>
+        <li class="step">
+          <span class="step-num">02</span>
+          <h3>One flat fee</h3>
+          <p>Your monthly fee covers the care listed in your plan &mdash; visits, portal messaging and care coordination.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">03</span>
+          <h3>Use your care</h3>
+          <p>Book visits when you need them and message between visits, without wondering what an appointment will cost.</p>
+        </li>
+        <li class="step">
+          <span class="step-num">04</span>
+          <h3>Adjust as life changes</h3>
+          <p>[TBD-CLIENT: confirm plan-change and pause policies]</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== EDIT: coverage reminder (details live on how-dpc-works.html#coverage) ===== -->
+  <section class="section section-ruled" aria-labelledby="coverage-heading">
+    <div class="wrap split">
+      <div class="reveal">
+        <p class="eyebrow">Before you choose</p>
+        <h2 id="coverage-heading">Membership is <em class="accent">not insurance.</em></h2>
+      </div>
+      <div class="reveal">
+        <p class="section-lede">See what membership includes, what it does not cover, and how it fits alongside an insurance plan for hospital and emergency care.</p>
+        <div class="actions">
+          <a class="link-arrow" href="how-dpc-works.html#coverage">What membership covers</a>
+          <a class="link-arrow" href="how-dpc-works.html#faq">Read the FAQ</a>
         </div>
       </div>
     </div>
@@ -210,7 +223,7 @@
 
 <!-- ======================================================================
      CLOSING CALL TO ACTION + SITE FOOTER — identical on every page.
-     Edit on one page, then copy the whole block across all eight HTML files.
+     Edit on one page, then copy the whole block across all the HTML pages.
      ====================================================================== -->
 <section class="closing" aria-labelledby="closing-heading">
   <div class="wrap closing-grid">
@@ -232,18 +245,26 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
-      <div>
+      <div class="footer-brand">
         <!-- EDIT: footer logo -->
         <img class="footer-logo" src="assets/brand/logo.webp" width="420" height="391" alt="The Wellness Advocate" loading="lazy" decoding="async">
-        <p class="footer-place">Direct primary care, hormone health and psychiatry<br>Jacksonville, Florida</p>
+        <p class="footer-place">Direct primary care, hormone therapy, and psychiatry &amp; mental health<br>Jacksonville, Florida</p>
       </div>
       <nav aria-label="Practice">
         <p class="footer-head">Practice</p>
         <ul class="footer-links">
+          <li><a href="how-dpc-works.html">How DPC Works</a></li>
+          <li><a href="membership.html">Membership &amp; Pricing</a></li>
           <li><a href="about.html">About Aimee</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="membership.html">Membership</a></li>
-          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="new-patients.html">New Patients</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Services">
+        <p class="footer-head">Services</p>
+        <ul class="footer-links">
+          <li><a href="primary-care.html">Primary Care</a></li>
+          <li><a href="hormone-therapy.html">Hormone Therapy</a></li>
+          <li><a href="psychiatry.html">Psychiatry &amp; Mental Health</a></li>
         </ul>
       </nav>
       <nav aria-label="Patients">
@@ -263,14 +284,15 @@
       </div>
     </div>
 
-    <!-- EDIT: crisis line and service area -->
-    <div class="crisis">
+    <div class="crisis" role="note" aria-label="Crisis and emergency information">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5.2 3.5h3.1l1.6 4-2 1.3a11 11 0 0 0 5.3 5.3l1.3-2 4 1.6v3.1a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 3.2 5.7a2 2 0 0 1 2-2.2z"/></svg>
       <div>
-        <p><strong>If you are experiencing a mental health emergency, call or text <a href="tel:988">988</a> or go to your nearest emergency room.</strong></p>
-        <p>Services are available to patients located in [TBD-CLIENT: licensed states].</p>
+        <p><strong>If you are experiencing a mental health crisis, call or text <a href="tel:988">988</a> to reach the 988 Suicide &amp; Crisis Lifeline.</strong></p>
+        <p>For an emergency, call <a href="tel:911">911</a> or go to your nearest emergency room. This website and its contact form are not monitored for urgent messages.</p>
       </div>
     </div>
+    <!-- EDIT: service area -->
+    <p class="footer-area">Services are available to patients located in [TBD-CLIENT: licensed states].</p>
 
     <div class="footer-fine">
       <p>&copy; <span class="js-year">2026</span> The Wellness Advocate, Jacksonville, Florida. This website is general information, not medical advice &mdash; see <a href="privacy.html">Privacy &amp; Disclosures</a>.</p>
