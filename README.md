@@ -1,27 +1,40 @@
 # The Wellness Advocate — Website
 
 Marketing site for **The Wellness Advocate**, a cash-pay Direct Primary Care
-(DPC) practice in Jacksonville, FL, also offering bioidentical hormone
-replacement therapy (BHRT) and psychiatry. Provider: Aimee Roberts-Serrato,
-MSN, APRN, PMHNP-BC, FNP-C. Built by Robinson Consulting Group.
+(DPC) practice in Jacksonville, FL, also offering hormone therapy (BHRT) and
+psychiatry & mental health care. Provider: Aimee Roberts-Serrato, MSN, APRN,
+PMHNP-BC, FNP-C. Built by Robinson Consulting Group.
 
 Hand-authored static site — no framework, no build step, no CMS, no npm
-dependencies, no analytics, no cookies.
+dependencies, no cookies. Analytics is not switched on yet; a cookieless slot
+is ready (see "Analytics").
 
 ## File map
 
+Pages follow the signed proposal:
+
 ```
 index.html            Home — hero, what DPC is, the three services, how it works, provider
-about.html            Provider bio, education and credentials, care philosophy
-services.html         DPC / BHRT / Psychiatry (anchors: #dpc #bhrt #psychiatry)
-membership.html       How membership works, why cash-pay, plans (#plans), inclusions
-faq.html              Ten prospective-patient questions
+how-dpc-works.html    How Direct Primary Care Works — the model, why cash-pay,
+                      what membership covers (#coverage) and the FAQ (#faq)
+membership.html       Membership & Pricing — plans (#plans), how enrollment works
+services.html         Short overview of the three services (parent of the Services menu)
+primary-care.html     Primary Care
+hormone-therapy.html  Hormone Therapy (BHRT) — carries the FTC compliance comment
+psychiatry.html       Psychiatry & Mental Health
+about.html            About Aimee — bio, education and credentials, care philosophy
+new-patients.html     New Patients — choose a plan, enroll, intake forms, first visit,
+                      what to bring, reaching the practice between visits
 contact.html          Practice details, contact form (backend TODO), booking (#book)
 privacy.html          Privacy policy / HIPAA notice / medical disclaimer — placeholders
 404.html              Not-found page
+faq.html              Redirect only: sends visitors to how-dpc-works.html#faq
+sitemap.xml           Every public page, for search engines
+robots.txt            Points search engines at the sitemap
+partials/             Reusable snippets that are NOT shown on any page (see below)
 css/styles.css        The one stylesheet; colors, fonts and spacing live in :root at the top
-js/main.js            Booking/portal URLs, mobile menu, current-page marker, scroll reveals
-assets/brand/         Logo files (see below)
+js/main.js            OptiMantra link addresses, menus, current-page marker, scroll reveals
+assets/brand/         Logo files and the social-sharing image (see below)
 assets/favicon-32.png, assets/apple-touch-icon.png   Browser and home-screen icons
 amplify.yml           Amplify build spec (no-build static deploy)
 customHttp.yml        Amplify security headers (HSTS, CSP, etc.)
@@ -38,6 +51,7 @@ customHttp.yml        Amplify security headers (HSTS, CSP, etc.)
 | `wordmark.webp` | "THE WELLNESS — ADVOCATE —" | Header |
 | `logo.webp` | Full logo | Footer |
 | `leaves.webp` | The three watercolor leaves, isolated | Page accents |
+| `og-image.jpg` | Full logo on ivory, 1200×630 | Link previews (Open Graph / Twitter) |
 
 - **Colors** are sampled from the logo file: navy `#0A1E3C` (wordmark), rose
   gold `#C08265` (the T, A and "ADVOCATE"), blush and peach from the leaves.
@@ -48,7 +62,7 @@ customHttp.yml        Amplify security headers (HSTS, CSP, etc.)
   wordmark), *Jost* for body text. All three load from Google Fonts.
 - **The open rose-gold ring** around portraits echoes the ring in the logo.
 
-When a new logo file arrives, re-cut these four files from it (same names and
+When a new logo file arrives, re-cut these files from it (same names and
 sizes) and the whole site updates. A simplified small mark for the favicon is
 an open question for the client.
 
@@ -60,21 +74,52 @@ python3 -m http.server 8000
 
 Then open <http://localhost:8000>. No install, no build.
 
+## Changing the domain at launch (BASE_URL)
+
+Search engines and link previews need full web addresses, so one base address
+— `BASE_URL` — appears in every page's canonical and social-sharing tags, in
+the structured data, in `sitemap.xml` and in `robots.txt`. It is currently
+RCG's Amplify preview:
+
+```
+https://main.d1bs05hyunugqi.amplifyapp.com
+```
+
+When the final domain is chosen, swap it everywhere with one command (put the
+real domain in place of `https://www.example.com`, no trailing slash):
+
+```
+grep -rl 'https://main.d1bs05hyunugqi.amplifyapp.com' --include='*.html' --include='*.xml' --include='*.txt' . \
+  | xargs perl -pi -e 's#https://main\.d1bs05hyunugqi\.amplifyapp\.com#https://www.example.com#g'
+```
+
+Then confirm nothing was missed: `grep -rn "amplifyapp" .` should return
+nothing. Submit the new `sitemap.xml` address in Google Search Console.
+
 ## Editing conventions
 
 - **`[TBD-CLIENT: …]` markers** — every fact not yet confirmed by the client
   (prices, phone, address, hours, licensed states, policies) appears in the
-  pages as a literal `[TBD-CLIENT: description]` marker. Find them all with:
-  `grep -rn "TBD-CLIENT" --include="*.html" --include="*.js" .`
+  pages as a literal `[TBD-CLIENT: description]` marker. **`[TBD-RCG: …]`**
+  marks items RCG finishes (analytics). Find them all with:
+  `grep -rn "TBD-" --include="*.html" --include="*.js" .`
   Nothing should launch while any marker remains.
 - **`<!-- EDIT: … -->` comments** mark every editable region in the HTML.
   `<!-- VERIFY: … -->` marks a fact to confirm with the client.
-- **Header and footer are identical on all eight pages.** Edit once, then copy
-  the whole block (or find-and-replace) across the other pages.
-- **Booking + patient portal links** — paste the real OptiMantra URLs into the
-  `BOOKING_URL` and `PORTAL_URL` constants at the top of `js/main.js` (one line
-  each). Every button and link updates automatically; until then they fall
-  back to `contact.html#book`.
+- **Header and footer are identical on every page** (except the `faq.html`
+  redirect). Edit once, then copy the whole block (or find-and-replace) across
+  the other pages.
+- **OptiMantra links** — paste the real addresses into the four constants at
+  the top of `js/main.js` (one line each): `BOOKING_URL` (every "Book a visit"),
+  `PORTAL_URL` (every "Patient Portal"), `ENROLL_URL` ("Enroll online") and
+  `INTAKE_URL` ("Open intake forms"). Until then the links fall back to
+  `contact.html#book`. Also replace the matching visible `[TBD-CLIENT]` text on
+  `new-patients.html` and `contact.html`.
+- **Crisis information** appears in the footer and on the psychiatry,
+  contact, new-patients and privacy pages. It is the same block everywhere
+  (the 988 Suicide & Crisis Lifeline, 911 or the nearest emergency room, and
+  that the site and form are not monitored for urgent messages). If the wording
+  ever changes, change every copy the same way.
 - **Photos** — each portrait slot has an `EDIT` comment showing the one `<img>`
   line to add. Square photos work best (they are cropped to a circle).
 - **No inline styles.** The live site's security policy (`customHttp.yml`)
@@ -83,10 +128,35 @@ Then open <http://localhost:8000>. No install, no build.
 - **Avoid long dashes (—) in large headings.** Bodoni Moda draws horizontal
   strokes as hairlines; at heading sizes a dash nearly disappears. Use a period
   or comma instead. Body text is fine.
+- **Her name with credentials always includes APRN** — in page titles and in
+  visible text (for example "Aimee Roberts-Serrato, APRN, PMHNP-BC, FNP-C").
 - **Compliance** — BHRT copy, privacy policy, HIPAA notice, and disclaimers are
   placeholders flagged with `<!-- COMPLIANCE: … -->` comments and must be
   reviewed by the client's attorney/malpractice carrier before launch. No
   testimonials or reviews may be added without a compliance review.
+
+## Florida free / discounted-service notice
+
+`partials/florida-free-service-notice.html` holds the statement required by
+section 456.062, Florida Statutes, in capital letters, ready to paste. It is
+**not shown on any page**. Add it only to a page or ad that offers a free,
+discounted-fee or reduced-fee service, examination or treatment (a free
+consultation, a discounted first visit, a promotional membership price). The
+comment in that file explains placement; confirm with counsel before any
+promotion goes live.
+
+## Analytics
+
+Not switched on. Each page's `<head>` has a commented-out slot marked
+`[TBD-RCG: analytics provider and token]`, planned as cookieless, aggregate
+visit counts with no personal or health information. To switch it on:
+
+1. In every page, move the script line out of the ANALYTICS comment and fill in
+   the provider's script address and token.
+2. Add the provider's domain to `script-src` and `connect-src` in
+   `customHttp.yml`, or the browser will block it.
+3. Replace the `[TBD-RCG]` analytics paragraph on `privacy.html` with the final
+   disclosure.
 
 ## Deploy (AWS Amplify)
 
@@ -96,6 +166,9 @@ headers at the edge).
 
 **Do not connect Amplify from this (Robinson Consulting Group) account.** After
 the repo is transferred to the client's account, connect Amplify there:
-Amplify Console → New app → Host web app → connect this repo/branch. Also set
-the custom 404 in the Amplify console: Rewrites and redirects → add
-`/<*>` → `/404.html` → `404 (Rewrite)`.
+Amplify Console → New app → Host web app → connect this repo/branch. Then add
+these in Rewrites and redirects, in this order:
+
+1. `/faq.html` → `/how-dpc-works.html` → `301 (Redirect - Permanent)` (the FAQ
+   moved; `faq.html` also redirects in the browser as a fallback)
+2. `/<*>` → `/404.html` → `404 (Rewrite)` (custom not-found page)
