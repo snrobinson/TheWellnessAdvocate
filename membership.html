@@ -4,44 +4,51 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Membership & Pricing | The Wellness Advocate</title>
-  <meta name="description" content="How Direct Primary Care membership works at The Wellness Advocate: flat monthly pricing, no insurance billing, more time with your provider.">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <!-- One Google Fonts family pair (Fraunces for headings, Outfit for body),
-       loaded with font-display: swap. -->
+  <meta name="description" content="How direct primary care membership works at The Wellness Advocate: one flat monthly fee, no insurance billing, more time with your provider.">
+  <meta name="theme-color" content="#FBF9F6">
+  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <!-- Fonts (Google Fonts, display=swap): Bodoni Moda for headings, Cinzel for
+       small capitals, Jost for body text — chosen to match the practice logo. -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&amp;family=Cinzel:wght@400..600&amp;family=Jost:wght@300..500&amp;display=swap">
   <link rel="stylesheet" href="css/styles.css">
+  <!-- Loaded in the head on purpose (not deferred): it marks the page as
+       JavaScript-enabled before the first paint, so the mobile menu never
+       flashes open and shifts the page. It waits for the page itself. -->
+  <script src="js/main.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <!-- ======================================================================
-     SITE HEADER — this block is IDENTICAL on every page.
-     To change the nav, edit it here on one page, then copy the whole
-     block (or find-and-replace) across all eight HTML files.
+     SITE HEADER — identical on every page. Edit it on one page, then copy
+     the whole block (or find-and-replace) across all eight HTML files.
      ====================================================================== -->
 <header class="site-header">
-  <div class="container header-inner">
-    <!-- EDIT: replace with logo image when the final logo is ready.
-         Swap the text below for: <img src="assets/logo.svg" alt="The Wellness Advocate"> -->
-    <a class="wordmark" href="index.html">The&nbsp;Wellness&nbsp;Advocate</a>
+  <div class="wrap header-bar">
+    <!-- EDIT: logo lockup (both images are cut from the practice logo) -->
+    <a class="brand" href="index.html">
+      <img class="brand-mark" src="assets/brand/mark.webp" width="225" height="176" alt="">
+      <img class="brand-word" src="assets/brand/wordmark.webp" width="640" height="104" alt="The Wellness Advocate — home">
+    </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
       <span class="nav-toggle-icon" aria-hidden="true"></span>
-      Menu
+      <span class="nav-toggle-label">Menu</span>
     </button>
     <nav id="site-nav" class="site-nav" aria-label="Main">
       <ul>
-        <li><a href="index.html">Home</a></li>
+        <li class="nav-home"><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="membership.html">Membership</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <!-- Patient portal link — real URL is set once in js/main.js (PORTAL_URL). -->
-        <li><a href="contact.html#book" class="js-portal-link nav-portal">Patient Portal</a></li>
-        <!-- Booking link — real URL is set once in js/main.js (BOOKING_URL). -->
-        <li><a href="contact.html#book" class="js-booking-link button button-primary nav-cta">Book a visit</a></li>
+        <!-- Patient portal — the real address is set once in js/main.js (PORTAL_URL) -->
+        <li><a class="nav-portal js-portal-link" href="contact.html#book">Patient Portal</a></li>
+        <!-- Booking — the real address is set once in js/main.js (BOOKING_URL) -->
+        <li class="nav-cta-item"><a class="button nav-cta js-booking-link" href="contact.html#book">Book a visit</a></li>
       </ul>
     </nav>
   </div>
@@ -50,161 +57,149 @@
 
 <main id="main">
 
-  <!-- ===== EDIT: membership hero ===== -->
-  <section class="hero">
-    <span class="orb orb-clay" style="top:6rem; right:-2rem;" aria-hidden="true"></span>
-    <div class="container">
-      <div class="reveal">
-        <p class="eyebrow">Membership</p>
-        <h1>Simple monthly pricing. <em class="accent">No insurance middleman.</em></h1>
-        <p class="hero-lede">One flat membership fee covers your ongoing care &mdash; so decisions
-          get made between you and your provider, not by a claims department.</p>
-        <div class="cta-row">
-          <a href="contact.html#book" class="button button-primary js-booking-link">Book a visit</a>
-          <a href="faq.html" class="button button-secondary">Read the FAQ</a>
-        </div>
+  <!-- ===== EDIT: membership page heading ===== -->
+  <section class="page-hero" aria-labelledby="page-heading">
+    <div class="wrap">
+      <p class="eyebrow rise rise-1">Membership</p>
+      <h1 id="page-heading" class="rise rise-2">Simple monthly pricing. <em class="accent">No insurance middleman.</em></h1>
+      <p class="hero-lede rise rise-3">One flat membership fee covers your ongoing care, so decisions are made between you and your provider &mdash; not by a claims department.</p>
+      <div class="actions rise rise-4">
+        <a class="button js-booking-link" href="contact.html#book">Book a visit</a>
+        <a class="link-arrow" href="#plans">See the plans</a>
       </div>
     </div>
+    <img class="page-hero-leaves" src="assets/brand/leaves.webp" width="285" height="498" alt="" decoding="async">
   </section>
 
   <!-- ===== EDIT: how membership works ===== -->
-  <section class="section" aria-labelledby="how-membership-heading">
-    <div class="container">
-      <div class="reveal">
-        <p class="eyebrow">01 &mdash; The model</p>
-        <h2 id="how-membership-heading">How membership <em class="accent">works</em></h2>
-        <p class="section-lede">Membership is a direct agreement between you and the practice:
-          a monthly fee, clearly listed services, and no per-visit insurance billing.</p>
+  <section class="section" aria-labelledby="how-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">The model</p>
+        <h2 id="how-heading">How membership <em class="accent">works.</em></h2>
+        <p class="section-lede">A direct agreement between you and the practice: a monthly fee, clearly listed services, and no per-visit insurance billing.</p>
       </div>
       <ol class="steps" data-stagger>
-        <li>
+        <li class="step">
+          <span class="step-num">01</span>
           <h3>Enroll</h3>
-          <p>Pick a plan and sign up online. Membership is month-to-month.
-            [TBD-CLIENT: confirm enrollment fee and cancellation terms]</p>
+          <p>Pick a plan and sign up online. [TBD-CLIENT: confirm enrollment fee and cancellation terms]</p>
         </li>
-        <li>
-          <h3>Pay one flat fee</h3>
-          <p>Your monthly fee covers the care listed in your plan &mdash; visits, portal
-            messaging, and care coordination.</p>
+        <li class="step">
+          <span class="step-num">02</span>
+          <h3>One flat fee</h3>
+          <p>Your monthly fee covers the care listed in your plan &mdash; visits, portal messaging and care coordination.</p>
         </li>
-        <li>
+        <li class="step">
+          <span class="step-num">03</span>
           <h3>Use your care</h3>
-          <p>Book visits when you need them, message between visits, and never wonder what
-            an appointment will cost.</p>
+          <p>Book visits when you need them and message between visits, without wondering what an appointment will cost.</p>
         </li>
-        <li>
-          <h3>Adjust anytime</h3>
-          <p>Life changes &mdash; your plan can too. [TBD-CLIENT: confirm plan-change and
-            pause policies]</p>
+        <li class="step">
+          <span class="step-num">04</span>
+          <h3>Adjust as life changes</h3>
+          <p>[TBD-CLIENT: confirm plan-change and pause policies]</p>
         </li>
       </ol>
     </div>
   </section>
 
   <!-- ===== EDIT: why cash-pay ===== -->
-  <section class="section section-dark on-dark" aria-labelledby="why-heading">
-    <div class="container">
-      <div class="reveal">
-        <p class="eyebrow">02 &mdash; The why</p>
-        <h2 id="why-heading">Why <em class="accent">cash-pay?</em></h2>
-        <p class="section-lede">Removing insurance from everyday primary care changes what a
-          visit can be.</p>
+  <section class="section section-navy on-navy" aria-labelledby="why-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Why cash-pay</p>
+        <h2 id="why-heading">Take insurance out of everyday care, and <em class="accent">the visit changes.</em></h2>
       </div>
-      <ol class="steps steps-3col" data-stagger>
-        <li>
+      <div class="trio" data-stagger>
+        <div class="trio-item">
+          <span class="trio-num" aria-hidden="true">i.</span>
           <h3>More time with your provider</h3>
-          <p>Without insurance quotas, visits are scheduled for the time your questions
-            actually need.</p>
-        </li>
-        <li>
+          <p>Without insurance quotas, visits are scheduled for the time your questions actually need.</p>
+        </div>
+        <div class="trio-item">
+          <span class="trio-num" aria-hidden="true">ii.</span>
           <h3>No billing surprises</h3>
-          <p>You know the price before you walk in. No claims, no codes, no statements
-            months later.</p>
-        </li>
-        <li>
-          <h3>Care decisions stay yours</h3>
-          <p>Plans are built around what you and your provider decide together &mdash; not what
-            a payer will reimburse.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- ===== EDIT: pricing table (all tiers are placeholders) ===== -->
-  <section class="section" aria-labelledby="pricing-heading">
-    <div class="container">
-      <div class="reveal">
-        <p class="eyebrow">03 &mdash; Plans</p>
-        <h2 id="pricing-heading">Membership <em class="accent">plans</em></h2>
-        <p class="section-lede">[TBD-CLIENT: confirm number of tiers, names, prices, and
-          included services &mdash; the three cards below are placeholders]</p>
-      </div>
-      <div class="pricing-grid" data-stagger>
-        <div class="price-card">
-          <h3>[TBD-CLIENT: tier 1 name]</h3>
-          <p class="price">[TBD-CLIENT: tier 1 monthly price]</p>
-          <ul>
-            <li>[TBD-CLIENT: tier 1 included service]</li>
-            <li>[TBD-CLIENT: tier 1 included service]</li>
-            <li>[TBD-CLIENT: tier 1 included service]</li>
-          </ul>
-          <a href="contact.html#book" class="button button-primary js-booking-link">Get started</a>
+          <p>You know the price before you arrive. No claims, no codes, no statements months later.</p>
         </div>
-        <div class="price-card featured">
-          <h3>[TBD-CLIENT: tier 2 name]</h3>
-          <p class="price">[TBD-CLIENT: tier 2 monthly price]</p>
-          <ul>
-            <li>[TBD-CLIENT: tier 2 included service]</li>
-            <li>[TBD-CLIENT: tier 2 included service]</li>
-            <li>[TBD-CLIENT: tier 2 included service]</li>
-          </ul>
-          <a href="contact.html#book" class="button button-primary js-booking-link">Get started</a>
-        </div>
-        <div class="price-card">
-          <h3>[TBD-CLIENT: tier 3 name]</h3>
-          <p class="price">[TBD-CLIENT: tier 3 monthly price]</p>
-          <ul>
-            <li>[TBD-CLIENT: tier 3 included service]</li>
-            <li>[TBD-CLIENT: tier 3 included service]</li>
-            <li>[TBD-CLIENT: tier 3 included service]</li>
-          </ul>
-          <a href="contact.html#book" class="button button-primary js-booking-link">Get started</a>
+        <div class="trio-item">
+          <span class="trio-num" aria-hidden="true">iii.</span>
+          <h3>Decisions stay yours</h3>
+          <p>Plans are built around what you and your provider decide together, not what a payer will reimburse.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== EDIT: what membership does / does not include ===== -->
-  <section class="section section-cream" aria-labelledby="includes-heading">
-    <div class="container">
-      <div class="reveal">
-        <p class="eyebrow">04 &mdash; The fine print, plainly</p>
-        <h2 id="includes-heading">What membership does &mdash; and <em class="accent">doesn&rsquo;t</em> &mdash; include</h2>
+  <!-- ===== EDIT: membership plans (all three tiers are placeholders) ===== -->
+  <section class="section" id="plans" aria-labelledby="plans-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Plans</p>
+        <h2 id="plans-heading">Membership <em class="accent">plans.</em></h2>
+        <p class="section-lede">[TBD-CLIENT: confirm the number of tiers, their names, prices and what each includes &mdash; the three plans below are placeholders]</p>
       </div>
-      <div class="compare-cols" data-stagger>
-        <div class="card">
+      <div class="tiers" data-stagger>
+        <article class="tier">
+          <h3 class="tier-name">[TBD-CLIENT: tier 1 name]</h3>
+          <p class="tier-price">[TBD-CLIENT: tier 1 monthly price]</p>
+          <ul>
+            <li>[TBD-CLIENT: tier 1 included service]</li>
+            <li>[TBD-CLIENT: tier 1 included service]</li>
+            <li>[TBD-CLIENT: tier 1 included service]</li>
+          </ul>
+          <a class="button button-quiet js-booking-link" href="contact.html#book">Get started</a>
+        </article>
+        <article class="tier tier-featured on-navy">
+          <h3 class="tier-name">[TBD-CLIENT: tier 2 name]</h3>
+          <p class="tier-price">[TBD-CLIENT: tier 2 monthly price]</p>
+          <ul>
+            <li>[TBD-CLIENT: tier 2 included service]</li>
+            <li>[TBD-CLIENT: tier 2 included service]</li>
+            <li>[TBD-CLIENT: tier 2 included service]</li>
+          </ul>
+          <a class="button js-booking-link" href="contact.html#book">Get started</a>
+        </article>
+        <article class="tier">
+          <h3 class="tier-name">[TBD-CLIENT: tier 3 name]</h3>
+          <p class="tier-price">[TBD-CLIENT: tier 3 monthly price]</p>
+          <ul>
+            <li>[TBD-CLIENT: tier 3 included service]</li>
+            <li>[TBD-CLIENT: tier 3 included service]</li>
+            <li>[TBD-CLIENT: tier 3 included service]</li>
+          </ul>
+          <a class="button button-quiet js-booking-link" href="contact.html#book">Get started</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDIT: what membership does and does not include ===== -->
+  <section class="section section-porcelain" aria-labelledby="includes-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">The fine print, plainly</p>
+        <h2 id="includes-heading">What membership does, and <em class="accent">doesn&rsquo;t</em>, include.</h2>
+      </div>
+      <div class="ledger">
+        <div class="reveal">
           <h3>Membership generally includes</h3>
-          <p>[TBD-CLIENT: confirm this list against the final membership agreement]</p>
           <ul>
-            <li>Primary care visits with your provider</li>
-            <li>Same-day / next-day scheduling when available</li>
-            <li>Patient portal messaging between visits</li>
-            <li>Chronic condition management and annual wellness care</li>
-            <li>Care coordination and referrals when you need a specialist</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10.5l4 4 8-9"/></svg><span>Primary care visits with your provider</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10.5l4 4 8-9"/></svg><span>Same-day or next-day scheduling when available</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10.5l4 4 8-9"/></svg><span>Patient portal messaging between visits</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10.5l4 4 8-9"/></svg><span>Chronic condition management and annual wellness care</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10.5l4 4 8-9"/></svg><span>Care coordination and referrals when you need a specialist</span></li>
           </ul>
+          <p class="ledger-note">[TBD-CLIENT: confirm this list against the final membership agreement]</p>
         </div>
-        <div class="card">
+        <div class="reveal">
           <h3>Membership is not insurance</h3>
           <ul>
-            <li>Membership does not cover hospital care, emergency care, specialists,
-              imaging centers, or prescriptions filled at a pharmacy.</li>
-            <li>Most members pair membership with a high-deductible or catastrophic
-              insurance plan for those situations &mdash; talk to a licensed insurance agent
-              about what fits your circumstances.</li>
-            <li>Labs, certain procedures, BHRT, and psychiatry services may be billed
-              separately. [TBD-CLIENT: confirm what is in vs. out of membership]</li>
-            <li>[TBD-CLIENT: any state-required DPC agreement disclosures &mdash; attorney
-              review]</li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 10h10"/></svg><span>It does not cover hospital care, emergency care, specialists, imaging centers or prescriptions filled at a pharmacy.</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 10h10"/></svg><span>Most members pair membership with a high-deductible or catastrophic insurance plan &mdash; a licensed insurance agent can advise on what fits.</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 10h10"/></svg><span>Labs, certain procedures, BHRT and psychiatry services may be billed separately. [TBD-CLIENT: confirm what is in and out of membership]</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M5 10h10"/></svg><span>[TBD-CLIENT: any state-required DPC agreement disclosures &mdash; attorney review]</span></li>
           </ul>
         </div>
       </div>
@@ -214,58 +209,76 @@
 </main>
 
 <!-- ======================================================================
-     PRE-FOOTER CTA BAND + SITE FOOTER — this block is IDENTICAL on every
-     page. To change it, edit it here on one page, then copy the whole
-     block (or find-and-replace) across all eight HTML files.
+     CLOSING CALL TO ACTION + SITE FOOTER — identical on every page.
+     Edit on one page, then copy the whole block across all eight HTML files.
      ====================================================================== -->
-<section class="cta-band on-dark" aria-labelledby="cta-band-heading">
-  <div class="container">
-    <p class="eyebrow">Ready when you are</p>
-    <h2 id="cta-band-heading">Care that finally <em class="accent">knows you</em></h2>
-    <p>Become a member, or start with a single conversation — no insurance card required.</p>
-    <div class="cta-row">
-      <a href="contact.html#book" class="button button-primary js-booking-link">Book a visit</a>
-      <a href="membership.html" class="button button-secondary">Explore membership</a>
+<section class="closing" aria-labelledby="closing-heading">
+  <div class="wrap closing-grid">
+    <div class="reveal">
+      <p class="eyebrow">Ready when you are</p>
+      <h2 id="closing-heading">Care that finally has <em class="accent">time for you.</em></h2>
+    </div>
+    <div class="reveal">
+      <p>Book a first visit, or ask a question before you decide. No insurance card required.</p>
+      <div class="actions">
+        <a class="button js-booking-link" href="contact.html#book">Book a visit</a>
+        <a class="link-arrow" href="contact.html">Ask a question</a>
+      </div>
     </div>
   </div>
+  <img class="closing-leaves" src="assets/brand/leaves.webp" width="285" height="498" alt="" loading="lazy" decoding="async">
 </section>
+
 <footer class="site-footer">
-  <div class="container">
+  <div class="wrap">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <p class="footer-name">The Wellness Advocate</p>
-        <p>Direct Primary Care &middot; Hormone Health &middot; Psychiatry</p>
-        <p>Jacksonville, Florida</p>
-        <!-- EDIT: practice phone and email -->
-        <p>Phone: [TBD-CLIENT: practice phone number]</p>
-        <p>Email: [TBD-CLIENT: practice email address]</p>
+      <div>
+        <!-- EDIT: footer logo -->
+        <img class="footer-logo" src="assets/brand/logo.webp" width="420" height="391" alt="The Wellness Advocate" loading="lazy" decoding="async">
+        <p class="footer-place">Direct primary care, hormone health and psychiatry<br>Jacksonville, Florida</p>
       </div>
-      <nav class="footer-links" aria-label="Footer">
-        <ul>
+      <nav aria-label="Practice">
+        <p class="footer-head">Practice</p>
+        <ul class="footer-links">
+          <li><a href="about.html">About Aimee</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="membership.html">Membership</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="privacy.html">Privacy &amp; Disclosures</a></li>
-          <li><a href="contact.html#book" class="js-portal-link">Patient Portal</a></li>
-          <li><a href="contact.html#book" class="js-booking-link">Book a visit</a></li>
         </ul>
       </nav>
+      <nav aria-label="Patients">
+        <p class="footer-head">Patients</p>
+        <ul class="footer-links">
+          <li><a class="js-booking-link" href="contact.html#book">Book a visit</a></li>
+          <li><a class="js-portal-link" href="contact.html#book">Patient Portal</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy &amp; Disclosures</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <p class="footer-head">Reach the practice</p>
+        <!-- EDIT: practice phone and email -->
+        <p>[TBD-CLIENT: practice phone number]</p>
+        <p>[TBD-CLIENT: practice email address]</p>
+      </div>
     </div>
-    <div class="footer-crisis">
-      <p><strong>If you are experiencing a mental health emergency, call or text <a href="tel:988">988</a> or go to your nearest emergency room.</strong></p>
-      <p>Services are available to patients located in [TBD-CLIENT: licensed states].</p>
+
+    <!-- EDIT: crisis line and service area -->
+    <div class="crisis">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5.2 3.5h3.1l1.6 4-2 1.3a11 11 0 0 0 5.3 5.3l1.3-2 4 1.6v3.1a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 3.2 5.7a2 2 0 0 1 2-2.2z"/></svg>
+      <div>
+        <p><strong>If you are experiencing a mental health emergency, call or text <a href="tel:988">988</a> or go to your nearest emergency room.</strong></p>
+        <p>Services are available to patients located in [TBD-CLIENT: licensed states].</p>
+      </div>
     </div>
-    <p class="footer-fine">
-      &copy; <span class="js-year">2026</span> The Wellness Advocate. All rights reserved.
-      This website is for general information only and is not medical advice &mdash; see
-      <a href="privacy.html">Privacy &amp; Disclosures</a>.
-      <span class="footer-credit">Website by Robinson Consulting Group</span>
-    </p>
+
+    <div class="footer-fine">
+      <p>&copy; <span class="js-year">2026</span> The Wellness Advocate, Jacksonville, Florida. This website is general information, not medical advice &mdash; see <a href="privacy.html">Privacy &amp; Disclosures</a>.</p>
+      <p class="footer-credit">Website by Robinson Consulting Group</p>
+    </div>
   </div>
 </footer>
-<!-- ===== END PRE-FOOTER + SITE FOOTER ===== -->
+<!-- ===== END CLOSING + SITE FOOTER ===== -->
 
-<script src="js/main.js" defer></script>
 </body>
 </html>
