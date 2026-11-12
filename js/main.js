@@ -12,6 +12,8 @@
 /* EDIT: paste the real OptiMantra URLs between the quotes. */
 var BOOKING_URL = "[TBD-CLIENT: OptiMantra booking URL]";
 var PORTAL_URL = "[TBD-CLIENT: OptiMantra patient portal URL]";
+var ENROLL_URL = "[TBD-CLIENT: OptiMantra enrollment URL]";   /* "Enroll online" on new-patients.html */
+var INTAKE_URL = "[TBD-CLIENT: OptiMantra intake forms URL]"; /* "Open intake forms" on new-patients.html */
 
 /* Tell the stylesheet JavaScript is running (enables the mobile menu and motion). */
 document.documentElement.classList.add("js");
@@ -27,6 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   wire(".js-booking-link", BOOKING_URL);
   wire(".js-portal-link", PORTAL_URL);
+  wire(".js-enroll-link", ENROLL_URL);
+  wire(".js-intake-link", INTAKE_URL);
 
   /* ----- Mobile menu ----- */
   var toggle = document.querySelector(".nav-toggle");
@@ -50,6 +54,35 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  /* ----- Services dropdown (desktop) -----
+     Hover and keyboard focus open it without JavaScript; the small arrow
+     button also opens it for touch screens. Escape or a click elsewhere closes it. */
+  document.querySelectorAll(".has-sub").forEach(function (item) {
+    var button = item.querySelector(".sub-toggle");
+    if (!button) return;
+    function setSub(open) {
+      item.classList.toggle("is-open", open);
+      item.classList.remove("is-dismissed");
+      button.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    button.addEventListener("click", function () {
+      setSub(!item.classList.contains("is-open"));
+    });
+    item.addEventListener("keydown", function (event) {
+      if (event.key !== "Escape") return;
+      setSub(false);
+      item.classList.add("is-dismissed"); /* stays shut until focus or the pointer leaves */
+      button.focus();
+    });
+    item.addEventListener("mouseleave", function () { item.classList.remove("is-dismissed"); });
+    item.addEventListener("focusout", function (event) {
+      if (!item.contains(event.relatedTarget)) item.classList.remove("is-dismissed");
+    });
+    document.addEventListener("click", function (event) {
+      if (!item.contains(event.target)) setSub(false);
+    });
+  });
+
   /* ----- Header hairline once the page scrolls ----- */
   var header = document.querySelector(".site-header");
   if (header) {
@@ -66,7 +99,12 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".site-nav a").forEach(function (link) {
     var target = (link.getAttribute("href") || "").split("#")[0];
     var isAction = link.classList.contains("nav-cta") || link.classList.contains("nav-portal");
-    if (target === here && !isAction) link.setAttribute("aria-current", "page");
+    if (target === here && !isAction) {
+      link.setAttribute("aria-current", "page");
+      /* on a service page, underline the "Services" parent too */
+      var parent = link.closest(".has-sub");
+      if (parent) parent.classList.add("is-current");
+    }
   });
 
   /* ----- Scroll reveals -----

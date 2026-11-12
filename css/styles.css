@@ -736,7 +736,10 @@ a:hover { color: var(--rose-deep); }
   line-height: 1.7;
   color: var(--navy);
 }
+.service-body h2,
 .service-body h3 {
+  line-height: 1.2;
+  letter-spacing: 0;
   margin: 2.6rem 0 0.75rem;
   padding-top: 1.4rem;
   border-top: 1px solid var(--line);
@@ -989,6 +992,74 @@ a:hover { color: var(--rose-deep); }
 .not-found .actions { justify-content: center; }
 
 /* ============================================================================
+   Additions for the proposal page structure
+   ========================================================================== */
+
+/* Services dropdown — on phones the three pages simply show, indented */
+.sub-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: var(--navy);
+  cursor: pointer;
+}
+.sub-toggle::before {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: translateY(-0.12rem) rotate(45deg);
+  transition: transform 0.3s var(--ease);
+}
+.sub-toggle[aria-expanded="true"]::before { transform: translateY(0.1rem) rotate(-135deg); }
+.site-nav .sub-nav { list-style: none; margin: 0; padding: 0 0 0.75rem 1.25rem; }
+.site-nav .sub-nav li { border-top: 0; }
+.site-nav .sub-nav a { padding: 0.45rem 0; font-size: 1.15rem; color: var(--slate); }
+
+/* Crisis information — the same block wherever it appears */
+.crisis { margin: 2.5rem 0; }
+.site-footer .crisis { margin: 3rem 0 0; }
+.footer-area { margin: 1rem 0 0; font-size: 0.93rem; color: var(--ink-soft); }
+
+/* A plain section separated by a hairline (used where two porcelain bands would meet) */
+.section-ruled { border-top: 1px solid var(--line); }
+
+/* A vertical numbered list, used for the new-patient steps */
+.steps-list { max-width: 44rem; }
+/* stays a vertical list at every width (outranks the multi-column .steps rules) */
+.steps.steps-list { grid-template-columns: minmax(0, 1fr); gap: 2.25rem; }
+.steps.steps-list::before { display: block; left: 0.55rem; right: auto; top: 0.6rem; bottom: 0.6rem; width: 1px; height: auto; }
+.steps-list .step { padding-left: 2.6rem; padding-top: 0; }
+.steps-list .step::before { top: 0.15rem; }
+.steps-list .step-actions { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; align-items: center; }
+
+/* Standalone service pages: the section heading is the page's H1 */
+main > .service:first-child { border-top: 0; padding-top: clamp(3rem, 8vw, 6.5rem); }
+.service-title h1 { font-size: clamp(2rem, 4.6vw, 3.35rem); line-height: 1.06; }
+
+/* Florida s. 456.062 free/discounted-service notice (see partials/).
+   Capital letters, set apart from the surrounding text. Not used on any page yet. */
+.fl-notice {
+  margin: 2rem 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line-strong);
+  background: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+
+/* ============================================================================
    Motion
    Everything that moves is opt-in: it only runs when JavaScript is on and the
    visitor has not asked their device to reduce motion.
@@ -1059,7 +1130,8 @@ a:hover { color: var(--rose-deep); }
   .trio { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3rem; border-top: 0; }
   .trio-item { border-bottom: 0; border-top: 1px solid var(--line); }
   .section-navy .trio-item { border-top-color: var(--line-navy); }
-  .footer-grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.2fr); gap: 2.5rem; }
+  .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.5rem; }
+  .footer-brand, .footer-contact { grid-column: 1 / -1; }
   .page-hero-leaves { display: block; }
   .closing-leaves { width: 11rem; right: 3%; bottom: -3rem; }
 }
@@ -1100,18 +1172,21 @@ a:hover { color: var(--rose-deep); }
   .doc-toc { position: sticky; top: 8rem; align-self: start; }
 
   .closing-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: end; gap: 4rem; }
+  .footer-grid { grid-template-columns: minmax(0, 1.25fr) repeat(3, minmax(0, 1fr)) minmax(0, 1.15fr); gap: 2rem; }
+  .footer-brand, .footer-contact { grid-column: auto; }
   .closing .actions { margin-top: 0; }
   /* leaves sit in a reserved right margin so they never run under the links */
   .closing-grid { padding-right: 12rem; }
   .closing-leaves { width: 10rem; right: 1.5%; bottom: -3rem; }
 }
 
-/* Full desktop menu — from 72em (1152px); below this the Menu button is used.
-   The logo itself links home, so the "Home" item is hidden here. */
-@media (min-width: 72em) {
+/* Full desktop menu — from 80em (1280px); below this the Menu button is used.
+   The logo itself links home, so the "Home" item is hidden here.
+   The three service pages sit in a small "Services" dropdown. */
+@media (min-width: 80em) {
   .header-bar { min-height: 5.5rem; }
-  .brand-mark { height: 3.4rem; }
-  .brand-word { height: 1.85rem; }
+  .brand-mark { height: 3.2rem; }
+  .brand-word { height: 1.75rem; }
   .site-nav .nav-home { display: none; }
 
   .js .nav-toggle { display: none; }
@@ -1126,10 +1201,10 @@ a:hover { color: var(--rose-deep); }
     overflow: visible;
     animation: none;
   }
-  .site-nav ul {
+  .site-nav > ul {
     display: flex;
     align-items: center;
-    gap: clamp(1.1rem, 1.8vw, 2rem);
+    gap: clamp(0.9rem, 1.4vw, 1.35rem);
     padding: 0;
   }
   .site-nav li { border-top: 0; }
@@ -1137,8 +1212,9 @@ a:hover { color: var(--rose-deep); }
     position: relative;
     padding: 0.4rem 0;
     font-family: var(--font-body);
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     letter-spacing: 0.02em;
+    white-space: nowrap;
   }
   .site-nav a:not(.nav-cta)::after {
     content: "";
@@ -1151,12 +1227,50 @@ a:hover { color: var(--rose-deep); }
     transition: transform 0.45s var(--ease);
   }
   .site-nav a:not(.nav-cta):hover::after,
-  .site-nav a[aria-current="page"]::after { transform: scaleX(1); }
+  .site-nav a[aria-current="page"]::after,
+  .site-nav .has-sub.is-current > a::after { transform: scaleX(1); }
   .site-nav a[aria-current="page"] { font-style: normal; color: var(--navy); }
   .site-nav a:hover { color: var(--navy); }
   .site-nav .nav-portal { color: var(--rose-deep); }
-  .site-nav .nav-cta-item { padding-top: 0; margin-left: 0.5rem; }
-  .site-nav a.nav-cta { padding: 0.85rem 1.4rem; min-height: 0; font-size: 0.75rem; }
+  .site-nav .nav-cta-item { padding-top: 0; margin-left: 0.4rem; }
+  .site-nav a.nav-cta { padding: 0.85rem 1.3rem; min-height: 0; font-size: 0.75rem; }
+
+  /* Services dropdown */
+  .has-sub { position: relative; display: flex; align-items: center; gap: 0.15rem; }
+  .sub-toggle { display: inline-flex; }
+  .site-nav .sub-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -1.25rem;
+    z-index: 20;
+    min-width: 17rem;
+    margin: 0;
+    padding: 0.6rem 1.25rem;
+    list-style: none;
+    background: var(--ivory);
+    border: 1px solid var(--line);
+    box-shadow: 0 18px 40px rgba(10, 30, 60, 0.08);
+  }
+  /* an invisible bridge so the pointer can travel from the link to the menu */
+  .sub-nav::before { content: ""; position: absolute; left: 0; right: 0; top: -0.9rem; height: 0.9rem; }
+  .has-sub:hover > .sub-nav,
+  .has-sub:focus-within > .sub-nav,
+  .has-sub.is-open > .sub-nav { display: block; }
+  /* Escape closes it even while focus or the pointer is still on the item */
+  .site-nav .has-sub.is-dismissed > .sub-nav { display: none; }
+  .site-nav .sub-nav li + li { border-top: 1px solid var(--line); }
+  .site-nav .sub-nav a {
+    display: block;
+    padding: 0.7rem 0;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    letter-spacing: 0;
+    color: var(--navy);
+  }
+  .site-nav .sub-nav a::after { display: none; }
+  .site-nav .sub-nav a:hover,
+  .site-nav .sub-nav a[aria-current="page"] { color: var(--rose-deep); }
 }
 
 /* ===== Reduced motion: no smooth scrolling, no animation ===== */
