@@ -1390,6 +1390,11 @@ body { background: var(--ivory) url("../assets/textures/grain.svg"); }
   .provider { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 5rem; }
 
   .split { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 5rem; align-items: start; }
+  /* the heading column carries more weight and stays beside a long list as it scrolls */
+  .split > :first-child { position: sticky; top: 7.5rem; }
+  .split h2 { font-size: clamp(2.6rem, 4.6vw, 4.25rem); }
+  .split .section-lede { margin-top: 1.5rem; }
+  .split .creds { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--line-strong); max-width: 24rem; }
 
   .navy-leaves { width: 12rem; right: 2%; top: -5rem; }
 
