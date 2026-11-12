@@ -103,7 +103,7 @@ h1, h2, h3, h4 {
   text-wrap: balance;
 }
 h1 { font-size: clamp(2.65rem, 7.4vw, 5.4rem); line-height: 1.02; }
-h2 { font-size: clamp(2rem, 4.6vw, 3.35rem); }
+h2 { font-size: clamp(2rem, 4.6vw, 3.75rem); }
 h3 { font-size: clamp(1.35rem, 2.2vw, 1.65rem); line-height: 1.2; letter-spacing: 0; }
 
 /* LEGIBILITY: Bodoni Moda has optical sizes. Left on "auto", big text gets the
@@ -436,7 +436,7 @@ a:hover { color: var(--rose-deep); }
   inset: auto 0 18% 0;
   text-align: center;
   font-family: var(--font-caps);
-  font-size: 0.76rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -1392,6 +1392,7 @@ body { background: var(--ivory) url("../assets/textures/grain.svg"); }
 
 @media (min-width: 64em) {
   .hero-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 4rem; }
+  .hero h1 { font-size: clamp(2.65rem, 6vw, 5.4rem); }
   .hero-grid .portrait-set { margin-right: 0; }
 
   .page-hero-leaves { width: 12rem; bottom: -3rem; }
@@ -1413,7 +1414,6 @@ body { background: var(--ivory) url("../assets/textures/grain.svg"); }
   .split { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 5rem; align-items: start; }
   /* the heading column carries more weight and stays beside a long list as it scrolls */
   .split > :first-child { position: sticky; top: 7.5rem; }
-  .split h2 { font-size: clamp(2.6rem, 4.6vw, 4.25rem); }
   .split .section-lede { margin-top: 1.5rem; }
   .split .split-aside { display: block; }
   .split .creds { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--line-strong); max-width: 24rem; }
@@ -1495,7 +1495,7 @@ body { background: var(--ivory) url("../assets/textures/grain.svg"); }
   .site-nav a:hover { color: var(--navy); }
   .site-nav .nav-portal { color: var(--rose-deep); }
   .site-nav .nav-cta-item { padding-top: 0; margin-left: 0.4rem; }
-  .site-nav a.nav-cta { padding: 0.85rem 1.3rem; min-height: 0; font-size: 0.8rem; }
+  .site-nav a.nav-cta { padding: 0.85rem 1.3rem; min-height: 0; font-size: 0.84rem; }
 
   /* Services dropdown */
   .has-sub { position: relative; display: flex; align-items: center; gap: 0.15rem; }
