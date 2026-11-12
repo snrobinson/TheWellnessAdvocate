@@ -60,6 +60,11 @@ customHttp.yml        Amplify security headers (HSTS, CSP, etc.)
 - **Type** mirrors the logo: *Bodoni Moda* for headings (the high-contrast TWA
   letters), *Cinzel* for small capital labels (the "THE WELLNESS ADVOCATE"
   wordmark), *Jost* for body text. All three load from Google Fonts.
+- **Legibility settings.** Bodoni Moda is pinned to a sturdier optical size
+  (`font-variation-settings: "opsz"`) with semibold headings, so its thin strokes
+  don't vanish on screen. Body text is Jost at weight 450, and small capital
+  labels are at least 0.76rem and weight 600. See the `LEGIBILITY` comment in
+  `css/styles.css` before making type lighter or smaller.
 - **The open rose-gold ring** around portraits echoes the ring in the logo.
 
 When a new logo file arrives, re-cut these files from it (same names and

@@ -40,9 +40,9 @@
 
   /* Text and lines */
   --ink:          #0A1E3C;
-  --ink-soft:     #4B5A6E;  /* secondary text (AA on ivory and porcelain) */
+  --ink-soft:     #3D4A5D;  /* secondary text (8.7:1 on ivory) */
   --on-navy:      #F4EFE9;  /* text on navy */
-  --on-navy-soft: #B9C3D2;  /* secondary text on navy */
+  --on-navy-soft: #C9D1DC;  /* secondary text on navy (11:1) */
   --line:         #E7DCD3;  /* hairlines on light grounds */
   --line-strong:  #D6C4B7;
   --line-navy:    rgba(244, 239, 233, 0.16);
@@ -78,7 +78,7 @@ body {
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 1.0625rem;
-  font-weight: 400;
+  font-weight: 450;  /* a touch above regular: Jost's 400 reads faint on ivory */
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -90,8 +90,7 @@ img { height: auto; }
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 400;
-  font-optical-sizing: auto;
+  font-weight: 500;
   color: var(--ink);
   line-height: 1.06;
   letter-spacing: -0.012em;
@@ -102,13 +101,31 @@ h1 { font-size: clamp(2.65rem, 7.4vw, 5.4rem); line-height: 1.02; }
 h2 { font-size: clamp(2rem, 4.6vw, 3.35rem); }
 h3 { font-size: clamp(1.35rem, 2.2vw, 1.65rem); line-height: 1.2; letter-spacing: 0; }
 
+/* LEGIBILITY: Bodoni Moda has optical sizes. Left on "auto", big text gets the
+   display cut, whose hairlines (the H crossbar, hyphens, serifs) vanish on
+   ordinary screens. Every Bodoni element is pinned to a sturdier text cut
+   instead: lower "opsz" = thicker thin strokes. Roman weights go to 600;
+   italics stop at 500 (the heaviest italic loaded). */
+h1, h2, h3, h4,
+.statement, .definition-text, .faq summary, .tier-price, .index-list a,
+.hero-sign-name, .svc-num, .trio-num, .service-numeral, .site-nav a, .doc-toc a::before {
+  font-optical-sizing: none;
+  font-variation-settings: "opsz" 18;
+}
+h1 { font-weight: 600; font-variation-settings: "opsz" 24; }
+h3, h4, .faq summary, .tier-price, .index-list a { font-weight: 600; font-variation-settings: "opsz" 11; }
+.statement, .definition-text { font-weight: 500; }
+.hero-sign-name, .svc-num, .trio-num, .service-numeral { font-weight: 500; font-variation-settings: "opsz" 11; }
+.site-nav a { font-weight: 500; font-variation-settings: "opsz" 11; }
+
 p, ul, ol, dl { margin: 0 0 1.1em; }
 p { text-wrap: pretty; }
-strong { font-weight: 500; }
+strong { font-weight: 600; }
 
 /* Italic accent words in headings, in rose — the rose-gold letters of the logo */
 em.accent, .accent {
   font-style: italic;
+  font-weight: 500;
   color: var(--rose-deep);
 }
 
@@ -157,9 +174,9 @@ a:hover { color: var(--rose-deep); }
   gap: 0.9rem;
   margin: 0 0 1.4rem;
   font-family: var(--font-caps);
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.24em;
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--rose-deep);
 }
@@ -181,9 +198,9 @@ a:hover { color: var(--rose-deep); }
 /* Credentials line, set like the logo's wordmark */
 .creds {
   font-family: var(--font-caps);
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.17em;
   text-transform: uppercase;
   color: var(--ink-soft);
   line-height: 1.9;
@@ -201,9 +218,9 @@ a:hover { color: var(--rose-deep); }
   background: var(--navy);
   color: var(--on-navy);
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: 0.84rem;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
@@ -225,9 +242,9 @@ a:hover { color: var(--rose-deep); }
   align-items: center;
   gap: 0.6rem;
   padding: 0.35rem 0;
-  font-size: 0.8rem;
+  font-size: 0.84rem;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--navy);
@@ -300,9 +317,9 @@ a:hover { color: var(--rose-deep); }
   border: 1px solid var(--line-strong);
   color: var(--navy);
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   cursor: pointer;
 }
@@ -411,8 +428,9 @@ a:hover { color: var(--rose-deep); }
   inset: auto 0 18% 0;
   text-align: center;
   font-family: var(--font-caps);
-  font-size: 0.68rem;
-  letter-spacing: 0.24em;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--rose-deep);
 }
@@ -574,9 +592,9 @@ a:hover { color: var(--rose-deep); }
 .svc-go {
   grid-column: 2;
   margin-top: 1.1rem;
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--rose-deep);
 }
@@ -624,8 +642,9 @@ a:hover { color: var(--rose-deep); }
 .step-num {
   display: block;
   font-family: var(--font-caps);
-  font-size: 0.72rem;
-  letter-spacing: 0.24em;
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   color: var(--rose-deep);
   margin-bottom: 0.4rem;
 }
@@ -762,9 +781,9 @@ a:hover { color: var(--rose-deep); }
 .tier-name {
   margin: 0;
   font-family: var(--font-caps);
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--rose-deep);
 }
@@ -843,9 +862,9 @@ a:hover { color: var(--rose-deep); }
 .details div:last-child { border-bottom: 1px solid var(--line); }
 .details dt {
   font-family: var(--font-caps);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--rose-deep);
   margin-bottom: 0.2rem;
@@ -856,9 +875,9 @@ a:hover { color: var(--rose-deep); }
 .field label {
   display: block;
   margin-bottom: 0.3rem;
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--navy);
 }
@@ -908,7 +927,7 @@ a:hover { color: var(--rose-deep); }
 .doc-section:last-child { border-bottom: 0; margin-bottom: 0; }
 .doc-section h2 { font-size: clamp(1.7rem, 3.2vw, 2.3rem); }
 .doc-section p { max-width: 42rem; color: var(--ink-soft); }
-.doc-date { font-family: var(--font-caps); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--rose-deep); }
+.doc-date { font-family: var(--font-caps); font-size: 0.84rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rose-deep); }
 
 /* ============================================================================
    Closing call to action + footer (shared on every page)
@@ -944,9 +963,9 @@ a:hover { color: var(--rose-deep); }
 .footer-head {
   margin: 0 0 1rem;
   font-family: var(--font-caps);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--rose-deep);
 }
@@ -1204,7 +1223,7 @@ main > .service:first-child { border-top: 0; padding-top: clamp(3rem, 8vw, 6.5re
   .site-nav > ul {
     display: flex;
     align-items: center;
-    gap: clamp(0.9rem, 1.4vw, 1.35rem);
+    gap: clamp(0.9rem, 1.4vw, 1.2rem);
     padding: 0;
   }
   .site-nav li { border-top: 0; }
@@ -1213,6 +1232,8 @@ main > .service:first-child { border-top: 0; padding-top: clamp(3rem, 8vw, 6.5re
     padding: 0.4rem 0;
     font-family: var(--font-body);
     font-size: 0.92rem;
+    font-weight: 450;
+    font-variation-settings: normal;
     letter-spacing: 0.02em;
     white-space: nowrap;
   }
@@ -1233,7 +1254,7 @@ main > .service:first-child { border-top: 0; padding-top: clamp(3rem, 8vw, 6.5re
   .site-nav a:hover { color: var(--navy); }
   .site-nav .nav-portal { color: var(--rose-deep); }
   .site-nav .nav-cta-item { padding-top: 0; margin-left: 0.4rem; }
-  .site-nav a.nav-cta { padding: 0.85rem 1.3rem; min-height: 0; font-size: 0.75rem; }
+  .site-nav a.nav-cta { padding: 0.85rem 1.3rem; min-height: 0; font-size: 0.8rem; }
 
   /* Services dropdown */
   .has-sub { position: relative; display: flex; align-items: center; gap: 0.15rem; }
