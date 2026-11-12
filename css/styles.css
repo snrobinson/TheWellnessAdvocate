@@ -265,6 +265,8 @@ a:hover { color: var(--rose-deep); }
   transition: transform 0.4s var(--ease);
 }
 .link-arrow:hover { color: var(--rose-deep); }
+.link-arrow { position: relative; }
+.link-arrow::before { content: ""; position: absolute; inset: -0.5rem 0; }  /* 44px+ tap area, same look */
 .link-arrow:hover::after { transform: translateX(0.3rem); }
 .on-navy .link-arrow { color: var(--on-navy); border-bottom-color: var(--rose-light); }
 
@@ -364,16 +366,16 @@ a:hover { color: var(--rose-deep); }
 .site-nav li { border-top: 1px solid var(--line); }
 .site-nav a {
   display: block;
-  padding: 0.95rem 0;
+  padding: 0.7rem 0;
   font-family: var(--font-display);
-  font-size: 1.55rem;
+  font-size: 1.3rem;
   line-height: 1.2;
   color: var(--navy);
   text-decoration: none;
 }
 .site-nav a[aria-current="page"] { color: var(--rose-deep); font-style: italic; }
 .site-nav .nav-portal { color: var(--rose-deep); }
-.site-nav .nav-cta-item { border-top: 0; padding-top: 1rem; }
+.site-nav .nav-cta-item { border-top: 0; padding-top: 0.75rem; }
 .site-nav a.nav-cta {
   display: flex;
   font-family: var(--font-body);
@@ -393,6 +395,7 @@ a:hover { color: var(--rose-deep); }
   background: var(--ivory);
   border-bottom: 1px solid var(--line);
   max-height: calc(100vh - 4.75rem);
+  max-height: calc(100dvh - 4.75rem);
   overflow-y: auto;
   animation: panel-in 0.4s var(--ease);
 }
@@ -691,6 +694,7 @@ a:hover { color: var(--rose-deep); }
 .fact-list svg { width: 1.1rem; height: 1.1rem; margin-top: 0.3rem; color: var(--rose); }
 
 /* Generic two-column split used on several pages */
+.split-aside { display: none; } /* extra lines that only balance the wide two-column layout */
 .split { display: grid; gap: 2.5rem; }
 
 /* Statement — a large serif line, left-aligned */
@@ -1006,7 +1010,7 @@ a:hover { color: var(--rose-deep); }
   color: var(--ink-soft);
 }
 .footer-fine p { margin: 0; max-width: 40rem; }
-.footer-credit { font-size: 0.8rem; letter-spacing: 0.04em; }
+.footer-credit { font-size: 0.85rem; letter-spacing: 0.04em; }
 
 /* ===== 404 ===== */
 .not-found { padding-block: clamp(4rem, 12vw, 9rem); text-align: center; }
@@ -1042,9 +1046,9 @@ a:hover { color: var(--rose-deep); }
   transition: transform 0.3s var(--ease);
 }
 .sub-toggle[aria-expanded="true"]::before { transform: translateY(0.1rem) rotate(-135deg); }
-.site-nav .sub-nav { list-style: none; margin: 0; padding: 0 0 0.75rem 1.25rem; }
+.site-nav .sub-nav { list-style: none; margin: -0.25rem 0 0; padding: 0 0 0.5rem 1.25rem; }
 .site-nav .sub-nav li { border-top: 0; }
-.site-nav .sub-nav a { padding: 0.45rem 0; font-size: 1.15rem; color: var(--slate); }
+.site-nav .sub-nav a { padding: 0.6rem 0; font-size: 1.1rem; color: var(--slate); }
 
 /* Crisis information — the same block wherever it appears */
 .crisis { margin: 2.5rem 0; }
@@ -1316,6 +1320,23 @@ body { background: var(--ivory) url("../assets/textures/grain.svg"); }
   .portrait-set-sm { width: min(64%, 14rem); }
   .portrait figcaption { padding-inline: 12%; line-height: 1.6; letter-spacing: 0.16em; text-wrap: balance; }
 
+  /* footer links: comfortable 40px+ tap rows */
+  .footer-links li + li { margin-top: 0; }
+  .footer-links a { display: block; padding: 0.55rem 0; }
+  .footer-head { margin-bottom: 0.25rem; }
+
+  /* headings: no desktop width cap, so they wrap in two or three lines, not four */
+  .page-hero h1 { max-width: none; }
+  .service-title h1 { font-size: 2.45rem; }
+
+  /* stacked two-column sections: heading sits close to its content */
+  .split { gap: 1.25rem; }
+  .split h2 { margin-bottom: 0; }
+
+  /* portrait placeholder caption breaks cleanly in two lines */
+  .portrait figcaption .sep { display: none; }
+  .portrait figcaption { font-size: 0.82rem; }
+
   /* lists of reasons and inclusions: same content, less air */
   .trio-item { padding: 1.5rem 0; }
   .trio-num { margin-bottom: 0.35rem; }
@@ -1394,6 +1415,7 @@ body { background: var(--ivory) url("../assets/textures/grain.svg"); }
   .split > :first-child { position: sticky; top: 7.5rem; }
   .split h2 { font-size: clamp(2.6rem, 4.6vw, 4.25rem); }
   .split .section-lede { margin-top: 1.5rem; }
+  .split .split-aside { display: block; }
   .split .creds { margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--line-strong); max-width: 24rem; }
 
   .navy-leaves { width: 12rem; right: 2%; top: -5rem; }
