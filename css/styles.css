@@ -19,6 +19,9 @@
 
 /* ===== EDIT: brand tokens ===== */
 :root {
+  /* This is a light design. Tell browsers and dark-mode tools not to recolor it. */
+  color-scheme: only light;
+
   /* Grounds */
   --ivory:        #FBF9F6;  /* page background */
   --porcelain:    #F5EEE9;  /* alternate sections (a breath of the blush leaf) */
@@ -951,6 +954,7 @@ a:hover { color: var(--rose-deep); }
 .closing h2 { margin: 0; max-width: 13ch; }
 .closing p { max-width: 30rem; color: var(--ink-soft); }
 .closing .actions { margin-top: 1.5rem; }
+.closing-grid > * { position: relative; z-index: 1; }  /* text always above the leaves */
 .closing-leaves {
   position: absolute;
   right: -1.5rem;
@@ -1407,7 +1411,6 @@ body { background: var(--ivory) url("../assets/textures/grain.svg"); }
     transition: transform 0.35s var(--ease), visibility 0s;
   }
   /* sits just under the header whenever the header is showing */
-  .js .section-bar.is-visible.is-under-header { transform: translateY(calc(4.75rem + 1px)); }
 }
 .section-bar-toggle {
   display: flex;
@@ -1483,6 +1486,9 @@ body { background: var(--ivory) url("../assets/textures/grain.svg"); }
   .portrait-set { width: min(72%, 16rem); }
   .portrait-set-sm { width: min(64%, 14rem); }
   .portrait figcaption { padding-inline: 12%; line-height: 1.6; letter-spacing: 0.16em; text-wrap: balance; }
+
+  /* closing call to action: buttons stack at the left, clear of the leaves */
+  .closing .actions { flex-direction: column; align-items: flex-start; }
 
   /* footer links: comfortable 40px+ tap rows */
   .footer-links li + li { margin-top: 0; }

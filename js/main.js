@@ -163,7 +163,8 @@ document.addEventListener("DOMContentLoaded", function () {
      desktop gets a slim rail on the right edge (one tick per section; the
      current one grows in rose gold and its name slides out briefly; hover or
      keyboard focus shows every name). Phones get a slim bar at the top that
-     names the current section and opens the full list on tap.
+     names the current section and opens the full list on tap; it appears
+     while the header is tucked away and steps aside when the header returns.
      Labels come from each section's small eyebrow line; a section can set its
      own short label with data-nav-label="...". */
   var mainEl = document.getElementById("main");
@@ -252,10 +253,11 @@ document.addEventListener("DOMContentLoaded", function () {
       var footerTop = footerEl ? footerEl.getBoundingClientRect().top : Infinity;
       var show = heroBottom < window.innerHeight * 0.4 && footerTop > window.innerHeight * 0.55;
       rail.classList.toggle("is-visible", show);
-      bar.classList.toggle("is-visible", show);
       if (!show) setBarOpen(false);
-      /* the phone bar sits under the header while the header is showing */
-      bar.classList.toggle("is-under-header", !!header && !header.classList.contains("is-hidden"));
+      /* the phone bar takes the header's place while the header is tucked away,
+         and steps aside when the header comes back, so the two never stack */
+      var headerShowing = !!header && !header.classList.contains("is-hidden");
+      bar.classList.toggle("is-visible", show && !headerShowing);
 
       var room = document.documentElement.scrollHeight - window.innerHeight;
       barProgress.style.setProperty("--read", room > 0 ? Math.min(1, window.scrollY / room).toFixed(3) : "0");
