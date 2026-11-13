@@ -65,7 +65,7 @@ customHttp.yml        Amplify security headers (HSTS, CSP, etc.)
 - **Legibility settings.** Bodoni Moda is pinned to a sturdier optical size
   (`font-variation-settings: "opsz"`) with semibold headings, so its thin strokes
   don't vanish on screen. Body text is Jost at weight 450, and small capital
-  labels are at least 0.76rem and weight 600. See the `LEGIBILITY` comment in
+  labels are at least 0.82rem and weight 600. See the `LEGIBILITY` comment in
   `css/styles.css` before making type lighter or smaller.
 - **The open rose-gold ring** around portraits echoes the ring in the logo.
 - **Texture and depth ("paper, foil and ink").** Light backgrounds carry a
@@ -195,7 +195,7 @@ AI assistants (ChatGPT, Claude, Perplexity, Google's AI answers), which is
 sometimes called GEO, generative engine optimization.
 
 - **Structured data.** Every page's `<head>` has a `<script type="application/ld+json">`
-  block describing the page, the practice (`MedicalClinic`) and Aimee (`Person`,
+  block describing the page, the practice (`MedicalOrganization`, since there is no office yet) and Aimee (`Person`,
   with her degrees and board certifications), all linked together. The
   How DPC Works page also lists the FAQ (`FAQPage`). **If you change an FAQ
   question or answer on that page, change the copy in its structured data the
