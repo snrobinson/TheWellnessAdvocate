@@ -30,7 +30,7 @@ privacy.html          Privacy policy / HIPAA notice / medical disclaimer — pla
 404.html              Not-found page
 faq.html              Redirect only: sends visitors to how-dpc-works.html#faq
 sitemap.xml           Every public page, for search engines
-robots.txt            Points search engines at the sitemap; welcomes AI assistants by name
+robots.txt            PREVIEW: blocks all crawlers until launch (see "Preview: hidden from search")
 llms.txt              Plain-language guide to the practice for AI assistants (see below)
 partials/             Reusable snippets that are NOT shown on any page (see below)
 css/styles.css        The one stylesheet; colors, fonts and spacing live in :root at the top
@@ -88,6 +88,30 @@ python3 -m http.server 8000
 ```
 
 Then open <http://localhost:8000>. No install, no build.
+
+## Preview: hidden from search
+
+Until launch the preview asks search engines and AI crawlers to stay away, in
+three places:
+
+1. `robots.txt` blocks every crawler (`Disallow: /`). The real launch version,
+   which welcomes search engines and names the AI assistants, waits in
+   `partials/robots-launch.txt`.
+2. Every page has a `<meta name="robots" content="noindex, nofollow">` line
+   marked `PREVIEW-ONLY`.
+3. `customHttp.yml` sends an `X-Robots-Tag: noindex, nofollow` header, also
+   marked `PREVIEW-ONLY`, which covers images, the README and other non-page files.
+
+**At launch, undo all three** (after the BASE_URL swap below):
+
+```
+git mv -f partials/robots-launch.txt robots.txt
+perl -ni -e 'print unless /PREVIEW-ONLY/' *.html
+```
+
+Then delete the two `X-Robots-Tag` lines and their `PREVIEW-ONLY` comment in
+`customHttp.yml`, and remove the "Not live yet" comment line at the top of the
+new `robots.txt`. Check: `grep -rn "PREVIEW-ONLY" .` should return nothing.
 
 ## Changing the domain at launch (BASE_URL)
 
@@ -204,7 +228,9 @@ sometimes called GEO, generative engine optimization.
 - **`llms.txt`** is a short Markdown summary of the practice and its pages,
   written for AI assistants. Keep its facts in step with the site, and add
   pricing or the address there once they are final.
-- **`robots.txt`** allows every crawler and names the AI ones explicitly. To keep
+- **`robots.txt`** blocks every crawler while the site is a private preview. The
+  launch version (`partials/robots-launch.txt`) allows every crawler and names the
+  AI ones explicitly. To keep
   the site out of AI *training* while staying visible in AI *answers*, follow
   the comment in that file.
 - **`sitemap.xml`** carries a `lastmod` date; update it when pages change.
