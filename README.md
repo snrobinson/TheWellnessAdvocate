@@ -161,6 +161,10 @@ nothing. Submit the new `sitemap.xml` address in Google Search Console.
   desktop, a slim bar at the top on phones. Its labels come from each section's
   small eyebrow line; to give a section a shorter label, add
   `data-nav-label="..."` to its `<section>` tag. Nothing to maintain otherwise.
+- **After editing `css/styles.css` or `js/main.js`**, change the `?v=` date on
+  their two lines in every page's `<head>` (for example `?v=20261113` to
+  `?v=20261120`), or phones may keep showing the old version:
+  `grep -rl '?v=20261113' --include='*.html' . | xargs perl -pi -e 's/\?v=20261113/?v=20261120/g'`
 - **No inline styles.** The live site's security policy (`customHttp.yml`)
   blocks `style="…"` attributes and `<style>` tags. Put all styling in
   `css/styles.css`.
