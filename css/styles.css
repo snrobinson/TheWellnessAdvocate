@@ -83,6 +83,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* links to a section stop below the pinned header (and the phone section bar) */
+  scroll-padding-top: 7.5rem;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
@@ -757,7 +759,6 @@ a:hover { color: var(--rose-deep); }
 .service {
   padding-block: var(--section);
   border-top: 1px solid var(--line);
-  scroll-margin-top: 4.75rem;
 }
 .service-grid { display: grid; gap: 2rem; }
 .service-numeral {
@@ -943,7 +944,7 @@ a:hover { color: var(--rose-deep); }
   color: var(--rose-deep);
 }
 .doc-toc a:hover { color: var(--rose-deep); }
-.doc-section { padding-bottom: 3rem; margin-bottom: 3rem; border-bottom: 1px solid var(--line); scroll-margin-top: 6rem; }
+.doc-section { padding-bottom: 3rem; margin-bottom: 3rem; border-bottom: 1px solid var(--line); }
 .doc-section:last-child { border-bottom: 0; margin-bottom: 0; }
 .doc-section h2 { font-size: clamp(1.7rem, 3.2vw, 2.3rem); }
 .doc-section p { max-width: 42rem; color: var(--ink-soft); }
@@ -1477,7 +1478,7 @@ body { background: var(--ivory) var(--grain); }
   .js .section-bar {
     display: block;
     position: fixed;
-    top: 0;
+    top: calc(4rem + 1px);  /* docked under the slim header */
     left: 0;
     right: 0;
     z-index: 95;
@@ -1495,7 +1496,6 @@ body { background: var(--ivory) var(--grain); }
     visibility: visible;
     transition: transform 0.35s var(--ease), visibility 0s;
   }
-  /* sits just under the header whenever the header is showing */
 }
 .section-bar-toggle {
   display: flex;
@@ -1554,11 +1554,18 @@ body { background: var(--ivory) var(--grain); }
 .bar-list li:last-child a { border-bottom: 0; }
 .bar-list a[aria-current] { color: var(--rose-deep); font-style: italic; }
 
-/* The header slides away while reading down and returns on the way up
-   (phones and tablets; the class is set by main.js). */
+/* The header (logo and menu) stays at the top of every page. On phones and
+   tablets it settles into a slimmer bar once the page is scrolled (main.js
+   sets .is-scrolled). The margin keeps the space it takes in the page the
+   same, so nothing below it jumps. */
 @media (max-width: 79.99em) {
-  .site-header { transition: border-color 0.4s var(--ease), transform 0.35s var(--ease); }
-  .site-header.is-hidden { transform: translateY(-100%); }
+  .header-bar { transition: min-height 0.35s var(--ease); }
+  .brand-mark, .brand-word { transition: height 0.35s var(--ease); }
+  .site-header { transition: border-color 0.4s var(--ease), margin 0.35s var(--ease); }
+  .site-header.is-scrolled { margin-bottom: 0.75rem; }
+  .site-header.is-scrolled .header-bar { min-height: 4rem; }
+  .site-header.is-scrolled .brand-mark { height: 2.4rem; }
+  .site-header.is-scrolled .brand-word { height: 1.25rem; }
 }
 
 /* ============================================================================
@@ -1646,6 +1653,7 @@ body { background: var(--ivory) var(--grain); }
 }
 
 @media (min-width: 64em) {
+  html { scroll-padding-top: 5.5rem; }
   .hero-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 4rem; }
   .hero h1 { font-size: clamp(2.65rem, 6vw, 5.4rem); }
   .hero-grid .portrait-set { margin-right: 0; }
@@ -1699,6 +1707,7 @@ body { background: var(--ivory) var(--grain); }
    The logo itself links home, so the "Home" item is hidden here.
    The three service pages sit in a small "Services" dropdown. */
 @media (min-width: 80em) {
+  html { scroll-padding-top: 7rem; }
   .header-bar { min-height: 5.5rem; }
   .brand-mark { height: 3.2rem; }
   .brand-word { height: 1.75rem; }

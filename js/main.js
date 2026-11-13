@@ -84,9 +84,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  /* ----- Scrolling: header hairline, header that steps aside, floating buttons -----
-     The header slides away while reading down and returns on any scroll up
-     (the CSS limits this to phones and tablets). After one screen of scrolling,
+  /* ----- Scrolling: header hairline, floating buttons -----
+     The header stays at the top; once the page is scrolled it gets a hairline
+     and, on phones and tablets, a slimmer bar (CSS). After one screen of scrolling,
      a "Back to top" button appears, its ring filling as the page is read; on
      phones a "Book a visit" button joins it unless a booking button is already
      on screen. */
@@ -96,7 +96,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var ring = document.querySelector(".to-top-progress");
   var footerArea = document.querySelector(".site-footer .footer-grid");
   var calmMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  var lastY = window.scrollY;
   var bookingInView = 0;
   var ticking = false;
 
@@ -105,16 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var y = window.scrollY;
     var screen = window.innerHeight;
     var menuOpen = !!(nav && nav.classList.contains("is-open"));
-    if (header) {
-      header.classList.toggle("is-scrolled", y > 4);
-      var dy = y - lastY;
-      if (Math.abs(dy) > 8) {
-        var busy = !!header.querySelector(":focus-visible"); /* a keyboard user is in the header */
-        header.classList.toggle("is-hidden", dy > 0 && y > header.offsetHeight * 2 && !menuOpen && !busy);
-        lastY = y;
-      }
-      if (y <= 0) header.classList.remove("is-hidden");
-    }
+    if (header) header.classList.toggle("is-scrolled", y > 4);
     var past = y > screen * 0.9 && !menuOpen;
     /* once the footer is on screen, the floating buttons step aside so they never
        sit on footer links; the footer has its own "Back to top" link */
@@ -133,10 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll);
-  if (header) {
-    /* keyboard users tabbing back into the header always see it */
-    header.addEventListener("focusin", function () { header.classList.remove("is-hidden"); });
-  }
   update();
 
   /* hide the floating "Book a visit" while another booking button or the footer is visible */
@@ -168,8 +154,8 @@ document.addEventListener("DOMContentLoaded", function () {
      desktop gets a slim rail on the right edge (one tick per section; the
      current one grows in rose gold and its name slides out briefly; hover or
      keyboard focus shows every name). Phones get a slim bar at the top that
-     names the current section and opens the full list on tap; it appears
-     while the header is tucked away and steps aside when the header returns.
+     names the current section and opens the full list on tap; it sits just
+     under the header once the page's opening section has scrolled away.
      Labels come from each section's small eyebrow line; a section can set its
      own short label with data-nav-label="...". */
   var mainEl = document.getElementById("main");
@@ -259,10 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var show = heroBottom < window.innerHeight * 0.4 && footerTop > window.innerHeight * 0.55;
       rail.classList.toggle("is-visible", show);
       if (!show) setBarOpen(false);
-      /* the phone bar takes the header's place while the header is tucked away,
-         and steps aside when the header comes back, so the two never stack */
-      var headerShowing = !!header && !header.classList.contains("is-hidden");
-      bar.classList.toggle("is-visible", show && !headerShowing);
+      bar.classList.toggle("is-visible", show);
 
       var room = document.documentElement.scrollHeight - window.innerHeight;
       barProgress.style.setProperty("--read", room > 0 ? Math.min(1, window.scrollY / room).toFixed(3) : "0");

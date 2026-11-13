@@ -200,20 +200,19 @@ nothing. Submit the new `sitemap.xml` address in Google Search Console.
 - **Getting around long pages.** The footer block ends with two floating
   buttons that `js/main.js` shows after the first screen of scrolling: "Back
   to top" (its rose-gold ring fills as the page is read) and, on phones only,
-  "Book a visit" (hidden while another booking button is on screen). On phones
-  and tablets the header slides away while reading down and returns on any
-  scroll up. The longest pages (`how-dpc-works`, `membership`, `new-patients`)
+  "Book a visit" (hidden while another booking button is on screen). The header (logo and menu) stays pinned at the top of every page; on phones and
+  tablets it settles into a slimmer bar once the page is scrolled. The longest pages (`how-dpc-works`, `membership`, `new-patients`)
   have an "On this page" row of links under the heading; if a section is added
   or renamed there, update that row and the section's `id` to match.
 - **Section navigator.** On pages with three or more sections, `js/main.js`
   adds a small index that follows the reader: a slim rail on the right edge on
-  desktop, a slim bar at the top on phones. Its labels come from each section's
+  desktop, a slim bar docked under the header on phones. Its labels come from each section's
   small eyebrow line; to give a section a shorter label, add
   `data-nav-label="..."` to its `<section>` tag. Nothing to maintain otherwise.
 - **After editing `css/styles.css` or `js/main.js`**, change the `?v=` date on
-  their two lines in every page's `<head>` (for example `?v=20261114` to
+  their two lines in every page's `<head>` (for example `?v=20261115` to
   `?v=20261120`), or phones may keep showing the old version:
-  `grep -rl '?v=20261114' --include='*.html' . | xargs perl -pi -e 's/\?v=20261114/?v=20261120/g'`
+  `grep -rl '?v=20261115' --include='*.html' . | xargs perl -pi -e 's/\?v=20261115/?v=20261120/g'`
 - **No inline styles.** The live site's security policy (`customHttp.yml`)
   blocks `style="…"` attributes and `<style>` tags. Put all styling in
   `css/styles.css`.
