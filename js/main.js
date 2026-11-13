@@ -151,9 +151,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ----- Section navigator -----
      On pages with three or more sections, a small index follows the reader:
-     desktop gets a slim rail on the right edge (one tick per section; the
-     current one grows in rose gold and its name slides out briefly; hover or
-     keyboard focus shows every name). Phones get a slim bar at the top that
+     desktop gets a quiet column of ticks on the right edge (one per section;
+     the current one is longer and rose gold; hover or keyboard focus shows
+     every name on a frosted panel). Phones get a slim bar at the top that
      names the current section and opens the full list on tap; it sits just
      under the header once the page's opening section has scrolled away.
      Labels come from each section's small eyebrow line; a section can set its
@@ -231,7 +231,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var footerEl = document.querySelector(".closing") || document.querySelector(".site-footer");
     var current = -1;
-    var flashTimer = null;
     var navTick = false;
     var updateSections = function () {
       navTick = false;
@@ -259,12 +258,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         barCurrent.textContent = entries[index].label;
         barCount.textContent = (index + 1) + " / " + entries.length;
-        if (current !== -1 && show) {
-          /* slide the new section's name out for a moment */
-          rail.classList.add("is-announcing");
-          clearTimeout(flashTimer);
-          flashTimer = setTimeout(function () { rail.classList.remove("is-announcing"); }, 1800);
-        }
         current = index;
       }
     };
@@ -274,28 +267,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", onSectionScroll, { passive: true });
     window.addEventListener("resize", onSectionScroll);
     updateSections();
-
-    /* The desktop rail fades away when the reader pauses, and comes back on
-       scroll or when the pointer nears the right edge. It stays while hovered
-       or while it holds keyboard focus. */
-    var idleTimer = null;
-    var railHovered = false;
-    var wakeRail = function () {
-      rail.classList.remove("is-idle");
-      clearTimeout(idleTimer);
-      idleTimer = setTimeout(function () {
-        if (!railHovered && !rail.contains(document.activeElement)) rail.classList.add("is-idle");
-      }, 2600);
-    };
-    rail.addEventListener("mouseenter", function () { railHovered = true; wakeRail(); });
-    rail.addEventListener("mouseleave", function () { railHovered = false; wakeRail(); });
-    rail.addEventListener("focusin", wakeRail);
-    rail.addEventListener("focusout", wakeRail);
-    window.addEventListener("scroll", wakeRail, { passive: true });
-    document.addEventListener("mousemove", function (event) {
-      if (window.innerWidth - event.clientX < 200) wakeRail();
-    }, { passive: true });
-    wakeRail();
   }
 
   /* ----- Mark the current page in the menu -----
