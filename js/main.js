@@ -152,8 +152,8 @@ document.addEventListener("DOMContentLoaded", function () {
   /* ----- Section navigator -----
      On pages with three or more sections, a small index follows the reader:
      desktop gets a quiet column of ticks on the right edge (one per section;
-     the current one is longer and rose gold; hover or keyboard focus shows
-     every name on a frosted panel). Phones get a slim bar at the top that
+     the current one is longer and rose gold, with its name in small caps just
+     above it; hover or keyboard focus shows every name on a frosted panel). Phones get a slim bar at the top that
      names the current section and opens the full list on tap; it sits just
      under the header once the page's opening section has scrolled away.
      Labels come from each section's small eyebrow line; a section can set its
@@ -186,6 +186,8 @@ document.addEventListener("DOMContentLoaded", function () {
         a.href = "#" + entry.sec.id;
         a.innerHTML = itemHtml;
         a.querySelector("[data-label]").textContent = entry.label;
+        var caption = a.querySelector("[data-caption]");
+        if (caption) caption.textContent = entry.label;
         li.appendChild(a);
         list.appendChild(li);
         entry[className] = a;
@@ -197,7 +199,11 @@ document.addEventListener("DOMContentLoaded", function () {
     var rail = document.createElement("nav");
     rail.className = "section-rail";
     rail.setAttribute("aria-label", "Sections on this page");
-    rail.appendChild(makeList("rail-list", '<span class="rail-label" data-label></span><span class="rail-tick" aria-hidden="true"></span>'));
+    rail.appendChild(makeList("rail-list", '<span class="rail-label" data-label></span>' +
+      '<span class="rail-caption" aria-hidden="true" data-caption></span><span class="rail-tick" aria-hidden="true"></span>'));
+    /* pages with the rail keep a wider right margin so the current section's
+       name, shown above its tick, never sits on the text */
+    document.documentElement.classList.add("has-rail");
 
     /* phone bar */
     var bar = document.createElement("nav");
@@ -243,6 +249,14 @@ document.addEventListener("DOMContentLoaded", function () {
       var footerTop = footerEl ? footerEl.getBoundingClientRect().top : Infinity;
       var show = heroBottom < window.innerHeight * 0.4 && footerTop > window.innerHeight * 0.55;
       rail.classList.toggle("is-visible", show);
+      /* over a navy band the rail switches to its light colours */
+      var mid = window.innerHeight / 2;
+      var under = null;
+      entries.forEach(function (entry) {
+        var box = entry.sec.getBoundingClientRect();
+        if (box.top <= mid && box.bottom > mid) under = entry.sec;
+      });
+      rail.classList.toggle("is-over-navy", !!under && under.classList.contains("section-navy"));
       if (!show) setBarOpen(false);
       bar.classList.toggle("is-visible", show);
 

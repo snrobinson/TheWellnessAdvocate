@@ -1428,12 +1428,21 @@ body { background: var(--ivory) var(--grain); }
 
 /* Section navigator (built by main.js on pages with three or more sections).
    Desktop: a quiet column of hairline ticks on the right edge, one per
-   section, the current one longer and rose gold. Names and a frosted panel
-   appear only on hover or keyboard focus.
+   section, the current one longer and rose gold with its name in small caps
+   just above it. Every name and a frosted panel appear on hover or keyboard
+   focus. Pages with the rail keep a wider right margin (--rail-room) so the
+   name never sits on the text.
    Phones: a slim bar at the top naming the current section. */
 .section-rail, .section-bar { display: none; }
 
 @media (min-width: 64em) {
+  :root { --rail-room: 13rem; }
+  /* the text column gives way to the rail on every section after the opening
+     one (the rail is hidden over the opening section); wide screens already
+     have the room, so nothing changes there */
+  .has-rail #main > section:not(:first-child) > .wrap {
+    padding-right: max(var(--gutter), calc(var(--rail-room) - max(0px, (100vw - var(--wrap)) / 2)));
+  }
   .section-rail {
     display: block;
     position: fixed;
@@ -1485,9 +1494,39 @@ body { background: var(--ivory) var(--grain); }
        screens and still fits on short laptop screens */
     min-height: clamp(2rem, 4.2vh, 2.6rem);
     padding: 0 0.35rem 0 0.75rem;
+    position: relative;
     color: var(--ink-soft);
     text-decoration: none;
   }
+  /* the current section's name, on one line, right-aligned above its tick.
+     --rail-room fits names up to about 9.5rem ("Before you choose"); give a
+     longer section a shorter data-nav-label. */
+  .rail-caption {
+    position: absolute;
+    right: 0.35rem;
+    bottom: calc(50% + 0.35rem);
+    white-space: nowrap;
+    text-align: right;
+    font-family: var(--font-caps);
+    font-size: 0.68rem;
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rose-deep);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s var(--ease);
+  }
+  .rail-list a[aria-current] .rail-caption { opacity: 1; }
+  .section-rail:hover .rail-list a .rail-caption,
+  .section-rail:focus-within .rail-list a .rail-caption { opacity: 0; }
+  /* over a navy band */
+  .section-rail.is-over-navy .rail-caption { color: var(--rose-light); }
+  .section-rail.is-over-navy:hover .rail-list,
+  .section-rail.is-over-navy:focus-within .rail-list { background-color: rgba(251, 249, 246, 0.95); }
+  .section-rail.is-over-navy:not(:hover):not(:focus-within) .rail-tick { background: rgba(244, 239, 233, 0.4); }
+  .section-rail.is-over-navy:not(:hover):not(:focus-within) .rail-list a[aria-current] .rail-tick { background: var(--foil); }
   .rail-tick {
     display: block;
     width: 0.75rem;
@@ -1497,7 +1536,10 @@ body { background: var(--ivory) var(--grain); }
     transition: width 0.45s var(--ease), background-color 0.45s var(--ease);
   }
   .rail-list a:hover .rail-tick { width: 1.1rem; background-color: var(--slate); }
-  .rail-list a[aria-current] .rail-tick { width: 1.5rem; background: var(--foil); }
+  /* the current tick runs on under its name; it shortens when the panel opens */
+  .rail-list a[aria-current] .rail-tick { width: 3rem; background: var(--foil); }
+  .section-rail:hover .rail-list a[aria-current] .rail-tick,
+  .section-rail:focus-within .rail-list a[aria-current] .rail-tick { width: 1.5rem; }
   .rail-label {
     display: block;
     max-width: 0;
@@ -1517,6 +1559,7 @@ body { background: var(--ivory) var(--grain); }
   .section-rail:focus-within .rail-label { max-width: 16rem; opacity: 1; }
 }
 @media (min-width: 90em) {
+  :root { --rail-room: 13.75rem; }
   .section-rail { right: 1.5rem; }
 }
 
@@ -1950,7 +1993,9 @@ body { background: var(--ivory) var(--grain); }
   .site-header.is-scrolled { box-shadow: 0 14px 30px -24px rgba(0, 0, 0, 0.7); }
   .js .section-bar { background-color: rgba(11, 22, 40, 0.95); box-shadow: 0 12px 26px -22px rgba(0, 0, 0, 0.7); }
   .section-rail:hover .rail-list,
-  .section-rail:focus-within .rail-list { background-color: rgba(11, 22, 40, 0.8); border-color: rgba(48, 70, 100, 0.85); }
+  .section-rail:focus-within .rail-list,
+  .section-rail.is-over-navy:hover .rail-list,
+  .section-rail.is-over-navy:focus-within .rail-list { background-color: rgba(11, 22, 40, 0.8); border-color: rgba(48, 70, 100, 0.85); }
   .to-top { background-color: rgba(19, 37, 63, 0.96); }
   .jump a { background-color: rgba(255, 255, 255, 0.04); }
 
