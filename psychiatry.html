@@ -37,11 +37,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&amp;family=Cinzel:wght@400..600&amp;family=Jost:wght@300..600&amp;display=swap">
   <!-- ?v= forces browsers (especially iPhone Safari) to fetch the new file after a change.
        When you edit styles.css or main.js, bump the date in every page (README). -->
-  <link rel="stylesheet" href="css/styles.css?v=20261115">
+  <link rel="stylesheet" href="css/styles.css?v=20261116">
   <!-- Loaded in the head on purpose (not deferred): it marks the page as
        JavaScript-enabled before the first paint, so the mobile menu never
        flashes open and shifts the page. It waits for the page itself. -->
-  <script src="js/main.js?v=20261115"></script>
+  <script src="js/main.js?v=20261116"></script>
   <!-- SEARCH + AI: structured data that search engines and AI assistants read to understand
        the practice, Aimee and this page. Keep it true to the visible page. -->
   <script type="application/ld+json">
@@ -170,9 +170,25 @@
       <div class="service-body reveal">
         <p>As a board-certified psychiatric&ndash;mental health nurse practitioner, Aimee provides psychiatric evaluation and ongoing medication management for adults. Because she is also a family practice provider, mental health care here is never siloed &mdash; sleep, nutrition, physical health and life circumstances are all part of the conversation.</p>
         <h2>Who it&rsquo;s for</h2>
-        <p>Adults seeking evaluation or ongoing support for concerns such as depression, anxiety, ADHD and mood disorders &mdash; whether you are starting medication for the first time, reconsidering a current regimen, or want mental health care that works alongside your primary care. [TBD-CLIENT: confirm any conditions or medications outside the practice&rsquo;s scope, e.g. controlled-substance policies for telehealth]</p>
+        <p>Adults seeking evaluation or ongoing support for concerns such as depression, anxiety, ADHD and mood disorders &mdash; whether you are starting medication for the first time, reconsidering a current regimen, or want mental health care that works alongside your primary care. [TBD-CLIENT: controlled-substance policy &mdash; whether ADHD stimulants or other controlled medications are prescribed by telehealth; whether prior records or an in-person visit are required; and the plan for when the federal telehealth prescribing extension ends on Dec 31, 2026]</p>
+        <!-- VERIFY: DEA/HHS telehealth controlled-substance flexibilities run through
+             Dec 31, 2026 (fourth extension). Recheck the rule before launch. -->
+        <h2>Who this isn&rsquo;t for</h2>
+        <p>[TBD-CLIENT: what the practice does not treat, so people can find the right care before booking &mdash; for example active crisis, substance use that needs detox, court-ordered or disability evaluations, and any age limits &mdash; and whether Aimee can refer elsewhere]</p>
         <h2>What a visit looks like</h2>
-        <p>An initial evaluation is an in-depth conversation about your history, symptoms and goals. Follow-up visits review how a plan is working and adjust it with you &mdash; combining medication, when appropriate, with attention to sleep, nutrition, exercise, and referrals to therapy when helpful. Visits are by telehealth. Psychiatry is added to a Primary Care membership: the initial evaluation is $300 and follow-up appointments are $130. [TBD-CLIENT: confirm visit lengths and therapy referral partners]</p>
+        <p>An initial evaluation is an in-depth conversation about your history, symptoms and goals. Follow-up visits review how a plan is working and adjust it with you &mdash; combining medication, when appropriate, with attention to sleep, nutrition, exercise, and referrals to therapy when helpful. Visits are by telehealth. [TBD-CLIENT: therapy referral partners, if any]</p>
+        <!-- EDIT: psychiatry fees (Aimee, Nov 12, 2026). Fill in visit lengths. -->
+        <h2 id="psych-fees-heading">Fees</h2>
+        <table class="fee-table" aria-labelledby="psych-fees-heading">
+          <thead>
+            <tr><th scope="col">Visit</th><th scope="col">Length</th><th scope="col" class="fee">Fee</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Initial evaluation</th><td>[TBD-CLIENT: ___ minutes]</td><td class="fee">$300</td></tr>
+            <tr><th scope="row">Follow-up appointment</th><td>[TBD-CLIENT: ___ minutes]</td><td class="fee">$130</td></tr>
+          </tbody>
+        </table>
+        <p>Psychiatry is added to a Primary Care membership and paid per visit. Self-pay patients have the right to a <a href="privacy.html#good-faith-estimate">Good Faith Estimate</a> of expected charges. All fees and terms are in the <a href="membership.html#fees">fee schedule</a>.</p>
         <div class="crisis" role="note" aria-label="Crisis and emergency information">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5.2 3.5h3.1l1.6 4-2 1.3a11 11 0 0 0 5.3 5.3l1.3-2 4 1.6v3.1a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 3.2 5.7a2 2 0 0 1 2-2.2z"/></svg>
       <div>
@@ -274,6 +290,7 @@
           <li><a class="js-portal-link" href="contact.html#book">Patient Portal</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="privacy.html">Privacy &amp; Disclosures</a></li>
+          <li><a href="privacy.html#good-faith-estimate">Good Faith Estimate</a></li>
         </ul>
       </nav>
       <div class="footer-contact">

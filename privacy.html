@@ -37,11 +37,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&amp;family=Cinzel:wght@400..600&amp;family=Jost:wght@300..600&amp;display=swap">
   <!-- ?v= forces browsers (especially iPhone Safari) to fetch the new file after a change.
        When you edit styles.css or main.js, bump the date in every page (README). -->
-  <link rel="stylesheet" href="css/styles.css?v=20261115">
+  <link rel="stylesheet" href="css/styles.css?v=20261116">
   <!-- Loaded in the head on purpose (not deferred): it marks the page as
        JavaScript-enabled before the first paint, so the mobile menu never
        flashes open and shifts the page. It waits for the page itself. -->
-  <script src="js/main.js?v=20261115"></script>
+  <script src="js/main.js?v=20261116"></script>
   <!-- SEARCH + AI: structured data that search engines and AI assistants read to understand
        the practice, Aimee and this page. Keep it true to the visible page. -->
   <script type="application/ld+json">
@@ -164,6 +164,7 @@
         <ol>
           <li><a href="#privacy-policy">Website privacy policy</a></li>
           <li><a href="#hipaa">Notice of Privacy Practices</a></li>
+          <li><a href="#good-faith-estimate">Good Faith Estimate</a></li>
           <li><a href="#disclaimer">Medical disclaimer</a></li>
         </ol>
       </nav>
@@ -185,6 +186,19 @@
           <h2 id="hipaa-heading">Notice of Privacy Practices (HIPAA)</h2>
           <p>The practice&rsquo;s Notice of Privacy Practices describes how medical information about you may be used and disclosed, and how you can get access to that information.</p>
           <p>[TBD-CLIENT: full HIPAA Notice of Privacy Practices &mdash; attorney/compliance review. Consider linking a downloadable PDF of the notice here, and note where patients receive and acknowledge it during enrollment.]</p>
+        </section>
+
+        <!-- ===== EDIT: Good Faith Estimate notice (No Surprises Act) =====
+             COMPLIANCE: federal rules require providers to post this notice on their
+             website for patients who are uninsured or not using insurance (self-pay).
+             Psychiatry visits ($300 / $130) are self-pay services. Counsel decides the
+             final wording and whether membership fees are also covered.
+             VERIFY: the current rule and the CMS model notice at cms.gov/nosurprises.
+             The footer of every page links here. -->
+        <section class="doc-section" id="good-faith-estimate" aria-labelledby="gfe-heading">
+          <h2 id="gfe-heading">Good Faith Estimate</h2>
+          <p>Under federal law, people who are uninsured or who are not using insurance for a service have the right to receive a Good Faith Estimate of the expected charges.</p>
+          <p>[TBD-CLIENT: full Good Faith Estimate notice &mdash; attorney review. Adapt the federal model notice from CMS. It should say how to ask for an estimate, when you receive it in writing, and how to dispute a bill that is substantially higher than the estimate.]</p>
         </section>
 
         <!-- ===== EDIT: medical disclaimer ===== -->
@@ -264,6 +278,7 @@
           <li><a class="js-portal-link" href="contact.html#book">Patient Portal</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="privacy.html">Privacy &amp; Disclosures</a></li>
+          <li><a href="privacy.html#good-faith-estimate">Good Faith Estimate</a></li>
         </ul>
       </nav>
       <div class="footer-contact">

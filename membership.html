@@ -37,11 +37,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&amp;family=Cinzel:wght@400..600&amp;family=Jost:wght@300..600&amp;display=swap">
   <!-- ?v= forces browsers (especially iPhone Safari) to fetch the new file after a change.
        When you edit styles.css or main.js, bump the date in every page (README). -->
-  <link rel="stylesheet" href="css/styles.css?v=20261115">
+  <link rel="stylesheet" href="css/styles.css?v=20261116">
   <!-- Loaded in the head on purpose (not deferred): it marks the page as
        JavaScript-enabled before the first paint, so the mobile menu never
        flashes open and shifts the page. It waits for the page itself. -->
-  <script src="js/main.js?v=20261115"></script>
+  <script src="js/main.js?v=20261116"></script>
   <!-- SEARCH + AI: structured data that search engines and AI assistants read to understand
        the practice, Aimee and this page. Keep it true to the visible page. -->
   <script type="application/ld+json">
@@ -158,6 +158,7 @@
         <p class="jump-label">On this page</p>
         <ul>
           <li><a href="#plans">Plans</a></li>
+          <li><a href="#fees">Fee schedule</a></li>
           <li><a href="#enrollment">How enrollment works</a></li>
           <li><a href="#insurance">Membership and insurance</a></li>
         </ul>
@@ -211,6 +212,44 @@
     </div>
   </section>
 
+  <!-- ===== EDIT: fee schedule =====
+       Every fee and term in one place, each with a number. Prices are Aimee's
+       (Nov 12, 2026). Fill each [TBD-CLIENT] blank from the final membership
+       agreement; write "None" rather than deleting a row, so visitors can see
+       there is no fee. -->
+  <section class="section section-ruled" id="fees" aria-labelledby="fees-heading">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Fee schedule</p>
+        <h2 id="fees-heading">Every fee, <em class="accent">in one place.</em></h2>
+        <p class="section-lede">What membership and visits cost, and the terms that come with them. Membership is not insurance.</p>
+      </div>
+      <div class="fees reveal">
+        <table class="fee-table" aria-labelledby="fees-heading">
+          <thead>
+            <tr><th scope="col">Item</th><th scope="col" class="fee">Fee</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Primary Care membership</th><td class="fee">$69&nbsp;/&nbsp;month</td></tr>
+            <tr><th scope="row">Primary Care + BHRT membership</th><td class="fee">$179&nbsp;/&nbsp;month</td></tr>
+            <tr><th scope="row">Psychiatric initial evaluation <span class="fee-detail">Added to a Primary Care membership</span></th><td class="fee">$300&nbsp;/&nbsp;visit</td></tr>
+            <tr><th scope="row">Psychiatry follow-up appointment</th><td class="fee">$130&nbsp;/&nbsp;visit</td></tr>
+            <tr><th scope="row">Enrollment fee</th><td class="fee">[TBD-CLIENT: $___, or None]</td></tr>
+            <tr><th scope="row">Lab work</th><td class="fee">[TBD-CLIENT: included, or a lab price list]</td></tr>
+            <tr><th scope="row">Hormone medications</th><td class="fee">[TBD-CLIENT: included, or how they are billed]</td></tr>
+          </tbody>
+        </table>
+        <dl class="details fee-terms">
+          <div><dt>Cancelling membership</dt><dd>[TBD-CLIENT: ___ days&rsquo; notice; any minimum term]</dd></div>
+          <div><dt>Changes to prices or terms</dt><dd>[TBD-CLIENT: members are told ___ days before a change]</dd></div>
+          <div><dt>Missed or late-cancelled visits</dt><dd>[TBD-CLIENT: ___ hours&rsquo; notice to cancel; fee $___, or None]</dd></div>
+          <div><dt>Paying</dt><dd>[TBD-CLIENT: accepted payment methods and billing date]</dd></div>
+        </dl>
+        <p class="ledger-note">Self-pay patients have the right to a <a href="privacy.html#good-faith-estimate">Good Faith Estimate</a> of expected charges.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== EDIT: how membership works ===== -->
   <section class="section" id="enrollment" aria-labelledby="how-heading">
     <div class="wrap">
@@ -223,7 +262,7 @@
         <li class="step">
           <span class="step-num">01</span>
           <h3>Enroll</h3>
-          <p>Pick a plan and sign up online. [TBD-CLIENT: confirm enrollment fee and cancellation terms]</p>
+          <p>Pick a plan and sign up online. Fees and terms are listed in the <a href="#fees">fee schedule</a>.</p>
         </li>
         <li class="step">
           <span class="step-num">02</span>
@@ -321,6 +360,7 @@
           <li><a class="js-portal-link" href="contact.html#book">Patient Portal</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="privacy.html">Privacy &amp; Disclosures</a></li>
+          <li><a href="privacy.html#good-faith-estimate">Good Faith Estimate</a></li>
         </ul>
       </nav>
       <div class="footer-contact">

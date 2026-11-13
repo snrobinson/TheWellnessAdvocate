@@ -892,6 +892,40 @@ a:hover { color: var(--rose-deep); }
 }
 .details dd { margin: 0; color: var(--navy); }
 
+/* Fee tables (membership.html#fees, psychiatry.html): ruled rows like the
+   ledger, item on the left, fee on the right. */
+.fees { max-width: 46rem; }
+.fee-table { width: 100%; border-collapse: collapse; margin: 0 0 2rem; }
+.fee-table th, .fee-table td {
+  padding: 0.95rem 0;
+  border-top: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+  font-weight: 450;
+}
+.fee-table th:not(:last-child), .fee-table td:not(:last-child) { padding-right: 1.25rem; }
+.fee-table tbody tr:last-child > * { border-bottom: 1px solid var(--line); }
+.fee-table thead th {
+  padding-top: 0;
+  border-top: 0;
+  font-family: var(--font-caps);
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rose-deep);
+}
+.fee-table tbody th { color: var(--navy); }
+.fee-table td { color: var(--ink-soft); }
+.fee-table .fee { text-align: right; }
+.fee-table td.fee { color: var(--navy); font-weight: 500; }
+.fee-detail { display: block; margin-top: 0.15rem; font-size: 0.92rem; color: var(--ink-soft); }
+.fee-terms { margin-bottom: 1.25rem; }
+.service-body .fee-table { margin-top: 0.5rem; }
+
+/* About: link to the state license lookup, under the credentials line */
+.license-check { margin: 1.25rem 0 0; }
+
 .form { display: grid; gap: 1.6rem; }
 .field label {
   display: block;

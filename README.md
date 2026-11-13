@@ -210,9 +210,9 @@ nothing. Submit the new `sitemap.xml` address in Google Search Console.
   small eyebrow line; to give a section a shorter label, add
   `data-nav-label="..."` to its `<section>` tag. Nothing to maintain otherwise.
 - **After editing `css/styles.css` or `js/main.js`**, change the `?v=` date on
-  their two lines in every page's `<head>` (for example `?v=20261115` to
+  their two lines in every page's `<head>` (for example `?v=20261116` to
   `?v=20261120`), or phones may keep showing the old version:
-  `grep -rl '?v=20261115' --include='*.html' . | xargs perl -pi -e 's/\?v=20261115/?v=20261120/g'`
+  `grep -rl '?v=20261116' --include='*.html' . | xargs perl -pi -e 's/\?v=20261116/?v=20261120/g'`
 - **No inline styles.** The live site's security policy (`customHttp.yml`)
   blocks `style="…"` attributes and `<style>` tags. Put all styling in
   `css/styles.css`.
@@ -259,6 +259,30 @@ sometimes called GEO, generative engine optimization.
   the comment in that file.
 - **`sitemap.xml`** carries a `lastmod` date; update it when pages change.
 - All of these use BASE_URL, so the launch command above updates them too.
+
+## Launch: listings must match the site
+
+Mismatched details across a practice's own site and its directory listings were
+the most common credibility problem on similar practices' sites (different prices,
+spellings of the provider's name, or addresses in different places). At launch,
+and whenever a fact changes, make every listing say exactly what the site says.
+Aimee approves or creates each listing, since they are her accounts.
+
+- **Copy these from the site, word for word:** practice name; "Aimee
+  Roberts-Serrato, MSN, APRN, FNP-C, PMHNP-BC"; the tagline; prices; "Telehealth
+  across Florida" and "Services are available to patients located in Florida";
+  the practice phone, email and domain once final.
+- **Never list an office address.** The practice is telehealth-first with no
+  office. Where a directory requires a location, use a service area (Florida)
+  or leave it blank, never a street address.
+- **Likely listings:** Google Business Profile (as a service-area business),
+  the DPC Frontier mapper, Hint Connect, Psychology Today (for psychiatry),
+  and any insurer-free or self-pay directories she chooses.
+- **After each listing is live:** add its URL to the `sameAs` list in the
+  structured data (the home page's block has a note), and to `llms.txt` if
+  it's useful there.
+- **Each time a price or policy changes:** update the site first, then every
+  listing, then `llms.txt` and the FAQ structured data.
 
 ## Analytics
 
