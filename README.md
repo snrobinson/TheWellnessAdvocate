@@ -1,9 +1,9 @@
 # The Wellness Advocate — Website
 
 Marketing site for **The Wellness Advocate**, a cash-pay Direct Primary Care
-(DPC) practice in Jacksonville, FL, also offering hormone therapy (BHRT) and
-psychiatry & mental health care. Provider: Aimee Roberts-Serrato, MSN, APRN,
-PMHNP-BC, FNP-C. Built by Robinson Consulting Group.
+(DPC) practice based in Jacksonville, FL, also offering hormone therapy (BHRT) and
+psychiatry & mental health care, telehealth-first across Florida. Provider: Aimee Roberts-Serrato, MSN, APRN,
+FNP-C, PMHNP-BC. Built by Robinson Consulting Group.
 
 Hand-authored static site — no framework, no build step, no CMS, no npm
 dependencies, no cookies. Analytics is not switched on yet; a cookieless slot
@@ -130,6 +130,17 @@ nothing. Submit the new `sitemap.xml` address in Google Search Console.
   `INTAKE_URL` ("Open intake forms"). Until then the links fall back to
   `contact.html#book`. Also replace the matching visible `[TBD-CLIENT]` text on
   `new-patients.html` and `contact.html`.
+- **Telehealth-first.** The practice has no office yet: visits are by telehealth
+  across Florida, by appointment with flexible hours, and Aimee is licensed in
+  Florida only. Nothing on the site should imply a walk-in location (no address,
+  map or office photos), and the structured data marks the practice as a
+  `MedicalOrganization` serving Florida, not a clinic location. When an office
+  opens, add the address to the Contact page and footer, and switch the home
+  page's structured data to `MedicalClinic` with a street address.
+- **Prices** (from Aimee, Nov 12, 2026) appear on the Membership page, the How
+  DPC Works FAQ and coverage list, the Primary Care, Hormone Therapy and
+  Psychiatry pages, the page descriptions, and `llms.txt`. If a price changes,
+  search for it (for example `grep -rn '\$179'`) and change every copy.
 - **Crisis information** appears in the footer and on the psychiatry,
   contact, new-patients and privacy pages. It is the same block everywhere
   (the 988 Suicide & Crisis Lifeline, 911 or the nearest emergency room, and
@@ -157,7 +168,7 @@ nothing. Submit the new `sitemap.xml` address in Google Search Console.
   strokes as hairlines; at heading sizes a dash nearly disappears. Use a period
   or comma instead. Body text is fine.
 - **Her name with credentials always includes APRN** — in page titles and in
-  visible text (for example "Aimee Roberts-Serrato, APRN, PMHNP-BC, FNP-C").
+  visible text, in her order: "Aimee Roberts-Serrato, MSN, APRN, FNP-C, PMHNP-BC".
 - **Compliance** — BHRT copy, privacy policy, HIPAA notice, and disclaimers are
   placeholders flagged with `<!-- COMPLIANCE: … -->` comments and must be
   reviewed by the client's attorney/malpractice carrier before launch. No

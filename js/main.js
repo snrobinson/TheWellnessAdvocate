@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var toTop = document.querySelector(".to-top");
   var floatBook = document.querySelector(".float-book");
   var ring = document.querySelector(".to-top-progress");
+  var footerArea = document.querySelector(".site-footer .footer-grid");
   var calmMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   var lastY = window.scrollY;
   var bookingInView = 0;
@@ -115,6 +116,10 @@ document.addEventListener("DOMContentLoaded", function () {
       if (y <= 0) header.classList.remove("is-hidden");
     }
     var past = y > screen * 0.9 && !menuOpen;
+    /* once the footer is on screen, the floating buttons step aside so they never
+       sit on footer links; the footer has its own "Back to top" link */
+    var footerTop = footerArea ? footerArea.getBoundingClientRect().top : Infinity;
+    if (footerTop < screen - 40) past = false;
     if (toTop) toTop.classList.toggle("is-visible", past);
     if (floatBook) floatBook.classList.toggle("is-visible", past && bookingInView === 0);
     if (ring) {

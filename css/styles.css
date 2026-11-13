@@ -152,6 +152,7 @@ a:hover { color: var(--rose-deep); }
   padding-inline: var(--gutter);
 }
 
+.nowrap { white-space: nowrap; }
 .visually-hidden {
   position: absolute !important;
   width: 1px; height: 1px;
@@ -1213,6 +1214,84 @@ body { background: var(--ivory) url("../assets/textures/grain.svg"); }
 .button-quiet,
 .button-quiet:hover,
 .on-navy .button-quiet { background-image: none; box-shadow: none; }
+
+/* Dark-mode tools on some phones repaint flat light backgrounds dark but leave
+   textured ones alone (seen on an iPhone: the grain-textured page stayed light
+   while the flat header and footer turned charcoal, hiding the navy wordmark).
+   Every light surface that carries the logo or navy text therefore gets the same
+   faint grain layer, alongside the "only light" color-scheme declared in :root. */
+.site-header { background-image: url("../assets/textures/grain.svg"); }
+.site-footer { background: url("../assets/textures/grain.svg"), var(--ivory); }
+.js .site-nav.is-open { background: url("../assets/textures/grain.svg"), var(--ivory); }
+.to-top, .rail-list, .jump a { background-image: url("../assets/textures/grain.svg"); }
+.js .section-bar { background-image: url("../assets/textures/grain.svg"); }
+.button { background-image: url("../assets/textures/grain-light.svg"), linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0) 65%); }
+.button:hover { background-image: url("../assets/textures/grain-light.svg"), linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 65%); }
+.button-quiet, .button-quiet:hover, .on-navy .button { background-image: url("../assets/textures/grain.svg"); }
+.on-navy .button-quiet { background-image: none; }
+@media (min-width: 80em) {
+  .site-nav .sub-nav { background: url("../assets/textures/grain.svg"), var(--ivory); }
+}
+
+/* Practice tagline */
+.tagline {
+  margin: 1.5rem 0 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-variation-settings: "opsz" 11;
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  color: var(--rose-deep);
+}
+.footer-place p { margin: 0 0 0.35rem; }
+.footer-tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-variation-settings: "opsz" 11;
+  font-size: 1.08rem;
+  color: var(--navy);
+}
+
+/* Aimee's own words */
+.provider-quote {
+  margin: 1.5rem 0 1.75rem;
+  padding: 0 0 0 1.4rem;
+  border-left: 1px solid var(--rose);
+}
+.provider-quote p { margin: 0 0 0.85rem; color: var(--ink); }
+.provider-quote p:last-child {
+  margin-bottom: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-variation-settings: "opsz" 11;
+  font-size: 1.22rem;
+  line-height: 1.5;
+  color: var(--navy);
+}
+.bio p { color: var(--ink-soft); }
+.bio p:first-child { color: var(--ink); font-size: 1.1rem; }
+.bio h3 { margin: 2rem 0 0.6rem; font-size: 1.3rem; }
+.section-head .statement + .section-lede { margin-top: 1.5rem; }
+.split h2 + .section-lede { margin-top: 1rem; }
+
+/* Prices */
+.tier-unit {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 450;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
+}
+.tier-featured .tier-unit { color: var(--on-navy-soft); }
+.tier-note { margin: -1rem 0 1.5rem; font-size: 0.9rem; color: var(--ink-soft); }
+.tier-featured .tier-note { color: var(--on-navy-soft); }
+
+/* Inline back-to-top at the very bottom of every page */
+.footer-top { margin: 0; }
+.footer-top a { color: var(--navy); text-decoration: none; letter-spacing: 0.04em; }
+.footer-top a:hover { color: var(--rose-deep); text-decoration: underline; }
 
 /* ============================================================================
    Getting around long pages

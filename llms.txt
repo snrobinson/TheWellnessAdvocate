@@ -1,13 +1,15 @@
 # The Wellness Advocate
 
-> A membership-based direct primary care practice in Jacksonville, Florida. One provider, Aimee Roberts-Serrato, MSN, APRN, a dual board-certified nurse practitioner (FNP-C and PMHNP-BC), offers primary care, bioidentical hormone replacement therapy (BHRT) consultations, and psychiatry and mental health care under one flat monthly membership, without insurance billing.
+> Advocating Your Health. Empowering Your Life. A telehealth-first, membership-based direct primary care practice serving patients located in Florida, based in Jacksonville. One provider, Aimee Roberts-Serrato, MSN, APRN, FNP-C, PMHNP-BC, a dual board-certified nurse practitioner, offers primary care, bioidentical hormone replacement therapy (BHRT), and psychiatry and mental health care, without insurance billing.
 
 Key facts:
 
 - Model: direct primary care (DPC). Patients pay the practice a flat monthly membership fee instead of the practice billing insurance per visit. Membership is not insurance; it does not cover hospital care, emergency care, specialists, imaging or pharmacy prescriptions.
-- Location: Jacksonville, Florida.
-- Provider: Aimee Roberts-Serrato, MSN, APRN, PMHNP-BC, FNP-C. Master of Science in Nursing, University of Cincinnati (2016); post-master's certificate, Florida State University (2022).
-- Services: primary care; bioidentical hormone replacement therapy consultations guided by lab work; psychiatric evaluation and medication management for adults.
+- Visits: telehealth across Florida, by appointment only, with flexible hours. There is no walk-in office yet. Based in Jacksonville.
+- Licensing: Aimee is licensed in Florida; care is available to patients located in Florida.
+- Pricing: Primary Care membership $69/month. Primary Care + BHRT membership $179/month. Psychiatry is added to a membership: initial evaluation $300, follow-up appointments $130. Every patient is enrolled in Primary Care.
+- Provider: Aimee Roberts-Serrato, MSN, APRN, FNP-C, PMHNP-BC. Nurse Practitioner since 2016. Registered Nursing degree, Santa Fe College; Bachelor of Science in Nursing, Florida State College at Jacksonville; Master of Science in Nursing (Family Nurse Practitioner), University of Cincinnati, 2016; psychiatric mental health training, Florida State University, 2022; certification in Bioidentical Hormone Replacement Therapy, Hormone Replacement Therapy University.
+- Services: primary care; bioidentical hormone replacement therapy guided by lab work; psychiatric evaluation and medication management for adults.
 - Booking and the patient portal run through OptiMantra.
 - Not for emergencies: in a mental health crisis, call or text 988 (988 Suicide & Crisis Lifeline). For an emergency, call 911 or go to the nearest emergency room.
 - Website content is general information, not medical advice.
@@ -15,14 +17,14 @@ Key facts:
 ## Pages
 
 - [How direct primary care works](https://main.d1bs05hyunugqi.amplifyapp.com/how-dpc-works.html): How direct primary care membership works at The Wellness Advocate: a flat monthly fee, no insurance billing, what membership covers and doesn't, and answers to common questions.
-- [Membership and pricing](https://main.d1bs05hyunugqi.amplifyapp.com/membership.html): Membership plans and pricing at The Wellness Advocate in Jacksonville, FL, and how enrollment works.
-- [Services](https://main.d1bs05hyunugqi.amplifyapp.com/services.html): Primary care, hormone therapy, and psychiatry & mental health care from one provider at The Wellness Advocate in Jacksonville, FL.
-- [Primary care](https://main.d1bs05hyunugqi.amplifyapp.com/primary-care.html): Direct primary care membership in Jacksonville, FL: who it's for and what a visit with Aimee Roberts-Serrato, APRN, looks like.
-- [Hormone therapy (BHRT)](https://main.d1bs05hyunugqi.amplifyapp.com/hormone-therapy.html): Bioidentical hormone replacement therapy consultations in Jacksonville, FL: who it's for and how the lab-guided consult process works.
-- [Psychiatry and mental health](https://main.d1bs05hyunugqi.amplifyapp.com/psychiatry.html): Psychiatric evaluation and medication management for adults in Jacksonville, FL, with sleep, nutrition and physical health part of the plan.
-- [About Aimee Roberts-Serrato, APRN](https://main.d1bs05hyunugqi.amplifyapp.com/about.html): Meet Aimee Roberts-Serrato, APRN, the dual board-certified nurse practitioner behind The Wellness Advocate in Jacksonville, FL.
+- [Membership and pricing](https://main.d1bs05hyunugqi.amplifyapp.com/membership.html): Membership pricing at The Wellness Advocate: Primary Care $69/month, Primary Care + BHRT $179/month, psychiatry visits added to membership. Telehealth across Florida.
+- [Services](https://main.d1bs05hyunugqi.amplifyapp.com/services.html): Primary care, hormone therapy, and psychiatry & mental health care from one provider, by telehealth across Florida.
+- [Primary care](https://main.d1bs05hyunugqi.amplifyapp.com/primary-care.html): Direct primary care membership by telehealth across Florida: who it's for and what a visit with Aimee Roberts-Serrato, APRN, looks like.
+- [Hormone therapy (BHRT)](https://main.d1bs05hyunugqi.amplifyapp.com/hormone-therapy.html): Bioidentical hormone replacement therapy by telehealth across Florida: who it's for and how the lab-guided consult process works.
+- [Psychiatry and mental health](https://main.d1bs05hyunugqi.amplifyapp.com/psychiatry.html): Psychiatric evaluation and medication management for adults by telehealth across Florida, with sleep, nutrition and physical health part of the plan.
+- [About Aimee Roberts-Serrato, APRN](https://main.d1bs05hyunugqi.amplifyapp.com/about.html): Meet Aimee Roberts-Serrato, MSN, APRN, FNP-C, PMHNP-BC: a Nurse Practitioner since 2016 and the dual board-certified provider behind The Wellness Advocate.
 - [New patients](https://main.d1bs05hyunugqi.amplifyapp.com/new-patients.html): How to become a patient of The Wellness Advocate: choose a plan, enroll, complete intake forms, book a first visit, and reach the practice between visits.
-- [Contact and booking](https://main.d1bs05hyunugqi.amplifyapp.com/contact.html): Contact The Wellness Advocate in Jacksonville, FL, or book a visit online.
+- [Contact and booking](https://main.d1bs05hyunugqi.amplifyapp.com/contact.html): Contact The Wellness Advocate or book a telehealth visit. By appointment, with flexible hours, for patients located in Florida.
 
 ## Optional
 
