@@ -19,8 +19,15 @@
 
 /* ===== EDIT: brand tokens ===== */
 :root {
-  /* This is a light design. Tell browsers and dark-mode tools not to recolor it. */
-  color-scheme: only light;
+  /* Light by default, with a designed dark mode at the end of this file
+     ("Dark mode"). Declaring both lets phones in dark mode use it instead of
+     repainting the light design themselves. */
+  color-scheme: light dark;
+
+  /* Paper grain on light grounds (dark mode swaps in the light grain) */
+  --grain: url("../assets/textures/grain.svg");
+  /* Navy that stays navy in dark mode: text on the light buttons */
+  --navy-ink: #0A1E3C;
 
   /* Grounds */
   --ivory:        #FBF9F6;  /* page background */
@@ -1146,10 +1153,10 @@ main > .service:first-child { border-top: 0; padding-top: clamp(3rem, 8vw, 6.5re
    The grains are two tiny tiled SVGs in assets/textures; to remove the
    texture, delete the url(...) layers below and nothing else changes.
    ========================================================================== */
-body { background: var(--ivory) url("../assets/textures/grain.svg"); }
+body { background: var(--ivory) var(--grain); }
 .section-porcelain,
-.closing { background: url("../assets/textures/grain.svg"), var(--porcelain); }
-.service.section-porcelain { background: url("../assets/textures/grain.svg"), var(--porcelain); }
+.closing { background: var(--grain), var(--porcelain); }
+.service.section-porcelain { background: var(--grain), var(--porcelain); }
 
 .section-navy,
 .tier-featured {
@@ -1215,22 +1222,21 @@ body { background: var(--ivory) url("../assets/textures/grain.svg"); }
 .button-quiet:hover,
 .on-navy .button-quiet { background-image: none; box-shadow: none; }
 
-/* Dark-mode tools on some phones repaint flat light backgrounds dark but leave
-   textured ones alone (seen on an iPhone: the grain-textured page stayed light
-   while the flat header and footer turned charcoal, hiding the navy wordmark).
-   Every light surface that carries the logo or navy text therefore gets the same
-   faint grain layer, alongside the "only light" color-scheme declared in :root. */
-.site-header { background-image: url("../assets/textures/grain.svg"); }
-.site-footer { background: url("../assets/textures/grain.svg"), var(--ivory); }
-.js .site-nav.is-open { background: url("../assets/textures/grain.svg"), var(--ivory); }
-.to-top, .rail-list, .jump a { background-image: url("../assets/textures/grain.svg"); }
-.js .section-bar { background-image: url("../assets/textures/grain.svg"); }
+/* Every surface that carries the logo or navy text gets the same faint grain.
+   (It also helped against dark-mode extensions, which repaint flat light
+   backgrounds but leave textured ones alone. The site now has its own dark
+   mode, below, which those tools defer to.) */
+.site-header { background-image: var(--grain); }
+.site-footer { background: var(--grain), var(--ivory); }
+.js .site-nav.is-open { background: var(--grain), var(--ivory); }
+.to-top, .rail-list, .jump a { background-image: var(--grain); }
+.js .section-bar { background-image: var(--grain); }
 .button { background-image: url("../assets/textures/grain-light.svg"), linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0) 65%); }
 .button:hover { background-image: url("../assets/textures/grain-light.svg"), linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 65%); }
-.button-quiet, .button-quiet:hover, .on-navy .button { background-image: url("../assets/textures/grain.svg"); }
+.button-quiet, .button-quiet:hover, .on-navy .button { background-image: var(--grain); }
 .on-navy .button-quiet { background-image: none; }
 @media (min-width: 80em) {
-  .site-nav .sub-nav { background: url("../assets/textures/grain.svg"), var(--ivory); }
+  .site-nav .sub-nav { background: var(--grain), var(--ivory); }
 }
 
 /* Practice tagline */
@@ -1809,3 +1815,101 @@ body { background: var(--ivory) url("../assets/textures/grain.svg"); }
 .section-navy .section-lede { color: var(--on-navy-soft); }
 /* Large decorative numerals: a slightly deeper rose so they clear 3:1 on porcelain too */
 .service-numeral { color: #B06F4F; }
+
+/* ============================================================================
+   Dark mode: "paper, foil and ink" at night
+   Used when the visitor's phone or computer is set to dark mode. The page
+   becomes deep ink navy with a fine light grain; text turns warm ivory; rose
+   gold stays rose gold; the navy bands become a lifted midnight blue so they
+   still read as bands; buttons turn ivory with navy lettering. The header and
+   footer swap to ivory versions of the logo (assets/brand/*-dark.webp, chosen
+   by a <picture> element in each page).
+   Most of it is the token block below; the rules after it cover the places
+   where the light design uses navy as a background rather than as ink.
+   All text passes WCAG AA on these grounds.
+   EDIT: dark-mode colors live in this :root block.
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --grain:        url("../assets/textures/grain-dark.svg");  /* finer than the navy bands' grain */
+
+    /* Grounds */
+    --ivory:        #0B1628;  /* page ground (deep ink navy) */
+    --porcelain:    #102038;  /* alternate sections */
+    --white:        #13253F;  /* cards and panels, lifted off the page */
+    --band:         #15305A;  /* the navy bands, lifted to midnight blue */
+
+    /* Ink: the light design's navy text becomes warm ivory */
+    --navy:         #F2ECE5;
+    --navy-mid:     #DCE4EE;  /* links */
+    --ink:          #F2ECE5;
+    --ink-soft:     #B8C2CF;  /* secondary text (9.9:1 on the page) */
+    --slate:        #A7B5C6;
+
+    /* Rose gold: small rose text uses the light rose (9:1 on the page) */
+    --rose-deep:    #E0AE92;
+
+    /* Lines and depth */
+    --line:         #22344F;
+    --line-strong:  #304664;
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.25), 0 3px 10px -6px rgba(0, 0, 0, 0.4);
+    --shadow-2: 0 1px 2px rgba(0, 0, 0, 0.2), 0 20px 44px -24px rgba(0, 0, 0, 0.6);
+    --shadow-3: 0 2px 6px rgba(0, 0, 0, 0.25), 0 28px 64px -26px rgba(0, 0, 0, 0.7);
+  }
+
+  ::selection { background: rgba(192, 130, 101, 0.5); color: #FFFFFF; }
+
+  /* Buttons: ivory with navy lettering (everywhere, as on the navy bands) */
+  .button,
+  .site-nav a.nav-cta,
+  .skip-link,
+  .skip-link:focus { color: var(--navy-ink); }
+  .button:hover,
+  .site-nav a.nav-cta:hover,
+  .on-navy .button,
+  .on-navy .button:hover { color: var(--navy-ink); }
+  .button:hover,
+  .on-navy .button:hover { background-color: #FFFFFF; border-color: #FFFFFF; }
+  .button-quiet,
+  .button-quiet:hover,
+  .on-navy .button-quiet,
+  .on-navy .button-quiet:hover { color: var(--navy); background-color: transparent; }
+  .button-quiet:hover { border-color: var(--navy); }
+  .button { box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3), 0 10px 20px -14px rgba(0, 0, 0, 0.7); }
+  .button-quiet, .button-quiet:hover, .on-navy .button-quiet { box-shadow: none; }
+
+  /* Navy bands and the featured plan: midnight blue with the same tonal light */
+  .section-navy,
+  .tier-featured {
+    background:
+      url("../assets/textures/grain-light.svg"),
+      radial-gradient(75% 95% at 92% -12%, rgba(90, 120, 160, 0.3), rgba(90, 120, 160, 0) 70%),
+      radial-gradient(65% 85% at -5% 112%, rgba(3, 10, 24, 0.45), rgba(3, 10, 24, 0) 70%),
+      var(--band);
+  }
+  .tier-featured { border-color: var(--band); }
+  .section-navy .step::before { background: var(--band); }
+
+  /* Frosted bars and floating controls */
+  .site-header { background-color: rgba(11, 22, 40, 0.92); }
+  .site-header.is-scrolled { box-shadow: 0 14px 30px -24px rgba(0, 0, 0, 0.7); }
+  .js .section-bar { background-color: rgba(11, 22, 40, 0.95); box-shadow: 0 12px 26px -22px rgba(0, 0, 0, 0.7); }
+  .rail-list { background-color: rgba(11, 22, 40, 0.84); border-color: rgba(48, 70, 100, 0.85); }
+  .to-top { background-color: rgba(19, 37, 63, 0.96); }
+  .jump a { background-color: rgba(255, 255, 255, 0.04); }
+
+  /* Interior headings: the fall-off is toward the alternate ground */
+  .page-hero { background: linear-gradient(180deg, rgba(16, 32, 56, 0) 10%, rgba(16, 32, 56, 0.85) 100%); }
+
+  /* Portrait placeholder: a midnight disc with a faint blush glow */
+  .portrait {
+    background:
+      radial-gradient(120% 90% at 30% 20%, rgba(240, 200, 192, 0.16), rgba(240, 200, 192, 0) 60%),
+      radial-gradient(90% 80% at 85% 90%, rgba(120, 150, 190, 0.18), rgba(120, 150, 190, 0) 65%),
+      #15294A;
+    box-shadow: 0 36px 60px -38px rgba(0, 0, 0, 0.8), inset 0 0 0 1px rgba(255, 255, 255, 0.07);
+  }
+  .portrait-set::before { background: radial-gradient(closest-side, rgba(240, 200, 192, 0.1), rgba(248, 216, 192, 0.04) 60%, rgba(248, 216, 192, 0) 100%); }
+
+  .service-numeral { color: var(--rose); }
+}

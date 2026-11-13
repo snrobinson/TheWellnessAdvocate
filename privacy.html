@@ -4,8 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow"> <!-- PREVIEW-ONLY: keeps the preview out of search; delete at launch (README) -->
-  <!-- A light design: ask browsers and dark-mode tools not to recolor it. -->
-  <meta name="color-scheme" content="only light">
+  <!-- The site has its own light and dark designs (css/styles.css, "Dark mode").
+       darkreader-lock asks the Dark Reader extension not to repaint it. -->
+  <meta name="color-scheme" content="light dark">
   <meta name="darkreader-lock">
   <title>Privacy &amp; Disclosures | The Wellness Advocate</title>
   <meta name="description" content="Website privacy policy, HIPAA Notice of Privacy Practices and medical disclaimer for The Wellness Advocate.">
@@ -25,7 +26,8 @@
   <meta name="twitter:title" content="Privacy &amp; Disclosures | The Wellness Advocate">
   <meta name="twitter:description" content="Website privacy policy, HIPAA Notice of Privacy Practices and medical disclaimer for The Wellness Advocate.">
   <meta name="twitter:image" content="https://main.d1bs05hyunugqi.amplifyapp.com/assets/brand/og-image.jpg">
-  <meta name="theme-color" content="#FBF9F6">
+  <meta name="theme-color" content="#FBF9F6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B1628" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <!-- Fonts (Google Fonts, display=swap): Bodoni Moda for headings, Cinzel for
@@ -35,11 +37,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..500&amp;family=Cinzel:wght@400..600&amp;family=Jost:wght@300..600&amp;display=swap">
   <!-- ?v= forces browsers (especially iPhone Safari) to fetch the new file after a change.
        When you edit styles.css or main.js, bump the date in every page (README). -->
-  <link rel="stylesheet" href="css/styles.css?v=20261113">
+  <link rel="stylesheet" href="css/styles.css?v=20261114">
   <!-- Loaded in the head on purpose (not deferred): it marks the page as
        JavaScript-enabled before the first paint, so the mobile menu never
        flashes open and shifts the page. It waits for the page itself. -->
-  <script src="js/main.js?v=20261113"></script>
+  <script src="js/main.js?v=20261114"></script>
   <!-- SEARCH + AI: structured data that search engines and AI assistants read to understand
        the practice, Aimee and this page. Keep it true to the visible page. -->
   <script type="application/ld+json">
@@ -107,8 +109,8 @@
   <div class="wrap header-bar">
     <!-- EDIT: logo lockup (both images are cut from the practice logo) -->
     <a class="brand" href="index.html">
-      <img class="brand-mark" src="assets/brand/mark.webp" width="225" height="176" alt="">
-      <img class="brand-word" src="assets/brand/wordmark.webp" width="640" height="104" alt="The Wellness Advocate — home">
+      <picture><source srcset="assets/brand/mark-dark.webp" media="(prefers-color-scheme: dark)"><img class="brand-mark" src="assets/brand/mark.webp" width="225" height="176" alt=""></picture>
+      <picture><source srcset="assets/brand/wordmark-dark.webp" media="(prefers-color-scheme: dark)"><img class="brand-word" src="assets/brand/wordmark.webp" width="640" height="104" alt="The Wellness Advocate — home"></picture>
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
       <span class="nav-toggle-icon" aria-hidden="true"></span>
@@ -230,7 +232,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <!-- EDIT: footer logo -->
-        <img class="footer-logo" src="assets/brand/logo.webp" width="420" height="391" alt="The Wellness Advocate" loading="lazy" decoding="async">
+        <picture><source srcset="assets/brand/logo-dark.webp" media="(prefers-color-scheme: dark)"><img class="footer-logo" src="assets/brand/logo.webp" width="420" height="391" alt="The Wellness Advocate" loading="lazy" decoding="async"></picture>
         <!-- EDIT: practice tagline and description -->
         <div class="footer-place">
           <p class="footer-tagline">Advocating Your Health. Empowering Your Life.</p>

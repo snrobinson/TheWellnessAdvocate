@@ -37,7 +37,7 @@ css/styles.css        The one stylesheet; colors, fonts and spacing live in :roo
 js/main.js            OptiMantra link addresses, menus, current-page marker, scroll reveals
 assets/brand/         Logo files and the social-sharing image (see below)
 assets/favicon-32.png, assets/apple-touch-icon.png   Browser and home-screen icons
-assets/textures/      grain.svg and grain-light.svg, the faint paper grain (see below)
+assets/textures/      grain.svg, grain-light.svg and grain-dark.svg, the faint paper grain (see below)
 amplify.yml           Amplify build spec (no-build static deploy)
 customHttp.yml        Amplify security headers (HSTS, CSP, etc.)
 ```
@@ -54,6 +54,7 @@ customHttp.yml        Amplify security headers (HSTS, CSP, etc.)
 | `logo.webp` | Full logo | Footer |
 | `leaves.webp` | The three watercolor leaves, isolated | Page accents |
 | `og-image.jpg` | Full logo on ivory, 1200×630 | Link previews (Open Graph / Twitter) |
+| `mark-dark.webp`, `wordmark-dark.webp`, `logo-dark.webp` | The same three with the navy turned ivory (rose gold unchanged) | Header and footer in dark mode |
 
 - **Colors** are sampled from the logo file: navy `#0A1E3C` (wordmark), rose
   gold `#C08265` (the T, A and "ADVOCATE"), blush and peach from the leaves.
@@ -80,6 +81,30 @@ customHttp.yml        Amplify security headers (HSTS, CSP, etc.)
 When a new logo file arrives, re-cut these files from it (same names and
 sizes) and the whole site updates. A simplified small mark for the favicon is
 an open question for the client.
+
+## Dark mode
+
+When a visitor's phone or computer is set to dark mode, the site switches to
+its own dark design automatically (there is no toggle). It is the same "paper,
+foil and ink" idea at night: a deep ink-navy page with a finer light grain,
+warm ivory text, rose gold kept as rose gold, the navy bands lifted to a
+midnight blue, and ivory buttons with navy lettering. The header and footer
+swap to the `-dark` logo files through a `<picture>` element in each page.
+
+- **Where it lives:** the "Dark mode" block at the end of `css/styles.css`.
+  Its `:root` block holds every dark color; the rules after it cover the few
+  places where the light design uses navy as a background. All text passes
+  WCAG AA in both modes.
+- **Why it exists:** without it, iPhones running a dark-mode Safari extension
+  (Noir, Dark Reader) or Smart Invert repainted the light design themselves,
+  turning the header charcoal and hiding the navy wordmark. A site with its own
+  dark design is left alone by those tools (`<meta name="darkreader-lock">`
+  also asks Dark Reader directly).
+- **Testing it:** switch the device to dark mode (on a Mac, System Settings →
+  Appearance; in Chrome DevTools, Rendering → "prefers-color-scheme: dark").
+- **New logo files:** when the logo is re-cut, re-make the three `-dark.webp`
+  files too: the logo's navy pixels turned to ivory (`#F4EFE9`), lighter navy
+  washes to pale slate, rose gold and the blush/peach leaves untouched.
 
 ## Preview locally
 
@@ -186,9 +211,9 @@ nothing. Submit the new `sitemap.xml` address in Google Search Console.
   small eyebrow line; to give a section a shorter label, add
   `data-nav-label="..."` to its `<section>` tag. Nothing to maintain otherwise.
 - **After editing `css/styles.css` or `js/main.js`**, change the `?v=` date on
-  their two lines in every page's `<head>` (for example `?v=20261113` to
+  their two lines in every page's `<head>` (for example `?v=20261114` to
   `?v=20261120`), or phones may keep showing the old version:
-  `grep -rl '?v=20261113' --include='*.html' . | xargs perl -pi -e 's/\?v=20261113/?v=20261120/g'`
+  `grep -rl '?v=20261114' --include='*.html' . | xargs perl -pi -e 's/\?v=20261114/?v=20261120/g'`
 - **No inline styles.** The live site's security policy (`customHttp.yml`)
   blocks `style="…"` attributes and `<style>` tags. Put all styling in
   `css/styles.css`.
