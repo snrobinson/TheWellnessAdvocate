@@ -274,6 +274,28 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", onSectionScroll, { passive: true });
     window.addEventListener("resize", onSectionScroll);
     updateSections();
+
+    /* The desktop rail fades away when the reader pauses, and comes back on
+       scroll or when the pointer nears the right edge. It stays while hovered
+       or while it holds keyboard focus. */
+    var idleTimer = null;
+    var railHovered = false;
+    var wakeRail = function () {
+      rail.classList.remove("is-idle");
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(function () {
+        if (!railHovered && !rail.contains(document.activeElement)) rail.classList.add("is-idle");
+      }, 2600);
+    };
+    rail.addEventListener("mouseenter", function () { railHovered = true; wakeRail(); });
+    rail.addEventListener("mouseleave", function () { railHovered = false; wakeRail(); });
+    rail.addEventListener("focusin", wakeRail);
+    rail.addEventListener("focusout", wakeRail);
+    window.addEventListener("scroll", wakeRail, { passive: true });
+    document.addEventListener("mousemove", function (event) {
+      if (window.innerWidth - event.clientX < 200) wakeRail();
+    }, { passive: true });
+    wakeRail();
   }
 
   /* ----- Mark the current page in the menu -----
