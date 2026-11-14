@@ -153,7 +153,9 @@ document.addEventListener("DOMContentLoaded", function () {
      On pages with three or more sections, a small index follows the reader:
      desktop gets a quiet column of ticks on the right edge (one per section;
      the current one is longer and rose gold, with its name in small caps just
-     above it; hover or keyboard focus shows every name on a frosted panel). Phones get a slim bar at the top that
+     above it; hover or keyboard focus shows every name on a frosted panel; it
+     fades out after a few quiet seconds and returns on scroll, when the
+     pointer comes near, or on keyboard focus). Phones get a slim bar at the top that
      names the current section and opens the full list on tap; it sits just
      under the header once the page's opening section has scrolled away.
      Labels come from each section's small eyebrow line; a section can set its
@@ -275,12 +277,38 @@ document.addEventListener("DOMContentLoaded", function () {
         current = index;
       }
     };
+    /* the rail fades out when the reader pauses; scrolling, the pointer
+       coming near it, or keyboard focus brings it back */
+    var idleTimer = null;
+    var wakeRail = function () {
+      rail.classList.remove("is-idle");
+      window.clearTimeout(idleTimer);
+      idleTimer = window.setTimeout(function () {
+        if (!rail.matches(":hover") && !rail.contains(document.activeElement)) rail.classList.add("is-idle");
+      }, 2500);
+    };
+    var pointerTick = false;
+    document.addEventListener("mousemove", function (event) {
+      if (pointerTick || !rail.classList.contains("is-visible")) return;
+      pointerTick = true;
+      window.requestAnimationFrame(function () {
+        pointerTick = false;
+        var box = rail.getBoundingClientRect();
+        if (event.clientX >= box.left - 120 && event.clientY >= box.top - 80 && event.clientY <= box.bottom + 80) wakeRail();
+      });
+    }, { passive: true });
+    rail.addEventListener("mouseleave", wakeRail);
+    rail.addEventListener("focusout", wakeRail);
+    rail.addEventListener("focusin", wakeRail);
+
     var onSectionScroll = function () {
+      wakeRail();
       if (!navTick) { navTick = true; window.requestAnimationFrame(updateSections); }
     };
     window.addEventListener("scroll", onSectionScroll, { passive: true });
     window.addEventListener("resize", onSectionScroll);
     updateSections();
+    wakeRail();
   }
 
   /* ----- Mark the current page in the menu -----

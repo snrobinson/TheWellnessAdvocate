@@ -1430,17 +1430,21 @@ body { background: var(--ivory) var(--grain); }
    Desktop: a quiet column of hairline ticks on the right edge, one per
    section, the current one longer and rose gold with its name in small caps
    just above it. Every name and a frosted panel appear on hover or keyboard
-   focus. Pages with the rail keep a wider right margin (--rail-room) so the
-   name never sits on the text.
+   focus. The column fades out when the reader pauses and comes back on
+   scroll, when the pointer nears it, or on keyboard focus. Pages with the
+   rail keep a wider margin (--rail-room) on both sides, so the text stays
+   centred and the name never sits on it.
    Phones: a slim bar at the top naming the current section. */
 .section-rail, .section-bar { display: none; }
 
 @media (min-width: 64em) {
   :root { --rail-room: 13rem; }
   /* the text column gives way to the rail on every section after the opening
-     one (the rail is hidden over the opening section); wide screens already
-     have the room, so nothing changes there */
+     one (the rail is hidden over the opening section), by the same amount on
+     both sides so it stays centred; wide screens already have the room, so
+     nothing changes there */
   .has-rail #main > section:not(:first-child) > .wrap {
+    padding-left: max(var(--gutter), calc(var(--rail-room) - max(0px, (100vw - var(--wrap)) / 2)));
     padding-right: max(var(--gutter), calc(var(--rail-room) - max(0px, (100vw - var(--wrap)) / 2)));
   }
   .section-rail {
@@ -1459,6 +1463,12 @@ body { background: var(--ivory) var(--grain); }
     visibility: visible;
     transform: translate(0, -50%);
     transition: opacity 0.5s var(--ease), transform 0.5s var(--ease), visibility 0s;
+  }
+  /* idle: main.js adds is-idle after a few quiet seconds; it stays reachable
+     (and reappears) on hover or keyboard focus */
+  .section-rail.is-visible.is-idle:not(:hover):not(:focus-within) {
+    opacity: 0;
+    transition: opacity 1.4s var(--ease), transform 0.5s var(--ease), visibility 0s;
   }
   /* at rest: ticks only, no panel */
   .rail-list {
